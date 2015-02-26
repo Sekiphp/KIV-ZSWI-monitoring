@@ -1,5 +1,3 @@
-h1. Monitoring komponent
+JAVA aplikace pro monitoring běhu komponent/instancí DMS PeerFile
 
-h2. JAVA aplikace pro monitoring běhu komponent/instancí DMS PeerFile
-
-h3. projekt na předmět ZSWI
+projekt na předmět ZSWI
