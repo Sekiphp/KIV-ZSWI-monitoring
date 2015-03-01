@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<preregistrationEvents
+  xmlns="urn:x-herout:schemata:preregistration.1.0"
+  xmlns:tt="urn:x-herout:schemata:timetable.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:x-herout:schemata:preregistration.1.0
+                      preregistration-schema.xsd">
+
+  <event eventNo="1">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:34"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193085"/>
+      <tt:department>KEE</tt:department>
+      <tt:subject kind="Př">ZBP</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="2">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193156"/>
+      <tt:department>KFY</tt:department>
+      <tt:subject kind="Př">FYA1</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="3">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193157"/>
+      <tt:department>KFY</tt:department>
+      <tt:subject kind="Cv">FYA1</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="4">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193505"/>
+      <tt:department>KIV</tt:department>
+      <tt:subject kind="Př">PPA1</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="5">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193513"/>
+      <tt:department>KIV</tt:department>
+      <tt:subject kind="Cv">PPA1</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="6">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193528"/>
+      <tt:department>KIV</tt:department>
+      <tt:subject kind="Př">PPA2</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="7">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193535"/>
+      <tt:department>KIV</tt:department>
+      <tt:subject kind="Cv">PPA2</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="8">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194036"/>
+      <tt:department>KKY</tt:department>
+      <tt:subject kind="Př">ZKY</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="9">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194274"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Př">LA</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="10">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194276"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Cv">LA</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="11">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194389"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Př">M1</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="12">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194392"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Př">M1</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="13">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194401"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Cv">M1</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="14">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194413"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Př">M2</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="15">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194414"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Př">M2</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="16">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194419"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Cv">M2</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="17">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194839"/>
+      <tt:department>KTS</tt:department>
+      <tt:subject kind="Cv">TV</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="18">
+    <parameters>
+      <timeStamp date="2009-05-26" time="12:27:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="tlusty" group="true"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194840"/>
+      <tt:department>KTS</tt:department>
+      <tt:subject kind="Cv">TV</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="19">
+    <parameters>
+      <timeStamp date="2009-05-29" time="10:47:34"/>
+      <actor personalNumber="A08B0178P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.45.72</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="185192"/>
+      <tt:department>UJP</tt:department>
+      <tt:subject kind="Cv">A4</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="20">
+    <parameters>
+      <timeStamp date="2009-05-29" time="10:47:34"/>
+      <actor personalNumber="A08B0178P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.45.72</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="185234"/>
+      <tt:department>UJP</tt:department>
+      <tt:subject kind="Cv">A4</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="21">
+    <parameters>
+      <timeStamp date="2009-05-29" time="10:48:12"/>
+      <actor personalNumber="A08B0178P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.45.72</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="191216"/>
+      <tt:department>KTS</tt:department>
+      <tt:subject kind="Cv">TV</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="22">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:38:15"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193857"/>
+      <tt:department>KKY</tt:department>
+      <tt:subject kind="Cv">MATL</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="23">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:38:25"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="delete">
+      <timetableAction tt:id="193857"/>
+      <tt:department>KKY</tt:department>
+      <tt:subject kind="Cv">MATL</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange>
+        <timeStamp date="2009-06-12" time="14:38:15"/>
+      </previousChange>
+    </processedData>
+  </event>
+  <event eventNo="24">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:47:46"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193117"/>
+      <tt:department>KFI</tt:department>
+      <tt:subject kind="Př">DFT</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="25">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:48:13"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="180326"/>
+      <tt:department>KFI</tt:department>
+      <tt:subject kind="Př">DN</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="26">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:48:48"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193119"/>
+      <tt:department>KFI</tt:department>
+      <tt:subject kind="Př">ETP</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="27">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:49:11"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="187334"/>
+      <tt:department>KFI</tt:department>
+      <tt:subject kind="Př">FCLO</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="28">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:49:35"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="181800"/>
+      <tt:department>KFI</tt:department>
+      <tt:subject kind="Př">UDF</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="29">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:50:05"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194519"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Cv">SDP</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="30">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:50:24"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.45.72</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194538"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Cv">SMA1</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="31">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:50:51"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="190838"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Cv">SMP</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="32">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:51:25"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="delete">
+      <timetableAction tt:id="190838"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Cv">SMP</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange>
+        <timeStamp date="2009-06-12" time="14:50:51"/>
+      </previousChange>
+    </processedData>
+  </event>
+  <event eventNo="33">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:51:25"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194547"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Cv">SMP</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="34">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:51:58"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193857"/>
+      <tt:department>KKY</tt:department>
+      <tt:subject kind="Cv">MATL</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange>
+        <timeStamp date="2009-06-12" time="14:38:25"/>
+      </previousChange>
+    </processedData>
+  </event>
+  <event eventNo="35">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:52:30"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="187412"/>
+      <tt:department>KFI</tt:department>
+      <tt:subject kind="Př">IV</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="36">
+    <parameters>
+      <timeStamp date="2009-06-12" time="14:53:13"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194529"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Cv">SDR</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="37">
+    <parameters>
+      <timeStamp date="2009-06-12" time="15:00:58"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="194754"/>
+      <tt:department>KME</tt:department>
+      <tt:subject kind="Cv">PRO</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="38">
+    <parameters>
+      <timeStamp date="2009-06-12" time="15:01:41"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.58.35</ipAddress>
+    </parameters>
+    <processedData activity="insert">
+      <timetableAction tt:id="193749"/>
+      <tt:department>KKS</tt:department>
+      <tt:subject kind="Cv">TTD</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange xsi:nil="true"/>
+    </processedData>
+  </event>
+  <event eventNo="39">
+    <parameters>
+      <timeStamp date="2009-06-17" time="13:07:35"/>
+      <actor personalNumber="A08B0178P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.45.72</ipAddress>
+    </parameters>
+    <processedData activity="delete">
+      <timetableAction tt:id="185192"/>
+      <tt:department>UJP</tt:department>
+      <tt:subject kind="Cv">A4</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange>
+        <timeStamp date="2009-05-29" time="10:47:34"/>
+      </previousChange>
+    </processedData>
+  </event>
+  <event eventNo="40">
+    <parameters>
+      <timeStamp date="2009-06-17" time="13:07:35"/>
+      <actor personalNumber="A08B0178P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.45.72</ipAddress>
+    </parameters>
+    <processedData activity="delete">
+      <timetableAction tt:id="185234"/>
+      <tt:department>UJP</tt:department>
+      <tt:subject kind="Cv">A4</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange>
+        <timeStamp date="2009-05-29" time="10:47:34"/>
+      </previousChange>
+    </processedData>
+  </event>
+  <event eventNo="41">
+    <parameters>
+      <timeStamp date="2009-06-17" time="13:07:35"/>
+      <actor personalNumber="A08B0178P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.45.72</ipAddress>
+    </parameters>
+    <processedData activity="delete">
+      <timetableAction tt:id="191216"/>
+      <tt:department>KTS</tt:department>
+      <tt:subject kind="Cv">TV</tt:subject>
+      <tt:term>LS</tt:term>
+      <previousChange>
+        <timeStamp date="2009-05-29" time="10:48:12"/>
+      </previousChange>
+    </processedData>
+  </event>
+  <event eventNo="42">
+    <parameters>
+      <timeStamp date="2009-07-22" time="10:11:18"/>
+      <actor personalNumber="A09B0765P"/>
+      <clientInfo category="portal" group="false"/>
+      <ipAddress>147.228.45.72</ipAddress>
+    </parameters>
+    <processedData activity="delete">
+      <timetableAction tt:id="194538"/>
+      <tt:department>KMA</tt:department>
+      <tt:subject kind="Cv">SMA1</tt:subject>
+      <tt:term>ZS</tt:term>
+      <previousChange>
+        <timeStamp date="2009-06-12" time="14:50:24"/>
+      </previousChange>
+    </processedData>
+  </event>
+</preregistrationEvents>
