@@ -18,7 +18,7 @@ public class Hlavni {
     private static String outputDir;
 
     /**
-     * Vstupní bod programu
+     * Vstupní bod programu Tonda
      * @param args parametry z příkazové řádky
      */
     public static void main(String[] args){
