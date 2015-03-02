@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # gitworkshop
 This project serves as a practice scenario for Git workshop we organize for our students
 at [The Department of Computer Science](http://kiv.zcu.cz) of
@@ -30,3 +31,16 @@ The package `jxt` contains the actual application code.
 
 ##Git Cheatsheet
 Git-SVN comparison cheatsheet available at http://danekja.github.io/gitworkshop/
+=======
+<h1>Monitoring koponent</h1>
+
+<strong>Následující projekt obsahuje semestrální práci na předmět ZSWI. Náplní semestrální práce je:</strong><br>
+JAVA aplikace pro monitoring běhu komponent/instancí DMS PeerFile
+
+<h3>členové týmu:</h3>
+• Luboš Hubáček <br>
+• Ondřej Pittl <br>
+• Jiří Homolka <br>
+• Jan Kohlíček <br>
+• Petr Kozler
+>>>>>>> 452359a8bf6f12ef3a4c50121b7d544a298d9835
