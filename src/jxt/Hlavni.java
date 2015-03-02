@@ -24,6 +24,7 @@ public class Hlavni {
     public static void main(String[] args){
         parameters(args);
         System.out.print("Ahoj");
+        System.out.print("Ahoj");
         MyTimeTableType timetable = TimetableActionsProcess.createTimetable(
                 timeTableActionsFile, PreregistrationProcess.getActionList(
                 preregistrationFile, personalNb), personalNb);
