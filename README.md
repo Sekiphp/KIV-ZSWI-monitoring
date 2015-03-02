@@ -1,4 +1,4 @@
-<h1>Monitoring koponent</h1>
+<h1>Monitoring komponent</h1>
 
 <strong>Následující repozitář obsahuje semestrální práci z předmětu ZSWI. Náplní semestrální práce je:</strong><br>
 JAVA aplikace pro monitoring běhu komponent/instancí DMS PeerFile
