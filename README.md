@@ -29,4 +29,4 @@ contain JAXB generated classes for working with the supplied XML schemas.
 The package `jxt` contains the actual application code.
 
 ##Git Cheatsheet
-Git-SVN comparison cheatsheet available at http://danekj.github.io/gitworkshop/
+Git-SVN comparison cheatsheet available at http://danekja.github.io/gitworkshop/
