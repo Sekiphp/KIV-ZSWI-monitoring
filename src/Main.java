@@ -4,6 +4,9 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * Main class of application
  * 
@@ -11,7 +14,17 @@ import java.net.URL;
  * @version 0.1 alfa
  */
 public class Main {
-
+	
+	static {
+		/*nastaveni XML konfigurace vypisu log4j*/
+		System.setProperty("log4j.configurationFile", "log4j_config.xml");
+	}
+	
+	/**
+	 * Main logger.
+	 */
+	private static Logger mainLogger = LogManager.getLogger();
+	
 	/**
 	 * Reads data from url, which are specified in Config
 	 * 
@@ -47,12 +60,16 @@ public class Main {
 	 * @param args	input args
 	 */
 	public static void main(String[] args) {
+		mainLogger.info("App starts.");
 		System.out.println(Config.appName);
 		
 		try {
 			loadUrl();
 		} catch (IOException e) {
+			mainLogger.error("IO Exception druring getting response from url.");
 			e.printStackTrace();
 		}
+		
+		mainLogger.info("App ends.");
 	}
 }

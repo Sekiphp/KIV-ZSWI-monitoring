@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Properties>
+    <Property name="logFormat">%d{HH:mm:ss} [%-level - %logger{1}.%-M()] - %msg%n</Property>
+    <Property name="outputFileDest">log.txt</Property>
+  </Properties>
+  <Appenders>
+    <File name="fileOutput" filename="${outputFileDest}">
+      <PatternLayout pattern="${logFormat}"/>
+      <!-- <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/> -->
+    </File>
+    <Console name="konzole" target="SYSTEM_OUT">
+      <PatternLayout pattern="${logFormat}"/>
+    </Console>
+  </Appenders>   
+
+  <Loggers>
+    <Root level="ALL">
+      <AppenderRef ref="konzole"/>
+    </Root>
+    <Logger name="Main" level="ALL">
+      <AppenderRef ref="fileOutput"/>
+    </Logger>
+  </Loggers>
+</Configuration>
