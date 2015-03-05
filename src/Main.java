@@ -4,8 +4,6 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 
-
-
 /**
  * Main class of application
  * 
@@ -35,18 +33,26 @@ public class Main {
 			
 			// samotne cteni
 			reader = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
-			    for (String line; (line = reader.readLine()) != null;) {
-			        System.out.println(line);
-			        System.out.println(" --- ");
-			    }
-			    reader.close();
-			
+		    for (String line; (line = reader.readLine()) != null;) {
+		        System.out.println(line);
+		        System.out.println(" --- ");
+		    }
+			    
+		    reader.close();
 		}		
 	}
 
-	public static void main(String[] args) throws UnsupportedEncodingException, IOException {
+	/**
+	 * Main method of app.
+	 * @param args	input args
+	 */
+	public static void main(String[] args) {
 		System.out.println(Config.appName);
 		
-		loadUrl();           
+		try {
+			loadUrl();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

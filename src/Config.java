@@ -18,7 +18,6 @@ public class Config {
     	"http://peerfile.eu:3000/api/mon/sessions_count", 
     	"http://peerfile.eu:3000/api/mon/sessions_info", 
     	"http://peerfile.eu:3000/api/mon/memory_info",  
-    	"",
-    	};
-    
+    	""
+    };
 }
