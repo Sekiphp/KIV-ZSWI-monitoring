@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- properties - definice instanci peerfile -->
+	
+
+
+    <!-- <bean id="flickrClient" class="com.springsource.samples.resttemplate.FlickrClient">
+        <constructor-arg ref="restTemplate"/>
+        <constructor-arg ref="xpathTemplate"/>
+    </bean>
+
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+                <bean class="com.springsource.samples.resttemplate.BufferedImageHttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="xpathTemplate" class="org.springframework.xml.xpath.Jaxp13XPathTemplate"/>-->   
+    
+    <!-- <bean id="webServiceClient" class="WebServiceClient">
+        <property name="defaultUri" value="http://localhost:8080/WebService"/>
+    </bean> -->
+    
+    <bean id="hello" class="HelloBean">
+    	<constructor-arg type="java.lang.String" value="Pepo"/>
+    </bean>
+    
+    
+    
+    
+    
+</beans>
