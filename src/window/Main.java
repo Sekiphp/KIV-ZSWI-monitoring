@@ -67,8 +67,11 @@ public class Main extends Application {
         MenuItem exitItem = new MenuItem("Konec", null);
         exitItem.setMnemonicParsing(true);
         exitItem.setAccelerator(new KeyCodeCombination(KeyCode.X, KeyCombination.CONTROL_DOWN));
-        exitItem.setOnAction((ActionEvent event) -> {
-            Platform.exit();
+        exitItem.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                Platform.exit();
+            }
         });
         menu.getItems().add(exitItem);
 
