@@ -63,6 +63,23 @@
 		  <scope>system</scope>
 		  <systemPath>${project.basedir}/lib/jfxrt.jar</systemPath>
 		</dependency>
+		<dependency>
+	        <groupId>org.codehaus.jackson</groupId>
+	        <artifactId>jackson-mapper-asl</artifactId>
+	        <version>1.9.13</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.codehaus.jackson</groupId>
+	        <artifactId>jackson-core-asl</artifactId>
+	        <version>1.9.13</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>javax.xml.bind</groupId>
+	        <artifactId>jaxb-api</artifactId>
+	        <version>2.2.9</version>
+	        <scope>runtime</scope>
+	    </dependency>
+	    
 	</dependencies>
 	
 </project>

@@ -3,10 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<!-- properties - definice instanci peerfile -->
-	
-
-
     <!-- <bean id="flickrClient" class="com.springsource.samples.resttemplate.FlickrClient">
         <constructor-arg ref="restTemplate"/>
         <constructor-arg ref="xpathTemplate"/>
@@ -28,11 +24,26 @@
     </bean> -->
     
     <bean id="hello" class="HelloBean">
-    	<constructor-arg type="java.lang.String" value="Pepo"/>
+    	<constructor-arg type="java.lang.String" value="Pepo"/> 		<!-- ref -->
     </bean>
     
-    
-    
-    
-    
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
+	
+	<bean id="urlFactory" class="UrlFactory">
+		<property name="urls">
+			<map>
+				<entry key="instance_id" value="http://peerfile.eu:3000/api/mon/instance_id"/>
+				<entry key="system_load" value="http://peerfile.eu:3000/api/mon/system_load"/>
+				<entry key="sessions_count" value="http://peerfile.eu:3000/api/mon/sessions_count"/>
+				<entry key="sessions_info" value="http://peerfile.eu:3000/api/mon/sessions_info"/>
+				<entry key="memory_info" value="http://peerfile.eu:3000/api/mon/memory_info"/>
+			</map>
+		</property>
+	</bean>
+		
+	<bean id="peerFileMonitor" class="PeerFileMonitor">
+	    <constructor-arg type="org.springframework.web.client.RestTemplate" ref="restTemplate"/>
+	    <constructor-arg type="UrlFactory" ref="urlFactory"/>
+	</bean>
+	
 </beans>
