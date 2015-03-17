@@ -2,11 +2,15 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.client.RestTemplate;
 
+import ukazka.HelloBean;
+
 
 public class Hlavni {
 
 	public static void main(String[] args) {	
 		ApplicationContext app = new ClassPathXmlApplicationContext("/application-context.xml");
+		
+		/* UKAZKA BEAN */
 		/*HelloBean bean = (HelloBean) app.getBean("hello");	//bean id
 		System.out.println(bean.getGreeting());*/
 		
@@ -21,9 +25,6 @@ public class Hlavni {
 		
 		InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
 		System.out.println("instance ID:    " + instanceId.getInstance_id());
-		
-		
-		
 		
 	}
 }

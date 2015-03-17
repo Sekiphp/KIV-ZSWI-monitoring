@@ -1,3 +1,4 @@
+package ukazka;
 public class HelloBean {
 
 	private String name;

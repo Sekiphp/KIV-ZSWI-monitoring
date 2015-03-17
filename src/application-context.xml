@@ -2,33 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <!-- <bean id="flickrClient" class="com.springsource.samples.resttemplate.FlickrClient">
-        <constructor-arg ref="restTemplate"/>
-        <constructor-arg ref="xpathTemplate"/>
-    </bean>
-
-    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
-        <property name="messageConverters">
-            <list>
-                <bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
-                <bean class="com.springsource.samples.resttemplate.BufferedImageHttpMessageConverter"/>
-            </list>
-        </property>
-    </bean>
-
-    <bean id="xpathTemplate" class="org.springframework.xml.xpath.Jaxp13XPathTemplate"/>-->   
-    
-    <!-- <bean id="webServiceClient" class="WebServiceClient">
-        <property name="defaultUri" value="http://localhost:8080/WebService"/>
-    </bean> -->
-    
-    <bean id="hello" class="HelloBean">
+   
+    <!-- ukazka BEAN -->
+    <bean id="hello" class="ukazka.HelloBean">
     	<constructor-arg type="java.lang.String" value="Pepo"/> 		<!-- ref -->
     </bean>
     
+    <!-- instance RestTemplate -->
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
 	
+	<!-- instance UrlFactory s mapou (asociativni pole, klic:hodnota) url instanci -->
 	<bean id="urlFactory" class="UrlFactory">
 		<property name="urls">
 			<map>
@@ -40,7 +23,8 @@
 			</map>
 		</property>
 	</bean>
-		
+	
+	<!-- injectnute beany -->
 	<bean id="peerFileMonitor" class="PeerFileMonitor">
 	    <constructor-arg type="org.springframework.web.client.RestTemplate" ref="restTemplate"/>
 	    <constructor-arg type="UrlFactory" ref="urlFactory"/>
