@@ -5,6 +5,7 @@ public class UrlFactory {
 
 	private final String SYSTEM_LOAD = "system_load";
 	private final String INSTANCE_ID = "instance_id";
+	private final String SESSIONS_COUNT = "sessions_count";
 	
 	private Map<String, String> urls;
 	
@@ -19,6 +20,10 @@ public class UrlFactory {
 
 	public String getInstanceId(){
 		return urls.get(INSTANCE_ID);
+	}
+	
+	public String getSessionsCount(){
+		return urls.get(SESSIONS_COUNT);
 	}
 	
 }
