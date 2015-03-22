@@ -11,18 +11,20 @@ public class PeerFileMonitor {
 
 	private UrlFactory urlFactory;
 	private RestTemplate restTemplate;
-	
 
 	public PeerFileMonitor(UrlFactory urlFactory, RestTemplate restTemplate) {
+		peerFileLogger.debug("Creating PeerFile monitor.");
 		this.urlFactory = urlFactory;
 		this.restTemplate = restTemplate;
 	}
 
 	public UrlFactory getUrlFactory() {
+		peerFileLogger.debug("Getting URL Factory.");
 		return urlFactory;
 	}
 
 	public RestTemplate getRestTemplate() {
+		peerFileLogger.debug("Getting Rest template.");
 		return restTemplate;
 	}
 	

@@ -3,7 +3,7 @@
 
   <Properties>
   	<!-- format vystupu -->
-    <Property name="logFormat">%d{HH:mm:ss} [%-level - %logger{1}.%-M()] - %msg%n</Property>
+    <Property name="format">%d{yyyy.MM.dd HH:mm:ss} [%-level - %logger{1}.%-M()] - %msg%n</Property>
     <!-- nazev vystupniho souboru pro logy cinnosti aplikace -->
     <Property name="debugFileDest">debug-log</Property>
     <!-- nazvy vystupnich souboru pro logy jednotlivych sluzeb -->
@@ -16,9 +16,9 @@
   
   <Appenders>
   <!-- vypis do konzole - pro testovaci ucely -->
-    <Console name="console" target="SYSTEM_OUT">
+    <!-- <Console name="console" target="SYSTEM_OUT">
       <PatternLayout pattern="${logFormat}"/>
-    </Console>
+    </Console> -->
     <!-- logovani cinnosti aplikace (5 souborů po 5 MB) -->
     <RollingFile name="debugFile" fileName="${debugFileDest}_1.txt" filePattern="${debugFileDest}_%i.txt">
 	  <PatternLayout pattern="${format}"/>
@@ -56,7 +56,7 @@
   <Loggers>
   	<!-- vystup loggeru do konzole -->
     <Root level="DEBUG">
-      <AppenderRef ref="console"/>
+      <!-- <AppenderRef ref="console"/> -->
     </Root>
     <!-- odkazy na loggery pro logovani cinnosti aplikace -->
     <Logger name="Hlavni" level="DEBUG">

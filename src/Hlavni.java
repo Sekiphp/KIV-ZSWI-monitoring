@@ -20,26 +20,37 @@ public class Hlavni {
 	private static Logger mainLogger = LogManager.getLogger();
 
 	public static void main(String[] args) {	
+		mainLogger.info("Application started.");
+		
 		ApplicationContext app = new ClassPathXmlApplicationContext("/application-context.xml");
+		mainLogger.debug("Application context loaded.");
 		
 		PeerFileMonitor pf = (PeerFileMonitor) app.getBean("peerFileMonitor");
+		mainLogger.debug("PeerFile monitor created.");
 		
 		RestTemplate restTemplate = pf.getRestTemplate();
+		mainLogger.debug("Rest template created.");
+		
 		UrlFactory fac = pf.getUrlFactory();
+		mainLogger.debug("Retrieved URL factory.");
 		
 		SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
+		mainLogger.debug("Retrieved instance from Rest template: System Load");
 		System.out.println("systemLoad:    " + systemLoad.getSystem_load());
 		
 		InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
+		mainLogger.debug("Retrieved instance from Rest template: Instance ID");
 		System.out.println("instance ID:    " + instanceId.getInstance_id());
 		
 		SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
+		mainLogger.debug("Retrieved instance from Rest template: Sessions Count");
 		System.out.println("sessions count:    " + sessionsCount.getSessions_count());
+		
+		mainLogger.info("Application finished.");
 		
 		/* doprogramovat!!!!
     	"http://peerfile.eu:3000/api/mon/sessions_info", 
     	"http://peerfile.eu:3000/api/mon/memory_info",
     	*/  
-		
 	}
 }
