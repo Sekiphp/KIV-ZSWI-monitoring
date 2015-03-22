@@ -5,13 +5,13 @@
   	<!-- format vystupu -->
     <Property name="logFormat">%d{HH:mm:ss} [%-level - %logger{1}.%-M()] - %msg%n</Property>
     <!-- nazev vystupniho souboru pro logy cinnosti aplikace -->
-    <Property name="debugFileDest">debug-log.txt</Property>
+    <Property name="debugFileDest">debug-log</Property>
     <!-- nazvy vystupnich souboru pro logy jednotlivych sluzeb -->
-    <Property name="systemLoadFileDest">system_load-log.txt</Property>
-    <Property name="instanceIDFileDest">instance_id-log.txt</Property>
-    <Property name="sessionsCountFileDest">sessions_count-log.txt</Property>
-    <Property name="sessionsInfoFileDest">sessions_info-log.txt</Property>
-    <Property name="memoryInfoFileDest">memory_info-log.txt</Property>
+    <Property name="systemLoadFileDest">system_load-log</Property>
+    <Property name="instanceIDFileDest">instance_id-log</Property>
+    <Property name="sessionsCountFileDest">sessions_count-log</Property>
+    <Property name="sessionsInfoFileDest">sessions_info-log</Property>
+    <Property name="memoryInfoFileDest">memory_info-log</Property>
   </Properties>
   
   <Appenders>
@@ -20,33 +20,33 @@
       <PatternLayout pattern="${logFormat}"/>
     </Console>
     <!-- logovani cinnosti aplikace (5 souborů po 5 MB) -->
-    <RollingFile name="debugFile" fileName="${debugFileDest}" filePattern="${debugFileDest}_%i">
+    <RollingFile name="debugFile" fileName="${debugFileDest}_1.txt" filePattern="${debugFileDest}_%i.txt">
 	  <PatternLayout pattern="${format}"/>
 	  <DefaultRolloverStrategy min="1" max="5" />
 	  <SizeBasedTriggeringPolicy size="5 MB" />
     </RollingFile>
     <!-- logovani pro jednotlive sluzby (od kazde 5 historickych souboru po 1 MB) -->
-    <RollingFile name="systemLoadFile" fileName="${systemLoadFileDest}" filePattern="${systemLoadFileDest}_%i">
+    <RollingFile name="systemLoadFile" fileName="${systemLoadFileDest}_1.txt" filePattern="${systemLoadFileDest}_%i.txt">
 		<PatternLayout pattern="${format}"/>
 		<DefaultRolloverStrategy min="1" max="5" />
 		<SizeBasedTriggeringPolicy size="1 MB" />
     </RollingFile>
-    <RollingFile name="instanceIDFile" fileName="${instanceIDFileDest}" filePattern="${instanceIDFileDest}_%i">
+    <RollingFile name="instanceIDFile" fileName="${instanceIDFileDest}_1.txt" filePattern="${instanceIDFileDest}_%i.txt">
 		<PatternLayout pattern="${format}"/>
 		<DefaultRolloverStrategy min="1" max="5" />
 		<SizeBasedTriggeringPolicy size="1 MB" />		
     </RollingFile>
-    <RollingFile name="sessionsCountFile" fileName="${sessionsCountFileDest}" filePattern="${sessionsCountFileDest}_%i">
+    <RollingFile name="sessionsCountFile" fileName="${sessionsCountFileDest}_1.txt" filePattern="${sessionsCountFileDest}_%i.txt">
 		<PatternLayout pattern="${format}"/>
 		<DefaultRolloverStrategy min="1" max="5" />
 		<SizeBasedTriggeringPolicy size="1 MB" />		
     </RollingFile>
-    <RollingFile name="sessionsInfoFile" fileName="${sessionsInfoFileDest}" filePattern="${sessionsInfoFileDest}_%i">
+    <RollingFile name="sessionsInfoFile" fileName="${sessionsInfoFileDest}_1.txt" filePattern="${sessionsInfoFileDest}_%i.txt">
 		<PatternLayout pattern="${format}"/>
 		<DefaultRolloverStrategy min="1" max="5" />
 		<SizeBasedTriggeringPolicy size="1 MB" />		
     </RollingFile>
-    <RollingFile name="memoryInfoFile" fileName="${memoryInfoFileDest}" filePattern="${memoryInfoFileDest}_%i">
+    <RollingFile name="memoryInfoFile" fileName="${memoryInfoFileDest}_1.txt" filePattern="${memoryInfoFileDest}_%i.txt">
 		<PatternLayout pattern="${format}"/>
 		<DefaultRolloverStrategy min="1" max="5" />
 		<SizeBasedTriggeringPolicy size="1 MB" />		

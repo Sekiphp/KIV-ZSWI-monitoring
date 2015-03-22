@@ -1,11 +1,13 @@
 import java.util.Map;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class UrlFactory {
 	
 	/**
 	 * Hlavni logger
 	 */
-	//private static Logger urlFactoryLogger = LogManager.getLogger();
+	private static Logger urlFactoryLogger = LogManager.getLogger();
 
 	private final String SYSTEM_LOAD = "system_load";
 	private final String INSTANCE_ID = "instance_id";

@@ -1,10 +1,12 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class InstanceId {
 	
 	/**
 	 * Hlavni logger
 	 */
-	//private static Logger instanceIdLogger = LogManager.getLogger();
+	private static Logger instanceIdLogger = LogManager.getLogger();
 
 	private String instance_id;
 

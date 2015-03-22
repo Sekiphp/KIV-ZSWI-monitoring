@@ -1,10 +1,12 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class SessionsCount {
 	
 	/**
 	 * Hlavni logger
 	 */
-	//private static Logger sessionsCountLogger = LogManager.getLogger();
+	private static Logger sessionsCountLogger = LogManager.getLogger();
 
 	private String sessions_count;
 

@@ -17,7 +17,7 @@ public class Hlavni {
 	/**
 	 * Hlavni logger
 	 */
-	//private static Logger mainLogger = LogManager.getLogger();
+	private static Logger mainLogger = LogManager.getLogger();
 
 	public static void main(String[] args) {	
 		ApplicationContext app = new ClassPathXmlApplicationContext("/application-context.xml");

@@ -1,11 +1,13 @@
 import org.springframework.web.client.RestTemplate;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PeerFileMonitor {
 	
 	/**
 	 * Hlavni logger
 	 */
-	//private static Logger peerFileLogger = LogManager.getLogger();
+	private static Logger peerFileLogger = LogManager.getLogger();
 
 	private UrlFactory urlFactory;
 	private RestTemplate restTemplate;
