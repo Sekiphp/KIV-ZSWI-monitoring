@@ -9,6 +9,15 @@ public class Sessions {
 	@JsonProperty("last_request") private String last_request;
 	@JsonProperty("user_name") private String user_name;
 	
+	public String getSessions_info()
+	{
+		return ("\nsession_code: " + session_code +
+				"\nsession_name: " + session_name + 
+				"\nsession_start: " + session_start +
+				"\nlast_request: " + last_request + 
+				"\nuser_name: " + user_name + "\n");
+	}
+	
 	public String getSession_code() {
 		return session_code;
 	}

@@ -52,8 +52,14 @@ public class Hlavni {
 		
 		
 		Sessions[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), Sessions[].class);
+		System.out.println("sessions info:");
+
+		for(int i = 0; i<sessionsInfo.length;i++){
+			
 		mainLogger.debug("Retrieved instance from Rest template: Sessions Info");
-		System.out.println("sessions info:    " + sessionsInfo[0].getSession_code());
+		System.out.println(sessionsInfo[i].getSessions_info());
+		
+		}
 		
 		mainLogger.info("Application finished.");
 		

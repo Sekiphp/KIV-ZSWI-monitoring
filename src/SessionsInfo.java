@@ -15,7 +15,7 @@ public class SessionsInfo {
 
 	public List<Sessions> getSessions_info() {
 		sessionsInfoLogger.info("Getting sessions_info: " + sessions_info);
-		return sessions_info.subList(0, 1);
+		return sessions_info;
 	}
 
 	public void setSessions_info(List<Sessions> sessions_info) {

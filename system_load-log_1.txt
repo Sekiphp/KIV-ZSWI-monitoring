@@ -88,3 +88,13 @@
 2015.03.22 20:14:00 [INFO - SystemLoad.getSystem_load()] - Getting system_load: 0.96
 2015.03.22 20:15:13 [INFO - SystemLoad.setSystem_load()] - Setting system_load: 0.0
 2015.03.22 20:15:13 [INFO - SystemLoad.getSystem_load()] - Getting system_load: 0.73
+2015.03.22 20:21:14 [INFO - SystemLoad.setSystem_load()] - Setting system_load: 0.0
+2015.03.22 20:21:14 [INFO - SystemLoad.getSystem_load()] - Getting system_load: 0.88
+2015.03.22 20:22:22 [INFO - SystemLoad.setSystem_load()] - Setting system_load: 0.0
+2015.03.22 20:22:22 [INFO - SystemLoad.getSystem_load()] - Getting system_load: 0.64
+2015.03.22 20:22:45 [INFO - SystemLoad.setSystem_load()] - Setting system_load: 0.0
+2015.03.22 20:22:45 [INFO - SystemLoad.getSystem_load()] - Getting system_load: 1.06
+2015.03.22 20:23:19 [INFO - SystemLoad.setSystem_load()] - Setting system_load: 0.0
+2015.03.22 20:23:20 [INFO - SystemLoad.getSystem_load()] - Getting system_load: 0.96
+2015.03.22 20:24:27 [INFO - SystemLoad.setSystem_load()] - Setting system_load: 0.0
+2015.03.22 20:24:27 [INFO - SystemLoad.getSystem_load()] - Getting system_load: 0.87
