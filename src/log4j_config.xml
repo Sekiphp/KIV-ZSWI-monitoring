@@ -28,7 +28,7 @@
     </RollingFile>
     <!-- logovani pro jednotlive sluzby (od kazde 5 historickych souboru po 5 MB) -->
     <RollingFile name="systemLoadFile" fileName="${systemLoadFileDest}" filePattern="${systemLoadFileDest}_%i">
-
+		
     </RollingFile>
     <RollingFile name="instanceIDFile" fileName="${instanceIDFileDest}" filePattern="${instanceIDFileDest}_%i">
 

@@ -1,6 +1,9 @@
+package ukazka;
 import java.io.StringReader;
+
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
+
 import org.springframework.ws.client.core.WebServiceTemplate;
 
 /**
