@@ -3,9 +3,7 @@ import org.apache.logging.log4j.Logger;
 
 public class SystemLoad {
 	
-	/**
-	 * Hlavni logger
-	 */
+	/** logger sluzby SystemLoad */
 	private static Logger systemLoadLogger = LogManager.getLogger();
     
 	private double system_load;

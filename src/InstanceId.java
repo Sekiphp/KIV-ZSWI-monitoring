@@ -3,9 +3,7 @@ import org.apache.logging.log4j.Logger;
 
 public class InstanceId {
 	
-	/**
-	 * Hlavni logger
-	 */
+	/** logger sluzby InstanceId */
 	private static Logger instanceIdLogger = LogManager.getLogger();
 
 	private String instance_id;

@@ -4,9 +4,7 @@ import org.apache.logging.log4j.Logger;
 
 public class UrlFactory {
 	
-	/**
-	 * Hlavni logger
-	 */
+	/** logger URLFactory */
 	private static Logger urlFactoryLogger = LogManager.getLogger();
 
 	private final String SYSTEM_LOAD = "system_load";

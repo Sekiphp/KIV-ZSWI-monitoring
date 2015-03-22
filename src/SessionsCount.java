@@ -3,9 +3,7 @@ import org.apache.logging.log4j.Logger;
 
 public class SessionsCount {
 	
-	/**
-	 * Hlavni logger
-	 */
+	/** logger sluzby SessionsCount */
 	private static Logger sessionsCountLogger = LogManager.getLogger();
 
 	private String sessions_count;

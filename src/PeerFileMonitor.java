@@ -4,9 +4,7 @@ import org.apache.logging.log4j.Logger;
 
 public class PeerFileMonitor {
 	
-	/**
-	 * Hlavni logger
-	 */
+	/** logger PeerFileMonitoru */
 	private static Logger peerFileLogger = LogManager.getLogger();
 
 	private UrlFactory urlFactory;

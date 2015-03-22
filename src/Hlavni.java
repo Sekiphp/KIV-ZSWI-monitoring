@@ -1,6 +1,5 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,15 +13,14 @@ public class Hlavni {
 				"log4j_config.xml");
 	}
 	
-	/**
-	 * Hlavni logger
-	 */
+	/** hlavni logger */
 	private static Logger mainLogger = LogManager.getLogger();
 
 	public static void main(String[] args) {	
 		mainLogger.info("Application started.");
 		
-		ApplicationContext app = new ClassPathXmlApplicationContext("/application-context.xml");
+		ClassPathXmlApplicationContext app = new ClassPathXmlApplicationContext("/application-context.xml");
+		System.out.println();
 		mainLogger.debug("Application context loaded.");
 		
 		PeerFileMonitor pf = (PeerFileMonitor) app.getBean("peerFileMonitor");
@@ -51,20 +49,17 @@ public class Hlavni {
 		System.out.println("memory info:    " + memoryInfo.getMemory_info());
 		
 		
-		Sessions[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), Sessions[].class);
+		SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
 		System.out.println("sessions info:");
 
 		for(int i = 0; i<sessionsInfo.length;i++){
-			
-		mainLogger.debug("Retrieved instance from Rest template: Sessions Info");
-		System.out.println(sessionsInfo[i].getSessions_info());
-		
+			System.out.println(sessionsInfo[i].getSessions_info());
 		}
-		
+		mainLogger.debug("Retrieved instances from Rest template: Sessions Info");
+
+		System.out.println();
+		app.close();
 		mainLogger.info("Application finished.");
-		
-		/* doprogramovat!!!!
-    	"http://peerfile.eu:3000/api/mon/sessions_info", 
-    	*/  
+
 	}
 }
