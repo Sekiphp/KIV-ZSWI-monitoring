@@ -50,15 +50,15 @@ public class Hlavni {
 		mainLogger.debug("Retrieved instance from Rest template: Memory Info");
 		System.out.println("memory info:    " + memoryInfo.getMemory_info());
 		
-		SessionsInfo sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo.class);
+		
+		Sessions[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), Sessions[].class);
 		mainLogger.debug("Retrieved instance from Rest template: Sessions Info");
-		System.out.println("sessions info:    " + sessionsInfo.getSessions_info());
+		System.out.println("sessions info:    " + sessionsInfo[0].getSession_code());
 		
 		mainLogger.info("Application finished.");
 		
 		/* doprogramovat!!!!
     	"http://peerfile.eu:3000/api/mon/sessions_info", 
-    	"http://peerfile.eu:3000/api/mon/memory_info",
     	*/  
 	}
 }

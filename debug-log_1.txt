@@ -536,3 +536,247 @@
 2015.03.22 19:32:17 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
 2015.03.22 19:32:17 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
 2015.03.22 19:32:17 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 19:36:20 [INFO - Hlavni.main()] - Application started.
+2015.03.22 19:36:21 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 19:36:21 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 19:36:21 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 19:36:21 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 19:36:21 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 19:36:21 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 19:36:21 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 19:36:21 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 19:36:21 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 19:36:22 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 19:36:22 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 19:36:22 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 19:36:22 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 19:36:25 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 19:36:25 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 19:36:25 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 19:36:25 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 19:44:12 [INFO - Hlavni.main()] - Application started.
+2015.03.22 19:44:14 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 19:44:14 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 19:44:14 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 19:44:14 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 19:44:14 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 19:44:14 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 19:44:14 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 19:44:14 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 19:44:14 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 19:44:14 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 19:44:14 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 19:44:14 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 19:44:14 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 19:44:18 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 19:44:18 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 19:44:18 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 19:44:18 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 19:46:29 [INFO - Hlavni.main()] - Application started.
+2015.03.22 19:46:30 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 19:46:31 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 19:46:31 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 19:46:31 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 19:46:31 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 19:46:31 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 19:46:31 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 19:46:31 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 19:46:31 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 19:46:31 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 19:46:31 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 19:46:31 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 19:46:31 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 19:46:34 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 19:46:34 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 19:46:34 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 19:46:34 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 19:54:34 [INFO - Hlavni.main()] - Application started.
+2015.03.22 19:54:35 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 19:54:35 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 19:54:35 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 19:54:35 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 19:54:35 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 19:54:35 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 19:54:35 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 19:54:35 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 19:54:35 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 19:54:36 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 19:54:36 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 19:54:36 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 19:54:36 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 19:54:40 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 19:54:40 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 19:54:40 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 19:54:40 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 19:55:45 [INFO - Hlavni.main()] - Application started.
+2015.03.22 19:55:46 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 19:55:46 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 19:55:46 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 19:55:46 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 19:55:46 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 19:55:46 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 19:55:46 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 19:55:46 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 19:55:46 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 19:55:46 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 19:55:46 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 19:55:46 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 19:55:46 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 19:55:50 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 19:55:50 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 19:55:50 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 19:55:50 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 20:07:37 [INFO - Hlavni.main()] - Application started.
+2015.03.22 20:07:38 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 20:07:38 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 20:07:38 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 20:07:38 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 20:07:38 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 20:07:38 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 20:07:38 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 20:07:38 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 20:07:38 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 20:07:38 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 20:07:38 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 20:07:38 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 20:07:38 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 20:07:42 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 20:07:42 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 20:07:42 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 20:07:42 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 20:09:35 [INFO - Hlavni.main()] - Application started.
+2015.03.22 20:09:36 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 20:09:36 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 20:09:36 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 20:09:36 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 20:09:36 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 20:09:36 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 20:09:36 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 20:09:36 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 20:09:36 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 20:09:36 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 20:09:36 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 20:09:36 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 20:09:36 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 20:09:40 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 20:09:40 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 20:09:40 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 20:09:40 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 20:10:10 [INFO - Hlavni.main()] - Application started.
+2015.03.22 20:10:11 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 20:10:11 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 20:10:11 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 20:10:11 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 20:10:11 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 20:10:11 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 20:10:11 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 20:10:11 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 20:10:11 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 20:10:11 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 20:10:11 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 20:10:11 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 20:10:11 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 20:10:15 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 20:10:15 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 20:10:15 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 20:10:15 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 20:12:00 [INFO - Hlavni.main()] - Application started.
+2015.03.22 20:12:01 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 20:12:01 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 20:12:01 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 20:12:01 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 20:12:01 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 20:12:01 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 20:12:01 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 20:12:01 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 20:12:01 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 20:12:02 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 20:12:02 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 20:12:02 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 20:12:02 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 20:12:06 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 20:12:06 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 20:12:06 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 20:12:06 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 20:12:10 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Info
+2015.03.22 20:12:10 [INFO - Hlavni.main()] - Application finished.
+2015.03.22 20:13:04 [INFO - Hlavni.main()] - Application started.
+2015.03.22 20:13:05 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 20:13:05 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 20:13:05 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 20:13:05 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 20:13:05 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 20:13:05 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 20:13:05 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 20:13:05 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 20:13:05 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 20:13:06 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 20:13:06 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 20:13:06 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 20:13:06 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 20:13:10 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 20:13:10 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 20:13:10 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 20:13:10 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 20:13:14 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Info
+2015.03.22 20:13:14 [INFO - Hlavni.main()] - Application finished.
+2015.03.22 20:13:30 [INFO - Hlavni.main()] - Application started.
+2015.03.22 20:13:31 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 20:13:31 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 20:13:31 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 20:13:32 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 20:13:32 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 20:13:32 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 20:13:32 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 20:13:32 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 20:13:32 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 20:13:32 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 20:13:32 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 20:13:32 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 20:13:32 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 20:13:36 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 20:13:36 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 20:13:36 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 20:13:36 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 20:13:40 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Info
+2015.03.22 20:13:40 [INFO - Hlavni.main()] - Application finished.
+2015.03.22 20:13:57 [INFO - Hlavni.main()] - Application started.
+2015.03.22 20:13:59 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 20:13:59 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 20:13:59 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 20:13:59 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 20:13:59 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 20:13:59 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 20:13:59 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 20:13:59 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 20:13:59 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 20:14:00 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 20:14:00 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 20:14:00 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 20:14:00 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 20:14:03 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 20:14:03 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 20:14:04 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 20:14:04 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 20:14:08 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Info
+2015.03.22 20:14:08 [INFO - Hlavni.main()] - Application finished.
+2015.03.22 20:15:12 [INFO - Hlavni.main()] - Application started.
+2015.03.22 20:15:13 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.03.22 20:15:13 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.03.22 20:15:13 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.03.22 20:15:13 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.03.22 20:15:13 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.03.22 20:15:13 [DEBUG - Hlavni.main()] - Rest template created.
+2015.03.22 20:15:13 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.03.22 20:15:13 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.03.22 20:15:13 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.03.22 20:15:13 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.03.22 20:15:13 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.03.22 20:15:14 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.03.22 20:15:14 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.03.22 20:15:18 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.03.22 20:15:18 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.03.22 20:15:18 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.03.22 20:15:18 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.03.22 20:15:22 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Info
+2015.03.22 20:15:22 [INFO - Hlavni.main()] - Application finished.
