@@ -98,3 +98,11 @@
 2015.03.22 20:23:20 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
 2015.03.22 20:24:27 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
 2015.03.22 20:24:27 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.03.22 20:25:34 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.03.22 20:25:34 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.03.22 20:26:42 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.03.22 20:26:42 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.03.22 20:27:55 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.03.22 20:27:55 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.03.22 20:28:25 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.03.22 20:28:25 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT

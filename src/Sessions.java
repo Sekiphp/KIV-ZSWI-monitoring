@@ -15,7 +15,7 @@ public class Sessions {
 				"\nsession_name: " + session_name + 
 				"\nsession_start: " + session_start +
 				"\nlast_request: " + last_request + 
-				"\nuser_name: " + user_name + "\n");
+				"\nuser_name: " + user_name);
 	}
 	
 	public String getSession_code() {

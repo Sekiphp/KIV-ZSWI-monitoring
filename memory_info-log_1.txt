@@ -107,3 +107,19 @@ mem_free: 1266504
 mem_total: 4043044
 mem_free: 1264196
 
+2015.03.22 20:25:38 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info: 
+mem_total: 4043044
+mem_free: 1262080
+
+2015.03.22 20:26:47 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info: 
+mem_total: 4043044
+mem_free: 1259544
+
+2015.03.22 20:27:59 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info: 
+mem_total: 4043044
+mem_free: 1380988
+
+2015.03.22 20:28:29 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info: 
+mem_total: 4043044
+mem_free: 1380236
+
