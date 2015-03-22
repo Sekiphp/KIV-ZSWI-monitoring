@@ -6,18 +6,21 @@ import org.springframework.web.client.RestTemplate;
 
 public class Hlavni {
 	
-	/**
-	 * Main logger.
+	/*
+	 * nastaveni konfigurace pro logovani
 	 */
-	private static Logger mainLogger = LogManager.getLogger();
+	static {
+		System.setProperty("log4j.configurationFile",
+				"log4j_config.xml");
+	}
+	
+	/**
+	 * Hlavni logger
+	 */
+	//private static Logger mainLogger = LogManager.getLogger();
 
 	public static void main(String[] args) {	
 		ApplicationContext app = new ClassPathXmlApplicationContext("/application-context.xml");
-		
-		/* UKAZKA BEAN */
-		/*HelloBean bean = (HelloBean) app.getBean("hello");	//bean id
-		System.out.println(bean.getGreeting());*/
-		
 		
 		PeerFileMonitor pf = (PeerFileMonitor) app.getBean("peerFileMonitor");
 		

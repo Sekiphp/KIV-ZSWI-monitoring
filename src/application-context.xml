@@ -2,11 +2,6 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-   
-    <!-- ukazka BEAN -->
-    <bean id="hello" class="ukazka.HelloBean">
-    	<constructor-arg type="java.lang.String" value="Pepo"/> 		<!-- ref -->
-    </bean>
     
     <!-- instance RestTemplate -->
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
