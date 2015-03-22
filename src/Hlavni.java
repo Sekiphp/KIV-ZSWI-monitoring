@@ -46,6 +46,14 @@ public class Hlavni {
 		mainLogger.debug("Retrieved instance from Rest template: Sessions Count");
 		System.out.println("sessions count:    " + sessionsCount.getSessions_count());
 		
+		MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
+		mainLogger.debug("Retrieved instance from Rest template: Memory Info");
+		System.out.println("memory info:    " + memoryInfo.getMemory_info());
+		
+		SessionsInfo sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo.class);
+		mainLogger.debug("Retrieved instance from Rest template: Sessions Info");
+		System.out.println("sessions info:    " + sessionsInfo.getSessions_info());
+		
 		mainLogger.info("Application finished.");
 		
 		/* doprogramovat!!!!

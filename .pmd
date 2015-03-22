@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd>
+    <useProjectRuleSet>false</useProjectRuleSet>
+    <ruleSetFile>.ruleset</ruleSetFile>
+    <rules>
+        <rule>
+            <name>SimplifyBooleanReturns</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>SimplifyBooleanExpressions</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>SwitchStmtsShouldHaveDefault</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>AvoidDeeplyNestedIfStmts</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>AvoidReassigningParameters</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>SwitchDensity</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>ConstructorCallsOverridableMethod</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>CloseResource</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>NonStaticInitializer</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>DefaultLabelNotLastInSwitchStmt</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>NonCaseLabelInSwitchStatement</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>BadComparison</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>EqualsNull</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>ImmutableField</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>AvoidProtectedFieldInFinalClass</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>AssignmentToNonFinalStatic</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>UncommentedEmptyMethod</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>UncommentedEmptyConstructor</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>PreserveStackTrace</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>SingularField</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>ReturnEmptyArrayRatherThanNull</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>StringInstantiation</name>
+            <ruleset>String and StringBuffer</ruleset>
+        </rule>
+        <rule>
+            <name>StringToString</name>
+            <ruleset>String and StringBuffer</ruleset>
+        </rule>
+        <rule>
+            <name>InefficientStringBuffering</name>
+            <ruleset>String and StringBuffer</ruleset>
+        </rule>
+        <rule>
+            <name>UnnecessaryCaseChange</name>
+            <ruleset>String and StringBuffer</ruleset>
+        </rule>
+        <rule>
+            <name>UseEqualsToCompareStrings</name>
+            <ruleset>String and StringBuffer</ruleset>
+        </rule>
+        <rule>
+            <name>UnusedPrivateField</name>
+            <ruleset>Unused Code</ruleset>
+        </rule>
+        <rule>
+            <name>UnusedLocalVariable</name>
+            <ruleset>Unused Code</ruleset>
+        </rule>
+        <rule>
+            <name>UnusedPrivateMethod</name>
+            <ruleset>Unused Code</ruleset>
+        </rule>
+        <rule>
+            <name>UnusedFormalParameter</name>
+            <ruleset>Unused Code</ruleset>
+        </rule>
+        <rule>
+            <name>NPathComplexity</name>
+            <ruleset>Code Size</ruleset>
+        </rule>
+        <rule>
+            <name>ExcessiveMethodLength</name>
+            <ruleset>Code Size</ruleset>
+        </rule>
+        <rule>
+            <name>ExcessiveParameterList</name>
+            <ruleset>Code Size</ruleset>
+        </rule>
+        <rule>
+            <name>CyclomaticComplexity</name>
+            <ruleset>Code Size</ruleset>
+        </rule>
+        <rule>
+            <name>DuplicateImports</name>
+            <ruleset>Import Statements</ruleset>
+        </rule>
+        <rule>
+            <name>DontImportJavaLang</name>
+            <ruleset>Import Statements</ruleset>
+        </rule>
+        <rule>
+            <name>UnusedImports</name>
+            <ruleset>Import Statements</ruleset>
+        </rule>
+        <rule>
+            <name>ImportFromSamePackage</name>
+            <ruleset>Import Statements</ruleset>
+        </rule>
+        <rule>
+            <name>TooManyStaticImports</name>
+            <ruleset>Import Statements</ruleset>
+        </rule>
+        <rule>
+            <name>AvoidDeeplyNestedIfStmts</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>CollapsibleIfStatements</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>AvoidReassigningParameters</name>
+            <ruleset>Design</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyIfStmt</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>IfStmtsMustUseBraces</name>
+            <ruleset>Braces</ruleset>
+        </rule>
+        <rule>
+            <name>WhileLoopsMustUseBraces</name>
+            <ruleset>Braces</ruleset>
+        </rule>
+        <rule>
+            <name>IfElseStmtsMustUseBraces</name>
+            <ruleset>Braces</ruleset>
+        </rule>
+        <rule>
+            <name>ForLoopsMustUseBraces</name>
+            <ruleset>Braces</ruleset>
+        </rule>
+        <rule>
+            <name>ExcessiveImports</name>
+            <ruleset>Coupling</ruleset>
+        </rule>
+        <rule>
+            <name>LooseCoupling</name>
+            <ruleset>Coupling</ruleset>
+        </rule>
+        <rule>
+            <name>JumbledIncrementer</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>ForLoopShouldBeWhileLoop</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>ReturnFromFinallyBlock</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>UnconditionalIfStatement</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>BooleanInstantiation</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>CollapsibleIfStatements</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>AvoidDecimalLiteralsInBigDecimalConstructor</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>MisplacedNullCheck</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>BrokenNullCheck</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>BigIntegerInstantiation</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>AvoidUsingOctalValues</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>AvoidMultipleUnaryOperators</name>
+            <ruleset>Basic</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyCatchBlock</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyIfStmt</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyWhileStmt</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyTryBlock</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyFinallyBlock</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptySwitchStatements</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyStatementNotInLoop</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyStaticInitializer</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>UnnecessaryConversionTemporary</name>
+            <ruleset>Unnecessary</ruleset>
+        </rule>
+        <rule>
+            <name>UnnecessaryReturn</name>
+            <ruleset>Unnecessary</ruleset>
+        </rule>
+        <rule>
+            <name>UnnecessaryFinalModifier</name>
+            <ruleset>Unnecessary</ruleset>
+        </rule>
+        <rule>
+            <name>UselessOverridingMethod</name>
+            <ruleset>Unnecessary</ruleset>
+        </rule>
+        <rule>
+            <name>UselessOperationOnImmutable</name>
+            <ruleset>Unnecessary</ruleset>
+        </rule>
+        <rule>
+            <name>JUnitSpelling</name>
+            <ruleset>JUnit</ruleset>
+        </rule>
+        <rule>
+            <name>TestClassWithoutTestCases</name>
+            <ruleset>JUnit</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyCatchBlock</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyIfStmt</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyWhileStmt</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyTryBlock</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyFinallyBlock</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptySwitchStatements</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyStatementNotInLoop</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>EmptyStaticInitializer</name>
+            <ruleset>Empty Code</ruleset>
+        </rule>
+        <rule>
+            <name>NPathComplexity</name>
+            <ruleset>Code Size</ruleset>
+        </rule>
+        <rule>
+            <name>ExcessiveMethodLength</name>
+            <ruleset>Code Size</ruleset>
+        </rule>
+        <rule>
+            <name>ExcessiveParameterList</name>
+            <ruleset>Code Size</ruleset>
+        </rule>
+        <rule>
+            <name>ExcessiveClassLength</name>
+            <ruleset>Code Size</ruleset>
+        </rule>
+        <rule>
+            <name>CyclomaticComplexity</name>
+            <ruleset>Code Size</ruleset>
+        </rule>
+        <rule>
+            <name>ExcessivePublicCount</name>
+            <ruleset>Code Size</ruleset>
+        </rule>
+        <rule>
+            <name>SignatureDeclareThrowsException</name>
+            <ruleset>Strict Exceptions</ruleset>
+        </rule>
+        <rule>
+            <name>ExceptionAsFlowControl</name>
+            <ruleset>Strict Exceptions</ruleset>
+        </rule>
+        <rule>
+            <name>AvoidCatchingNPE</name>
+            <ruleset>Strict Exceptions</ruleset>
+        </rule>
+        <rule>
+            <name>DoNotThrowExceptionInFinally</name>
+            <ruleset>Strict Exceptions</ruleset>
+        </rule>
+        <rule>
+            <name>IfStmtsMustUseBraces</name>
+            <ruleset>Braces</ruleset>
+        </rule>
+        <rule>
+            <name>IfElseStmtsMustUseBraces</name>
+            <ruleset>Braces</ruleset>
+        </rule>
+        <rule>
+            <name>WhileLoopsMustUseBraces</name>
+            <ruleset>Braces</ruleset>
+        </rule>
+        <rule>
+            <name>ForLoopsMustUseBraces</name>
+            <ruleset>Braces</ruleset>
+        </rule>
+        <rule>
+            <name>ShortMethodName</name>
+            <ruleset>Naming</ruleset>
+        </rule>
+        <rule>
+            <name>ClassNamingConventions</name>
+            <ruleset>Naming</ruleset>
+        </rule>
+        <rule>
+            <name>AvoidDollarSigns</name>
+            <ruleset>Naming</ruleset>
+        </rule>
+        <rule>
+            <name>MethodWithSameNameAsEnclosingClass</name>
+            <ruleset>Naming</ruleset>
+        </rule>
+        <rule>
+            <name>SuspiciousHashcodeMethodName</name>
+            <ruleset>Naming</ruleset>
+        </rule>
+        <rule>
+            <name>SuspiciousConstantFieldName</name>
+            <ruleset>Naming</ruleset>
+        </rule>
+        <rule>
+            <name>SuspiciousEqualsMethodName</name>
+            <ruleset>Naming</ruleset>
+        </rule>
+        <rule>
+            <name>PackageCase</name>
+            <ruleset>Naming</ruleset>
+        </rule>
+        <rule>
+            <name>UnnecessaryConversionTemporary</name>
+            <ruleset>Unnecessary</ruleset>
+        </rule>
+        <rule>
+            <name>UnnecessaryReturn</name>
+            <ruleset>Unnecessary</ruleset>
+        </rule>
+        <rule>
+            <name>UnnecessaryFinalModifier</name>
+            <ruleset>Unnecessary</ruleset>
+        </rule>
+        <rule>
+            <name>UselessOverridingMethod</name>
+            <ruleset>Unnecessary</ruleset>
+        </rule>
+        <rule>
+            <name>UselessOperationOnImmutable</name>
+            <ruleset>Unnecessary</ruleset>
+        </rule>
+    </rules>
+    <includeDerivedFiles>false</includeDerivedFiles>
+    <violationsAsErrors>true</violationsAsErrors>
+    <fullBuildEnabled>true</fullBuildEnabled>
+</pmd>

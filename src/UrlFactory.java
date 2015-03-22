@@ -12,6 +12,8 @@ public class UrlFactory {
 	private final String SYSTEM_LOAD = "system_load";
 	private final String INSTANCE_ID = "instance_id";
 	private final String SESSIONS_COUNT = "sessions_count";
+	private final String SESSIONS_INFO = "sessions_info";
+	private final String MEMORY_INFO = "memory_info";
 	
 	private Map<String, String> urls;
 	
@@ -33,6 +35,16 @@ public class UrlFactory {
 	public String getSessionsCount(){
 		urlFactoryLogger.debug("Getting sessions_count service instance.");
 		return urls.get(SESSIONS_COUNT);
+	}
+	
+	public String getSessionsInfo(){
+		urlFactoryLogger.debug("Getting sessions_info service instance.");
+		return urls.get(SESSIONS_INFO);
+	}
+	
+	public String getMemoryInfo(){
+		urlFactoryLogger.debug("Getting memory_info service instance.");
+		return urls.get(MEMORY_INFO);
 	}
 	
 }
