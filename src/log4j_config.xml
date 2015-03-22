@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
+
   <Properties>
     <Property name="logFormat">%d{HH:mm:ss} [%-level - %logger{1}.%-M()] - %msg%n</Property>
     <Property name="debugFileDest">debug-log.txt</Property>
@@ -9,7 +10,9 @@
     <Property name="sessionsInfoFileDest">sessions_info-log.txt</Property>
     <Property name="memoryInfoFileDest">memory_info-log.txt</Property>
   </Properties>
+  
   <Appenders>
+  <!-- výpis do konzole -->
     <Console name="console" target="SYSTEM_OUT">
       <PatternLayout pattern="${logFormat}"/>
     </Console>
@@ -20,43 +23,44 @@
 	  <ThresholdFilter level="DEBUG" />
     </RollingFile>
     <RollingFile name="systemLoadFile" fileName="${systemLoadFileDest}" filePattern="${systemLoadFileDest}_%i">
-	  <PatternLayout pattern="${format}"/>
-	  <OnStartupTriggeringPolicy />
-	  <DefaultRolloverStrategy max="1" />
-	  <ThresholdFilter level="DEBUG" />
+
     </RollingFile>
     <RollingFile name="instanceIDFile" fileName="${instanceIDFileDest}" filePattern="${instanceIDFileDest}_%i">
-	  <PatternLayout pattern="${format}"/>
-	  <OnStartupTriggeringPolicy />
-	  <DefaultRolloverStrategy max="1" />
-	  <ThresholdFilter level="DEBUG" />
+
     </RollingFile>
     <RollingFile name="sessionsCountFile" fileName="${sessionsCountFileDest}" filePattern="${sessionsCountFileDest}_%i">
-	  <PatternLayout pattern="${format}"/>
-	  <OnStartupTriggeringPolicy />
-	  <DefaultRolloverStrategy max="1" />
-	  <ThresholdFilter level="DEBUG" />
+
     </RollingFile>
     <RollingFile name="sessionsInfoFile" fileName="${sessionsInfoFileDest}" filePattern="${sessionsInfoFileDest}_%i">
-	  <PatternLayout pattern="${format}"/>
-	  <OnStartupTriggeringPolicy />
-	  <DefaultRolloverStrategy max="1" />
-	  <ThresholdFilter level="DEBUG" />
+
     </RollingFile>
     <RollingFile name="memoryInfoFile" fileName="${memoryInfoFileDest}" filePattern="${memoryInfoFileDest}_%i">
-	  <PatternLayout pattern="${format}"/>
-	  <OnStartupTriggeringPolicy />
-	  <DefaultRolloverStrategy max="1" />
-	  <ThresholdFilter level="DEBUG" />
+
     </RollingFile>
   </Appenders>
 
   <Loggers>
     <Root level="ALL">
-      <AppenderRef ref="konzole"/>
+      <AppenderRef ref="console"/>
     </Root>
-    <Logger name="Main" level="ALL">
-      <AppenderRef ref="fileOutput"/>
+    <Logger name="Hlavni" level="DEBUG">
+      <AppenderRef ref="debugFile"/>
+    </Logger>
+    <Logger name="SystemLoad" level="DEBUG">
+      <AppenderRef ref="systemLoadFile"/>
+    </Logger>
+    <Logger name="InstanceId" level="DEBUG">
+      <AppenderRef ref="instanceIDFile"/>
+    </Logger>
+    <Logger name="SessionsCount" level="DEBUG">
+      <AppenderRef ref="sessionsCountFile"/>
+    </Logger>
+    <Logger name="SessionsInfo" level="DEBUG">
+      <AppenderRef ref="sessionsInfoFile"/>
+    </Logger>
+    <Logger name="MemoryInfo" level="DEBUG">
+      <AppenderRef ref="memoryInfoFile"/>
     </Logger>
   </Loggers>
+  
 </Configuration>
