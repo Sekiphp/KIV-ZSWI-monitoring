@@ -1,5 +1,10 @@
 
 public class InstanceId {
+	
+	/**
+	 * Hlavni logger
+	 */
+	//private static Logger instanceIdLogger = LogManager.getLogger();
 
 	private String instance_id;
 

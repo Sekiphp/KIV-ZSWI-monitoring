@@ -1,5 +1,10 @@
 
 public class SessionsCount {
+	
+	/**
+	 * Hlavni logger
+	 */
+	//private static Logger sessionsCountLogger = LogManager.getLogger();
 
 	private String sessions_count;
 

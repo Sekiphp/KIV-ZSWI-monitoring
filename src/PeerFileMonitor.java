@@ -1,7 +1,11 @@
 import org.springframework.web.client.RestTemplate;
 
-
 public class PeerFileMonitor {
+	
+	/**
+	 * Hlavni logger
+	 */
+	//private static Logger peerFileLogger = LogManager.getLogger();
 
 	private UrlFactory urlFactory;
 	private RestTemplate restTemplate;

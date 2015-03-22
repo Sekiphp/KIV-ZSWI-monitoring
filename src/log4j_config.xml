@@ -22,35 +22,50 @@
     <!-- logovani cinnosti aplikace (5 souborů po 5 MB) -->
     <RollingFile name="debugFile" fileName="${debugFileDest}" filePattern="${debugFileDest}_%i">
 	  <PatternLayout pattern="${format}"/>
-	  <OnStartupTriggeringPolicy />
-	  <DefaultRolloverStrategy max="1" />
-	  <ThresholdFilter level="DEBUG" />
+	  <DefaultRolloverStrategy min="1" max="5" />
+	  <SizeBasedTriggeringPolicy size="5 MB" />
     </RollingFile>
-    <!-- logovani pro jednotlive sluzby (od kazde 5 historickych souboru po 5 MB) -->
+    <!-- logovani pro jednotlive sluzby (od kazde 5 historickych souboru po 1 MB) -->
     <RollingFile name="systemLoadFile" fileName="${systemLoadFileDest}" filePattern="${systemLoadFileDest}_%i">
-		
+		<PatternLayout pattern="${format}"/>
+		<DefaultRolloverStrategy min="1" max="5" />
+		<SizeBasedTriggeringPolicy size="1 MB" />
     </RollingFile>
     <RollingFile name="instanceIDFile" fileName="${instanceIDFileDest}" filePattern="${instanceIDFileDest}_%i">
-
+		<PatternLayout pattern="${format}"/>
+		<DefaultRolloverStrategy min="1" max="5" />
+		<SizeBasedTriggeringPolicy size="1 MB" />		
     </RollingFile>
     <RollingFile name="sessionsCountFile" fileName="${sessionsCountFileDest}" filePattern="${sessionsCountFileDest}_%i">
-
+		<PatternLayout pattern="${format}"/>
+		<DefaultRolloverStrategy min="1" max="5" />
+		<SizeBasedTriggeringPolicy size="1 MB" />		
     </RollingFile>
     <RollingFile name="sessionsInfoFile" fileName="${sessionsInfoFileDest}" filePattern="${sessionsInfoFileDest}_%i">
-
+		<PatternLayout pattern="${format}"/>
+		<DefaultRolloverStrategy min="1" max="5" />
+		<SizeBasedTriggeringPolicy size="1 MB" />		
     </RollingFile>
     <RollingFile name="memoryInfoFile" fileName="${memoryInfoFileDest}" filePattern="${memoryInfoFileDest}_%i">
-
+		<PatternLayout pattern="${format}"/>
+		<DefaultRolloverStrategy min="1" max="5" />
+		<SizeBasedTriggeringPolicy size="1 MB" />		
     </RollingFile>
   </Appenders>
 
   <Loggers>
   	<!-- vystup loggeru do konzole -->
-    <Root level="ALL">
+    <Root level="DEBUG">
       <AppenderRef ref="console"/>
     </Root>
     <!-- odkazy na loggery pro logovani cinnosti aplikace -->
     <Logger name="Hlavni" level="DEBUG">
+      <AppenderRef ref="debugFile"/>
+    </Logger>
+    <Logger name="UrlFactory" level="DEBUG">
+      <AppenderRef ref="debugFile"/>
+    </Logger>
+    <Logger name="PeerFileMonitor" level="DEBUG">
       <AppenderRef ref="debugFile"/>
     </Logger>
     <!-- odkazy na loggery pro logovani jednotlivych sluzeb -->
