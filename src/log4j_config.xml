@@ -2,17 +2,24 @@
 <Configuration status="WARN">
   <Properties>
     <Property name="logFormat">%d{HH:mm:ss} [%-level - %logger{1}.%-M()] - %msg%n</Property>
-    <Property name="outputFileDest">log.txt</Property>
+    <!-- <Property name="outputFileDest">log.txt</Property> -->
+    <Property name="debugFile">debug-log.txt</Property>
+    <Property name="systemLoadFile">system_load-log.txt</Property>
+    <Property name="instanceIDFile">instance_id-log.txt</Property>
+    <Property name="sessionsCountFile">sessions_count-log.txt</Property>
+    <Property name="sessionsInfoFile">sessions_info-log.txt</Property>
+    <Property name="memoryInfoFile">memory_info-log.txt</Property>
   </Properties>
   <Appenders>
-    <File name="fileOutput" filename="${outputFileDest}">
-      <PatternLayout pattern="${logFormat}"/>
-      <!-- <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/> -->
-    </File>
     <Console name="konzole" target="SYSTEM_OUT">
       <PatternLayout pattern="${logFormat}"/>
     </Console>
-  </Appenders>   
+    <!-- <File name="fileOutput" filename="${outputFileDest}">
+      <PatternLayout pattern="${logFormat}"/>
+      <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+    </File> -->
+    
+  </Appenders>
 
   <Loggers>
     <Root level="ALL">
