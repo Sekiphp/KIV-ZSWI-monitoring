@@ -1,0 +1,24 @@
+﻿1.2 - okopírovat
+
+2.3 - Celý systém bude implementován ve vysokoúrovňovém programovacím jazyce JAVA. Důvodem je nejen přání zadavatele, ale i vysoká vhodnot použití právě tohoto jazyka. Pro implementaci nosné části aplikace je použit framework Spring WS, který má implementován metody pro snadnou práci s webovými službami - tato práce spočívá především v získávání dat z webové služby přes REST a přehledného logování. Pro realizaci grafického uživatelského rozhraní jsme se po dohodě se zadavatelem rozhodli použít JavaFX, jelikož Java Swing ukončila vývoj a nebude do budoucna vůbec podporována a je tedy zastaralá. 
+
+3. - V našem případě nejde ani tak o vstupní soubory jako o instance PF, které jsou dostupné na vzdáleném serveru a přistupuje se k nim pomocí URL. Předběžný seznam aktuálně známých url je obsažen v DSP. Odkazy na nové instance se přidávají prosttřednictvím souboru application-context.xml, kde se do Bean UrlFactory připisují URL na instance služby PF. Při změně v XML souboru je vhodné ještě dané změny zanést do třídy UrlFactory, jinak by se mohlo stát, že aplikace nebude fungovat korektně. 
+Co se týče výstupních souborů, tak těch bude hned několik. Pro každou instanci bude k dispozici několik archivních rolling file o konstantní velikosti. Pro snadnější implementaci rotujících souborů využijeme knihovnu Log4J 2.  
+
+Kapitola 5:
+
+V této kapitole jsou ke každé existující třídě přiřazeni zodpovědní lidé, kteří se starají o implementaci daných tříd. Není ovšem vyloučeno, že do dané třídy bude zasahovat i jiný člen týmu, protože jednotlivé třídy jsou mezi sebou poměrně těsně provázány a potřebu úprav ostatmích tříd, byť jen minimální, nelze úplně vyloučit.
+
+Hlavni - celý tým dle aktuálních potřeb (zejména doplnění volání nově implementovaných metod)
+PeerFileMonitor - Ondřej Pittl
+UrlFactory - celý tým
+SystemLoad - Ondřej Pittl
+SessionsCount - Luboš Hubáček
+InstanceId - Jan Kohlíček
+SessionInfo - Jiří Homolka
+MemoryInfo - Jiří Homolka
+Window - Jan Kohlíček
+
+
+=================================================================
+  
