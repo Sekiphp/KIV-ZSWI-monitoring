@@ -7,7 +7,7 @@
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
 	
 	<!-- instance UrlFactory s mapou (asociativni pole, klic:hodnota) url instanci -->
-	<bean id="urlFactory" class="UrlFactory">
+	<bean id="urlFactory" class="library.UrlFactory">
 		<property name="urls">
 			<map>
 				<entry key="instance_id" value="http://peerfile.eu:3000/api/mon/instance_id"/>
@@ -20,7 +20,7 @@
 	</bean>
 	
 	<!-- injectnute beany -->
-	<bean id="peerFileMonitor" class="PeerFileMonitor">
+	<bean id="peerFileMonitor" class="library.PeerFileMonitor">
 	    <constructor-arg type="org.springframework.web.client.RestTemplate" ref="restTemplate"/>
 	    <constructor-arg type="UrlFactory" ref="urlFactory"/>
 	</bean>

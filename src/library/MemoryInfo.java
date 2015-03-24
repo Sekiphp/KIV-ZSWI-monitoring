@@ -1,3 +1,5 @@
+package library;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -13,8 +15,8 @@ public class MemoryInfo {
 
 	public String getMemory_info() {
 		memory_info = 
-				"\nmem_total: " + mem_total + 
-				"\nmem_free: " + mem_free + "\n";
+				"\n\tmem_total: " + mem_total + 
+				"\n\tmem_free: " + mem_free + "\n";
 	
 		memoryInfoLogger.info("Getting memory_info.");
 		return memory_info;
