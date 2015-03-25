@@ -1,10 +1,11 @@
-import library.UrlFactory;
-import library.SessionsInfo;
-import library.MemoryInfo;
-import library.InstanceId;
-import library.PeerFileMonitor;
-import library.SessionsCount;
-import library.SystemLoad;
+import instances.InstanceId;
+import instances.MemoryInfo;
+import instances.PeerFileMonitor;
+import instances.SessionsCount;
+import instances.SessionsInfo;
+import instances.SystemLoad;
+import instances.UrlFactory;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

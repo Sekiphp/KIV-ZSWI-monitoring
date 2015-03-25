@@ -8,12 +8,12 @@ package window;
 
 
 
-import library.Monitoring;
-import event.ExitApp;
-import event.LoadFilter;
-import event.RestoreApp;
-import event.SaveAsFilter;
-import event.SaveFilter;
+import instances.Monitoring;
+import event_handlers.ExitApp;
+import event_handlers.LoadFilter;
+import event_handlers.RestoreApp;
+import event_handlers.SaveAsFilter;
+import event_handlers.SaveFilter;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBoxTreeItem;
