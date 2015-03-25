@@ -1,4 +1,4 @@
-package instances;
+package library;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

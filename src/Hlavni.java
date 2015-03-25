@@ -1,10 +1,10 @@
-import instances.InstanceId;
-import instances.MemoryInfo;
-import instances.PeerFileMonitor;
-import instances.SessionsCount;
-import instances.SessionsInfo;
-import instances.SystemLoad;
-import instances.UrlFactory;
+import library.InstanceId;
+import library.MemoryInfo;
+import library.PeerFileMonitor;
+import library.SessionsCount;
+import library.SessionsInfo;
+import library.SystemLoad;
+import library.UrlFactory;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

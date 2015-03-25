@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package event_handlers;
+package event;
 
-import instances.Monitoring;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import library.Monitoring;
 
 /**
  *

@@ -1,4 +1,4 @@
-package instances;
+package library;
 
 import org.springframework.web.client.RestTemplate;
 import org.apache.logging.log4j.LogManager;
