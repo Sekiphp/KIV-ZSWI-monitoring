@@ -8,8 +8,8 @@ package event;
 import java.io.File;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
-import org.controlsfx.dialog.Dialogs;
 import window.MainWindow;
 
 /**
@@ -39,10 +39,11 @@ public class LoadFilter implements EventHandler {
         try {
             this.mainWindow.getMonitoring().getFilter().loadFile(file.getPath());
         } catch (Exception ex) {
-            Dialogs.create()
-                    .title("Error")
-                    .message("Error load filter?")
-                    .showError();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Error load filter");
+            alert.setContentText(ex.getMessage());
+            alert.showAndWait();
         }
         fileChooser=null;
     }

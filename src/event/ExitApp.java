@@ -5,54 +5,54 @@
  */
 package event;
 
+import java.util.Optional;
 import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import org.controlsfx.control.action.Action;
-import org.controlsfx.dialog.Dialog;
-import org.controlsfx.dialog.Dialogs;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
+import org.springframework.util.comparator.ComparableComparator;
 import window.MainWindow;
 
 /**
  *
  * @author Kohl
  */
-public class ExitApp implements EventHandler{
-
+public class ExitApp implements EventHandler {
 
     private final MainWindow mainWindow;
-    
+
     public ExitApp(MainWindow mainWindow) {
-        this.mainWindow=mainWindow;
+        this.mainWindow = mainWindow;
     }
-    
+
     @Override
     public void handle(Event event) {
-        
-        if(!this.mainWindow.getMonitoring().getFilter().isSave()){       
-                Action response = Dialogs.create()
-                        .owner(null)
-                        .title("Confirm Save filter")
-                        .message("Save filter?")
-                        .actions(Dialog.ACTION_YES,Dialog.ACTION_NO)
-                        .showConfirm();
-                if (response == Dialog.ACTION_YES) {
-                    new SaveFilter(this.mainWindow).handle(null);
-                }
-        }
- 
-        Action response = Dialogs.create()
-                        .owner(null)
-                        .title("Confirm Exit")
-                        .message("Exit Monitoring?")
-                        .actions(Dialog.ACTION_NO, Dialog.ACTION_YES)
-                        .showConfirm();
 
-                if (response == Dialog.ACTION_NO) {
-                    event.consume();
-                }else{
-                    Platform.exit();
-                }
+        if (!this.mainWindow.getMonitoring().getFilter().isSave()) {           
+            Optional<ButtonType> result = dialogYesNo("Confirm Save filter","Save filter?");
+            if (result.get() == ButtonType.YES) {
+                new SaveFilter(this.mainWindow).handle(null);
+            }
+        }
+        
+        Optional<ButtonType> result = dialogYesNo("Confirm Exit","Exit Monitoring?");
+
+        if (result.get() == ButtonType.NO) {
+            event.consume();
+        } else {
+            Platform.exit();
+        }
     }
-    
+
+    private Optional<ButtonType> dialogYesNo(String title, String text){ 
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setContentText(text);
+        alert.getButtonTypes().set(0, ButtonType.YES);
+        alert.getButtonTypes().set(1, ButtonType.NO);
+        return alert.showAndWait();
+    }  
 }

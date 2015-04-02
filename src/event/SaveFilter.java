@@ -7,37 +7,38 @@ package event;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;
-import org.controlsfx.dialog.Dialogs;
+import javafx.scene.control.Alert;
 import window.MainWindow;
 
 /**
  *
  * @author Kohl
  */
-public class SaveFilter implements EventHandler{
+public class SaveFilter implements EventHandler {
 
     private final MainWindow mainWindow;
-    
+
     public SaveFilter(MainWindow mainWindow) {
-        this.mainWindow=mainWindow;
+        this.mainWindow = mainWindow;
     }
-    
+
     @Override
     public void handle(Event event) {
-        
+
         if (this.mainWindow.getMonitoring().getFilter().isPath()) {
             try {
                 this.mainWindow.getMonitoring().getFilter().saveFile();
             } catch (Exception ex) {
-                Dialogs.create()
-                        .title("Error")
-                        .message("Error save filter?")
-                        .showError();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error save filter");
+                alert.setContentText(ex.getMessage());
+                alert.showAndWait();
             }
         } else {
             new SaveAsFilter(this.mainWindow).handle(null);
         }
-       
+
     }
-    
+
 }
