@@ -13,6 +13,7 @@ import event.LoadFilter;
 import event.RestoreApp;
 import event.SaveAsFilter;
 import event.SaveFilter;
+import event.StartPauseMonitor;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBoxTreeItem;
@@ -94,6 +95,11 @@ public class MainWindow extends Application {
         restoneItem.setMnemonicParsing(true);
         restoneItem.setAccelerator(new KeyCodeCombination(KeyCode.F5));
         restoneItem.setOnAction(new RestoreApp(this.monitoring));
+        
+        MenuItem startPauseItem = new MenuItem("Start");
+        startPauseItem .setMnemonicParsing(true);
+        startPauseItem .setAccelerator(new KeyCodeCombination(KeyCode.SPACE));
+        startPauseItem .setOnAction(new StartPauseMonitor(this.monitoring));
 
         MenuItem exitItem = new MenuItem("Exit");
         exitItem.setMnemonicParsing(true);
@@ -102,6 +108,7 @@ public class MainWindow extends Application {
         menu.getItems().add(loadItem);
         menu.getItems().add(saveItem);
         menu.getItems().add(saveAsItem);
+        menu.getItems().add(startPauseItem);
         menu.getItems().add(restoneItem);
         menu.getItems().add(exitItem);
 

@@ -34,6 +34,8 @@ public class Monitoring{
     private final RestTemplate restTemplate ;
     private final UrlFactory fac;
 
+    private Boolean run=false;
+    
     public Monitoring(TextArea console) {
         this.console = console;
 
@@ -59,10 +61,14 @@ public class Monitoring{
         return filter;
     }
 
-    
+    public boolean isRun(){
+        run=!run;
+        return !run;
+    } 
     
     public void start() {
 
+        writeConsole("Loading...\n");
         SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
         mainLogger.debug("Retrieved instance from Rest template: System Load");
         writeConsole("systemLoad: " + systemLoad.getSystem_load());
@@ -91,14 +97,15 @@ public class Monitoring{
 
     }
 
+    public void pause(){
+    
+    }
+    
     public void  close(){
         app.close();
         mainLogger.info("Application finished.");
     }
-    
-    public void restore() {
 
-    }
 
     private void writeConsole(String text) {
         this.console.appendText(text+"\n");
