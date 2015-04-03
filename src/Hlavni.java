@@ -23,10 +23,6 @@ public class Hlavni {
 	
 	/** 
 	 * hlavni logger 
-	 * 
-	 * Pozn.: regularni vyrazy pro doplneni testu isDebugEnabled:
-	 * ([a-zA-Z]*Logger)(\.debug)
-	 * if \($1\.isDebugEnabled\(\)\)\r\n\t\t\t$1$2
 	 * */
 	private static Logger mainLogger = LogManager.getLogger();
 
@@ -69,8 +65,7 @@ public class Hlavni {
 		if (mainLogger.isDebugEnabled())
 			mainLogger.debug("Retrieved instance from Rest template: Memory Info");
 		System.out.println("memory info:    " + memoryInfo.getMemory_info());
-		
-		
+
 		SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
 		System.out.println("sessions info:");
 

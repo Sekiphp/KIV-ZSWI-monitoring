@@ -1,9 +1,10 @@
+package library;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package library;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,12 +15,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  *
  * @author Kohl
  */
 public class FilterManager {
 
+	/**
+     * logger FilterManageru
+     */
+    private static final Logger filterManagerLogger = LogManager.getLogger();
+	
     private boolean isSave;
     private String path;
     private final List<String> filters;

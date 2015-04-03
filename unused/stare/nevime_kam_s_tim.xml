@@ -1,0 +1,5 @@
+<beans xmlns="http://www.springframework.org/schema/beans">
+    <bean id="webServiceClient" class="WebServiceClient">
+        <property name="defaultUri" value="http://localhost:8080/WebService"/>
+    </bean>
+</beans>

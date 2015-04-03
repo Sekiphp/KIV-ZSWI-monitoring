@@ -59,7 +59,10 @@
       <!-- <AppenderRef ref="console"/> -->
     </Root>
     <!-- odkazy na loggery pro logovani cinnosti aplikace -->
-    <Logger name="Hlavni" level="DEBUG">
+    <Logger name="Monitoring" level="DEBUG">
+      <AppenderRef ref="debugFile"/>
+    </Logger>
+    <Logger name="FilterManager" level="DEBUG">
       <AppenderRef ref="debugFile"/>
     </Logger>
     <Logger name="UrlFactory" level="DEBUG">

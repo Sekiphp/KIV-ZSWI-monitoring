@@ -3808,3 +3808,25 @@
 2015.03.23 11:35:10 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
 2015.03.23 11:35:15 [DEBUG - Hlavni.main()] - Retrieved instances from Rest template: Sessions Info
 2015.03.23 11:35:15 [INFO - Hlavni.main()] - Application finished.
+2015.04.03 18:25:41 [INFO - Hlavni.main()] - Application started.
+2015.04.03 18:25:47 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.04.03 18:25:47 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.04.03 18:25:47 [DEBUG - Hlavni.main()] - Rest template created.
+2015.04.03 18:25:47 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.04.03 18:25:47 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.04.03 18:25:47 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.04.03 18:25:47 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.04.03 18:25:47 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.04.03 18:25:47 [DEBUG - Hlavni.main()] - Retrieved instances from Rest template: Sessions Info
+2015.04.03 18:25:47 [INFO - Hlavni.main()] - Application finished.
+2015.04.03 18:29:16 [INFO - Hlavni.main()] - Application started.
+2015.04.03 18:29:17 [DEBUG - Hlavni.main()] - Application context loaded.
+2015.04.03 18:29:17 [DEBUG - Hlavni.main()] - PeerFile monitor created.
+2015.04.03 18:29:17 [DEBUG - Hlavni.main()] - Rest template created.
+2015.04.03 18:29:17 [DEBUG - Hlavni.main()] - Retrieved URL factory.
+2015.04.03 18:29:17 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: System Load
+2015.04.03 18:29:17 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Instance ID
+2015.04.03 18:29:17 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Sessions Count
+2015.04.03 18:29:17 [DEBUG - Hlavni.main()] - Retrieved instance from Rest template: Memory Info
+2015.04.03 18:29:17 [DEBUG - Hlavni.main()] - Retrieved instances from Rest template: Sessions Info
+2015.04.03 18:29:17 [INFO - Hlavni.main()] - Application finished.
