@@ -18,10 +18,16 @@ public class Hlavni {
 	 */
 	static {
 		System.setProperty("log4j.configurationFile",
-				"log4j_config.xml");
+				"log4j-config.xml");
 	}
 	
-	/** hlavni logger */
+	/** 
+	 * hlavni logger 
+	 * 
+	 * Pozn.: regularni vyrazy pro doplneni testu isDebugEnabled:
+	 * ([a-zA-Z]*Logger)(\.debug)
+	 * if \($1\.isDebugEnabled\(\)\)\r\n\t\t\t$1$2
+	 * */
 	private static Logger mainLogger = LogManager.getLogger();
 
 	public static void main(String[] args) {	
@@ -29,31 +35,39 @@ public class Hlavni {
 		
 		ClassPathXmlApplicationContext app = new ClassPathXmlApplicationContext("/application-context.xml");
 		System.out.println();
-		mainLogger.debug("Application context loaded.");
+		if (mainLogger.isDebugEnabled())
+			mainLogger.debug("Application context loaded.");
 		
 		PeerFileMonitor pf = (PeerFileMonitor) app.getBean("peerFileMonitor");
-		mainLogger.debug("PeerFile monitor created.");
+		if (mainLogger.isDebugEnabled())
+			mainLogger.debug("PeerFile monitor created.");
 		
 		RestTemplate restTemplate = pf.getRestTemplate();
-		mainLogger.debug("Rest template created.");
+		if (mainLogger.isDebugEnabled())
+			mainLogger.debug("Rest template created.");
 		
 		UrlFactory fac = pf.getUrlFactory();
-		mainLogger.debug("Retrieved URL factory.");
+		if (mainLogger.isDebugEnabled())
+			mainLogger.debug("Retrieved URL factory.");
 		
 		SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
-		mainLogger.debug("Retrieved instance from Rest template: System Load");
+		if (mainLogger.isDebugEnabled())
+			mainLogger.debug("Retrieved instance from Rest template: System Load");
 		System.out.println("systemLoad:    " + systemLoad.getSystem_load());
 		
 		InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
-		mainLogger.debug("Retrieved instance from Rest template: Instance ID");
+		if (mainLogger.isDebugEnabled())
+			mainLogger.debug("Retrieved instance from Rest template: Instance ID");
 		System.out.println("instance ID:    " + instanceId.getInstance_id());
 		
 		SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
-		mainLogger.debug("Retrieved instance from Rest template: Sessions Count");
+		if (mainLogger.isDebugEnabled())
+			mainLogger.debug("Retrieved instance from Rest template: Sessions Count");
 		System.out.println("sessions count:    " + sessionsCount.getSessions_count());
 		
 		MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
-		mainLogger.debug("Retrieved instance from Rest template: Memory Info");
+		if (mainLogger.isDebugEnabled())
+			mainLogger.debug("Retrieved instance from Rest template: Memory Info");
 		System.out.println("memory info:    " + memoryInfo.getMemory_info());
 		
 		
@@ -63,7 +77,8 @@ public class Hlavni {
 		for(int i = 0; i<sessionsInfo.length;i++){
 			System.out.println(sessionsInfo[i].getSessions_info());
 		}
-		mainLogger.debug("Retrieved instances from Rest template: Sessions Info");
+		if (mainLogger.isDebugEnabled())
+			mainLogger.debug("Retrieved instances from Rest template: Sessions Info");
 
 		System.out.println();
 		app.close();

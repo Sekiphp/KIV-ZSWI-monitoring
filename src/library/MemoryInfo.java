@@ -28,22 +28,26 @@ public class MemoryInfo {
 	}
 	
 	public long getMem_total() {
-		memoryInfoLogger.debug("Getting mem_total: " + mem_total);
+		if (memoryInfoLogger.isDebugEnabled())
+			memoryInfoLogger.debug("Getting mem_total: " + mem_total);
 		return mem_total;
 	}
 	
 	public void setMem_total(long mem_total) {
-		memoryInfoLogger.debug("Setting mem_total: " + mem_total);
+		if (memoryInfoLogger.isDebugEnabled())
+			memoryInfoLogger.debug("Setting mem_total: " + mem_total);
 		this.mem_total = mem_total;
 	}
 	
 	public long getMem_free() {
-		memoryInfoLogger.debug("Getting mem_free: " + mem_free);
+		if (memoryInfoLogger.isDebugEnabled())
+			memoryInfoLogger.debug("Getting mem_free: " + mem_free);
 		return mem_free;
 	}
 	
 	public void setMem_free(long mem_free) {
-		memoryInfoLogger.debug("Setting mem_free: " + mem_free);
+		if (memoryInfoLogger.isDebugEnabled())
+			memoryInfoLogger.debug("Setting mem_free: " + mem_free);
 		this.mem_free = mem_free;
 	}
 }
