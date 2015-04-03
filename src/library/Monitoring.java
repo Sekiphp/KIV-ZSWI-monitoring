@@ -21,9 +21,9 @@ public class Monitoring {
     /**
      * logger monitoringu
      * 
-     * Pozn.: regularni vyrazy pro doplneni testu isDebugEnabled:
-	 * ([a-zA-Z]*Logger)(\.debug)
-	 * if \($1\.isDebugEnabled\(\)\)\r\n\t\t\t$1$2
+     * Pozn. - regularni vyrazy pro doplneni testu isDebugEnabled:
+	 * Find:			([a-zA-Z]*Logger)(\.debug)
+	 * Replace with:	if \($1\.isDebugEnabled\(\)\)\r\n\t\t\t$1$2
      */
     private static final Logger monitoringLogger = LogManager.getLogger();
     
@@ -34,7 +34,7 @@ public class Monitoring {
     private final RestTemplate restTemplate ;
     private final UrlFactory fac;
 
-    private Boolean run = false;
+    private boolean run = false;
     
     public Monitoring(TextArea console) {
         this.console = console;
@@ -42,6 +42,8 @@ public class Monitoring {
         monitoringLogger.info("Application started.");
 
         this.filter = new FilterManager();
+        if (monitoringLogger.isDebugEnabled())
+			monitoringLogger.debug("Filter manager created.");
 
         this.app = new ClassPathXmlApplicationContext("./application-context.xml");
         if (monitoringLogger.isDebugEnabled())

@@ -6,6 +6,7 @@
 package event;
 
 import java.util.Optional;
+
 import javafx.application.Platform;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -13,7 +14,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.util.comparator.ComparableComparator;
+
 import window.MainWindow;
 
 /**
@@ -21,6 +26,8 @@ import window.MainWindow;
  * @author Kohl
  */
 public class ExitApp implements EventHandler {
+	
+	private static final Logger exitAppLogger = LogManager.getLogger();
 
     private final MainWindow mainWindow;
 

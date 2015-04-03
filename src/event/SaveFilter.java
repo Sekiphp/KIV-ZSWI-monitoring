@@ -5,6 +5,9 @@
  */
 package event;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
@@ -15,6 +18,8 @@ import window.MainWindow;
  * @author Kohl
  */
 public class SaveFilter implements EventHandler {
+	
+	private static final Logger saveFilterLogger = LogManager.getLogger();
 
     private final MainWindow mainWindow;
 

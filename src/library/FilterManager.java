@@ -34,6 +34,8 @@ public class FilterManager {
     private final List<String> filters;
 
     public FilterManager() {
+    	if (filterManagerLogger.isDebugEnabled())
+    		filterManagerLogger.debug("Creating Filter manager.");
         this.isSave = true;
         this.filters = new ArrayList<>();
     }
@@ -47,11 +49,13 @@ public class FilterManager {
     }
 
     public void loadFile(String filePath) throws FileNotFoundException, IOException {
-
+    	if (filterManagerLogger.isDebugEnabled())
+    		filterManagerLogger.debug("Loading file.");
+    	
         BufferedReader br = new BufferedReader(new FileReader(filePath));
 
         br.close();
-        this.path=filePath;
+        this.path = filePath;
     }
 
     public void saveFile() throws IOException {
@@ -59,11 +63,14 @@ public class FilterManager {
     }
 
     public void saveFile(String filePath) throws IOException {
+    	if (filterManagerLogger.isDebugEnabled())
+    		filterManagerLogger.debug("Saving file.");
+    	
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));
 
         bw.close();
         this.isSave = true;
-        this.path=filePath;
+        this.path = filePath;
     }
 
     public boolean isPath() {

@@ -71,6 +71,27 @@
     <Logger name="PeerFileMonitor" level="DEBUG">
       <AppenderRef ref="debugFile"/>
     </Logger>
+    <Logger name="ExitApp" level="DEBUG">
+      <AppenderRef ref="debugFile"/>
+    </Logger>
+    <Logger name="ChangeFilter" level="DEBUG">
+      <AppenderRef ref="debugFile"/>
+    </Logger>
+    <Logger name="LoadFilter" level="DEBUG">
+      <AppenderRef ref="debugFile"/>
+    </Logger>
+    <Logger name="RestoreApp" level="DEBUG">
+      <AppenderRef ref="debugFile"/>
+    </Logger>
+    <Logger name="SaveAsFilter" level="DEBUG">
+      <AppenderRef ref="debugFile"/>
+    </Logger>
+    <Logger name="SaveFilter" level="DEBUG">
+      <AppenderRef ref="debugFile"/>
+    </Logger>
+    <Logger name="StartPauseMonitor" level="DEBUG">
+      <AppenderRef ref="debugFile"/>
+    </Logger>
     <!-- odkazy na loggery pro logovani jednotlivych sluzeb -->
     <Logger name="SystemLoad" level="DEBUG">
       <AppenderRef ref="systemLoadFile"/>
