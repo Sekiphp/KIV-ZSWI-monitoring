@@ -17,7 +17,7 @@
   <Appenders>
   <!-- vypis do konzole - pro testovaci ucely -->
     <!-- <Console name="console" target="SYSTEM_OUT">
-      <PatternLayout pattern="${logFormat}"/>
+      <PatternLayout pattern="${format}"/>
     </Console> -->
     <!-- logovani cinnosti aplikace (5 souborů po 5 MB) -->
     <RollingFile name="applicationFile" fileName="${applicationFileDest}_1.txt" filePattern="${applicationFileDest}_%i.txt">
@@ -30,37 +30,47 @@
 		<PatternLayout pattern="${format}"/>
 		<DefaultRolloverStrategy min="1" max="5" />
 		<SizeBasedTriggeringPolicy size="1 MB" />
+		<ThresholdFilter level="INFO"/>
     </RollingFile>
     <RollingFile name="instanceIDFile" fileName="${instanceIDFileDest}_1.txt" filePattern="${instanceIDFileDest}_%i.txt">
 		<PatternLayout pattern="${format}"/>
 		<DefaultRolloverStrategy min="1" max="5" />
-		<SizeBasedTriggeringPolicy size="1 MB" />		
+		<SizeBasedTriggeringPolicy size="1 MB" />
+		<ThresholdFilter level="INFO"/>
     </RollingFile>
     <RollingFile name="sessionsCountFile" fileName="${sessionsCountFileDest}_1.txt" filePattern="${sessionsCountFileDest}_%i.txt">
 		<PatternLayout pattern="${format}"/>
 		<DefaultRolloverStrategy min="1" max="5" />
-		<SizeBasedTriggeringPolicy size="1 MB" />		
+		<SizeBasedTriggeringPolicy size="1 MB" />
+		<ThresholdFilter level="INFO"/>
     </RollingFile>
     <RollingFile name="sessionsInfoFile" fileName="${sessionsInfoFileDest}_1.txt" filePattern="${sessionsInfoFileDest}_%i.txt">
 		<PatternLayout pattern="${format}"/>
 		<DefaultRolloverStrategy min="1" max="5" />
-		<SizeBasedTriggeringPolicy size="1 MB" />		
+		<SizeBasedTriggeringPolicy size="1 MB" />
+		<ThresholdFilter level="INFO"/>
     </RollingFile>
     <RollingFile name="memoryInfoFile" fileName="${memoryInfoFileDest}_1.txt" filePattern="${memoryInfoFileDest}_%i.txt">
 		<PatternLayout pattern="${format}"/>
 		<DefaultRolloverStrategy min="1" max="5" />
-		<SizeBasedTriggeringPolicy size="1 MB" />		
+		<SizeBasedTriggeringPolicy size="1 MB" />
+		<ThresholdFilter level="INFO"/>
     </RollingFile>
   </Appenders>
 
   <Loggers>
   	<!-- vystup loggeru do konzole -->
-    <Root level="ALL">
+    <Root level="DEBUG">
       <!-- <AppenderRef ref="console"/> -->
     </Root>
     <!-- odkazy na loggery pro logovani cinnosti aplikace -->
     <Logger name="library.Monitoring" level="DEBUG">
-      <AppenderRef ref="applicationFile"/>
+   		<AppenderRef ref="applicationFile"/>
+	      <AppenderRef ref="systemLoadFile"/>
+	      <AppenderRef ref="instanceIDFile"/>
+	      <AppenderRef ref="sessionsCountFile"/>
+	      <AppenderRef ref="sessionsInfoFile"/>
+	      <AppenderRef ref="memoryInfoFile"/>
     </Logger>
     <Logger name="library.FilterManager" level="DEBUG">
       <AppenderRef ref="applicationFile"/>
@@ -93,19 +103,19 @@
       <AppenderRef ref="applicationFile"/>
     </Logger>
     <!-- odkazy na loggery pro logovani jednotlivych sluzeb -->
-    <Logger name="library.SystemLoad" level="DEBUG">
+    <Logger name="library.SystemLoad" level="INFO">
       <AppenderRef ref="systemLoadFile"/>
     </Logger>
-    <Logger name="library.InstanceId" level="DEBUG">
+    <Logger name="library.InstanceId" level="INFO">
       <AppenderRef ref="instanceIDFile"/>
     </Logger>
-    <Logger name="library.SessionsCount" level="DEBUG">
+    <Logger name="library.SessionsCount" level="INFO">
       <AppenderRef ref="sessionsCountFile"/>
     </Logger>
-    <Logger name="library.SessionsInfo" level="DEBUG">
+    <Logger name="library.SessionsInfo" level="INFO">
       <AppenderRef ref="sessionsInfoFile"/>
     </Logger>
-    <Logger name="library.MemoryInfo" level="DEBUG">
+    <Logger name="library.MemoryInfo" level="INFO">
       <AppenderRef ref="memoryInfoFile"/>
     </Logger>
   </Loggers>

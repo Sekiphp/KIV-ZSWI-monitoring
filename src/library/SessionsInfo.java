@@ -27,62 +27,52 @@ public class SessionsInfo {
 	}
 
 	public String getSession_code() {
-		if (sessionsInfoLogger.isDebugEnabled())
-			sessionsInfoLogger.debug("Getting session_code: " + session_code);
+		sessionsInfoLogger.info("Getting session_code: " + session_code);
 		return session_code;
 	}
 	
 	public void setSession_code(String session_code) {
-		if (sessionsInfoLogger.isDebugEnabled())
-			sessionsInfoLogger.debug("Setting session_code: " + session_code);
+		sessionsInfoLogger.info("Setting session_code: " + session_code);
 		this.session_code = session_code;
 	}
 	
 	public String getSession_name() {
-		if (sessionsInfoLogger.isDebugEnabled())
-			sessionsInfoLogger.debug("Getting session_name: " + session_name);
+		sessionsInfoLogger.info("Getting session_name: " + session_name);
 		return session_name;
 	}
 	
 	public void setSession_name(String session_name) {
-		if (sessionsInfoLogger.isDebugEnabled())
-			sessionsInfoLogger.debug("Setting session_name: " + session_name);
+		sessionsInfoLogger.info("Setting session_name: " + session_name);
 		this.session_name = session_name;
 	}
 	
 	public String getSession_start() {
-		if (sessionsInfoLogger.isDebugEnabled())
-			sessionsInfoLogger.debug("Getting session_start: " + session_start);
+		sessionsInfoLogger.info("Getting session_start: " + session_start);
 		return session_start;
 	}
 	
 	public void setSession_start(String session_start) {
-		if (sessionsInfoLogger.isDebugEnabled())
-			sessionsInfoLogger.debug("Setting session_start: " + session_start);
+		sessionsInfoLogger.info("Setting session_start: " + session_start);
 		this.session_start = session_start;
 	}
 	
 	public String getLast_request() {
-		if (sessionsInfoLogger.isDebugEnabled())
-			sessionsInfoLogger.debug("Getting last_request: " + last_request);
+		sessionsInfoLogger.info("Getting last_request: " + last_request);
 		return last_request;
 	}
 	
 	public void setLast_request(String last_request) {
-		if (sessionsInfoLogger.isDebugEnabled())
-			sessionsInfoLogger.debug("Setting last_request: " + last_request);
+		sessionsInfoLogger.info("Setting last_request: " + last_request);
 		this.last_request = last_request;
 	}
 	
 	public String getUser_name() {
-		if (sessionsInfoLogger.isDebugEnabled())
-			sessionsInfoLogger.debug("Getting user_name: " + user_name);
+		sessionsInfoLogger.info("Getting user_name: " + user_name);
 		return user_name;
 	}
 	
 	public void setUser_name(String user_name) {
-		if (sessionsInfoLogger.isDebugEnabled())
-			sessionsInfoLogger.debug("Setting user_name: " + user_name);
+		sessionsInfoLogger.info("Setting user_name: " + user_name);
 		this.user_name = user_name;
 	}
 	

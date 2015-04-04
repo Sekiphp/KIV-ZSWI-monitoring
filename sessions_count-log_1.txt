@@ -1,2 +1,5 @@
-2015.04.04 19:53:56 [INFO - SessionsCount.setSessions_count()] - Setting sessions_count: 0
-2015.04.04 19:53:56 [INFO - SessionsCount.getSessions_count()] - Getting sessions_count: 0
+2015.04.04 20:41:45 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.04 20:41:48 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.04 20:41:48 [INFO - SessionsCount.setSessions_count()] - Setting sessions_count: 0
+2015.04.04 20:41:48 [INFO - SessionsCount.getSessions_count()] - Getting sessions_count: 0
+2015.04.04 20:42:14 [INFO - Monitoring.close()] - Application closed.
