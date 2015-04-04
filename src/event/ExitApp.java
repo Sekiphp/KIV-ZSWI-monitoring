@@ -50,6 +50,7 @@ public class ExitApp implements EventHandler {
         if (result.get() == ButtonType.NO) {
             event.consume();
         } else {
+        	mainWindow.getMonitoring().close();
             Platform.exit();
         }
     }

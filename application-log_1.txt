@@ -1,0 +1,23 @@
+2015.04.04 19:53:52 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.04 19:53:52 [DEBUG - FilterManager.<init>()] - Creating Filter manager.
+2015.04.04 19:53:52 [DEBUG - Monitoring.<init>()] - Filter manager created.
+2015.04.04 19:53:53 [DEBUG - UrlFactory.setUrls()] - Setting URLs.
+2015.04.04 19:53:53 [DEBUG - PeerFileMonitor.<init>()] - Creating PeerFile monitor.
+2015.04.04 19:53:53 [DEBUG - Monitoring.<init>()] - Application context loaded.
+2015.04.04 19:53:53 [DEBUG - Monitoring.<init>()] - PeerFile monitor created.
+2015.04.04 19:53:53 [DEBUG - PeerFileMonitor.getRestTemplate()] - Getting Rest template.
+2015.04.04 19:53:53 [DEBUG - Monitoring.<init>()] - Rest template created.
+2015.04.04 19:53:53 [DEBUG - PeerFileMonitor.getUrlFactory()] - Getting URL Factory.
+2015.04.04 19:53:53 [DEBUG - Monitoring.<init>()] - Retrieved URL factory.
+2015.04.04 19:53:55 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.04 19:53:55 [DEBUG - UrlFactory.getSystemLoad()] - Getting system_load service instance.
+2015.04.04 19:53:56 [DEBUG - Monitoring.start()] - Retrieved instance from Rest template: System Load
+2015.04.04 19:53:56 [DEBUG - UrlFactory.getInstanceId()] - Getting instance_id service instance.
+2015.04.04 19:53:56 [DEBUG - Monitoring.start()] - Retrieved instance from Rest template: Instance ID
+2015.04.04 19:53:56 [DEBUG - UrlFactory.getSessionsCount()] - Getting sessions_count service instance.
+2015.04.04 19:53:56 [DEBUG - Monitoring.start()] - Retrieved instance from Rest template: Sessions Count
+2015.04.04 19:53:56 [DEBUG - UrlFactory.getMemoryInfo()] - Getting memory_info service instance.
+2015.04.04 19:53:56 [DEBUG - Monitoring.start()] - Retrieved instance from Rest template: Memory Info
+2015.04.04 19:53:56 [DEBUG - UrlFactory.getSessionsInfo()] - Getting sessions_info service instance.
+2015.04.04 19:53:56 [DEBUG - Monitoring.start()] - Retrieved instances from Rest template: Sessions Info (count: 0)
+2015.04.04 19:53:59 [INFO - Monitoring.close()] - Application closed.

@@ -24,7 +24,7 @@ public class Hlavni {
 	/** 
 	 * hlavni logger 
 	 * */
-	private static Logger mainLogger = LogManager.getLogger();
+	private static final Logger mainLogger = LogManager.getLogger();
 
 	public static void main(String[] args) {	
 		mainLogger.info("Application started.");
@@ -67,13 +67,13 @@ public class Hlavni {
 		System.out.println("memory info:    " + memoryInfo.getMemory_info());
 
 		SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
+		if (mainLogger.isDebugEnabled())
+			mainLogger.debug("Retrieved instances from Rest template: Sessions Info (count: " + sessionsInfo.length + ")");
 		System.out.println("sessions info:");
-
+		
 		for(int i = 0; i<sessionsInfo.length;i++){
 			System.out.println(sessionsInfo[i].getSessions_info());
 		}
-		if (mainLogger.isDebugEnabled())
-			mainLogger.debug("Retrieved instances from Rest template: Sessions Info");
 
 		System.out.println();
 		app.close();

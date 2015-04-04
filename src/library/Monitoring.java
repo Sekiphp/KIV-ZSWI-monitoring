@@ -7,6 +7,7 @@ package library;
  */
 
 import javafx.scene.control.TextArea;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -19,14 +20,14 @@ import org.springframework.web.client.RestTemplate;
 public class Monitoring {
 
     /**
-     * logger monitoringu
+     * hlavni logger
      * 
      * Pozn. - regularni vyrazy pro doplneni testu isDebugEnabled:
 	 * Find:			([a-zA-Z]*Logger)(\.debug)
 	 * Replace with:	if \($1\.isDebugEnabled\(\)\)\r\n\t\t\t$1$2
      */
     private static final Logger monitoringLogger = LogManager.getLogger();
-    
+
     private final ClassPathXmlApplicationContext app;
     private final TextArea console;
     private final FilterManager filter;
@@ -37,9 +38,9 @@ public class Monitoring {
     private boolean run = false;
     
     public Monitoring(TextArea console) {
+        monitoringLogger.info("Application launched.");
+        
         this.console = console;
-
-        monitoringLogger.info("Application started.");
 
         this.filter = new FilterManager();
         if (monitoringLogger.isDebugEnabled())
@@ -72,6 +73,7 @@ public class Monitoring {
     } 
     
     public void start() {
+    	monitoringLogger.info("Monitoring started.");
 
         writeConsole("Loading...\n");
         SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
@@ -95,27 +97,26 @@ public class Monitoring {
         writeConsole("memory info: " + memoryInfo.getMemory_info());
 
         SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
+        if (monitoringLogger.isDebugEnabled())
+        	monitoringLogger.debug("Retrieved instances from Rest template: Sessions Info (count: " + sessionsInfo.length + ")");
         writeConsole("sessions info: ");
 
         for (int i = 0; i < sessionsInfo.length; i++) {
             writeConsole(sessionsInfo[i].getSessions_info());
         }
-        if (monitoringLogger.isDebugEnabled())
-			monitoringLogger.debug("Retrieved instances from Rest template: Sessions Info");
       
         this.writeConsole("");
 
     }
 
     public void pause(){
-    	monitoringLogger.info("Application paused.");
+    	monitoringLogger.info("Monitoring paused.");
     }
     
-    public void  close(){
+    public void close(){
         app.close();
-        monitoringLogger.info("Application finished.");
+        monitoringLogger.info("Application closed.");
     }
-
 
     private void writeConsole(String text) {
         this.console.appendText(text+"\n");

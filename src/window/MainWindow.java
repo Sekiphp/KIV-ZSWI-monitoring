@@ -34,13 +34,14 @@ import library.Monitoring;
  * @author Kohl
  */
 public class MainWindow extends Application {
-
+	
 	/**
 	 * nastaveni konfiguracniho souboru pro logovani
 	 */
-    static {
-        System.setProperty("log4j.configurationFile", "log4j-config.xml");
-    }
+	static {
+		System.setProperty("log4j.configurationFile",
+				"log4j-config.xml");
+	}
 	
     private TreeView filters;
     private TextArea console;
@@ -154,7 +155,7 @@ public class MainWindow extends Application {
     private TextArea getCenterContent() {
         this.console.setWrapText(true);
         this.console.setEditable(false);
-        this.console.setScrollTop(Double.MIN_VALUE);// scroluje na posleni radek
+        this.console.setScrollTop(Double.MIN_VALUE);// scroluje na posledni radek
         return console;
     }
 

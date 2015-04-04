@@ -5,7 +5,7 @@
   	<!-- format vystupu -->
     <Property name="format">%d{yyyy.MM.dd HH:mm:ss} [%-level - %logger{1}.%-M()] - %msg%n</Property>
     <!-- nazev vystupniho souboru pro logy cinnosti aplikace -->
-    <Property name="debugFileDest">debug-log</Property>
+    <Property name="applicationFileDest">application-log</Property>
     <!-- nazvy vystupnich souboru pro logy jednotlivych sluzeb -->
     <Property name="systemLoadFileDest">system_load-log</Property>
     <Property name="instanceIDFileDest">instance_id-log</Property>
@@ -20,7 +20,7 @@
       <PatternLayout pattern="${logFormat}"/>
     </Console> -->
     <!-- logovani cinnosti aplikace (5 souborů po 5 MB) -->
-    <RollingFile name="debugFile" fileName="${debugFileDest}_1.txt" filePattern="${debugFileDest}_%i.txt">
+    <RollingFile name="applicationFile" fileName="${applicationFileDest}_1.txt" filePattern="${applicationFileDest}_%i.txt">
 	  <PatternLayout pattern="${format}"/>
 	  <DefaultRolloverStrategy min="1" max="5" />
 	  <SizeBasedTriggeringPolicy size="5 MB" />
@@ -55,57 +55,57 @@
 
   <Loggers>
   	<!-- vystup loggeru do konzole -->
-    <Root level="DEBUG">
+    <Root level="ALL">
       <!-- <AppenderRef ref="console"/> -->
     </Root>
     <!-- odkazy na loggery pro logovani cinnosti aplikace -->
-    <Logger name="Monitoring" level="DEBUG">
-      <AppenderRef ref="debugFile"/>
+    <Logger name="library.Monitoring" level="DEBUG">
+      <AppenderRef ref="applicationFile"/>
     </Logger>
-    <Logger name="FilterManager" level="DEBUG">
-      <AppenderRef ref="debugFile"/>
+    <Logger name="library.FilterManager" level="DEBUG">
+      <AppenderRef ref="applicationFile"/>
     </Logger>
-    <Logger name="UrlFactory" level="DEBUG">
-      <AppenderRef ref="debugFile"/>
+    <Logger name="library.UrlFactory" level="DEBUG">
+      <AppenderRef ref="applicationFile"/>
     </Logger>
-    <Logger name="PeerFileMonitor" level="DEBUG">
-      <AppenderRef ref="debugFile"/>
+    <Logger name="library.PeerFileMonitor" level="DEBUG">
+      <AppenderRef ref="applicationFile"/>
     </Logger>
-    <Logger name="ExitApp" level="DEBUG">
-      <AppenderRef ref="debugFile"/>
+    <Logger name="event.ExitApp" level="DEBUG">
+      <AppenderRef ref="applicationFile"/>
     </Logger>
-    <Logger name="ChangeFilter" level="DEBUG">
-      <AppenderRef ref="debugFile"/>
+    <Logger name="event.ChangeFilter" level="DEBUG">
+      <AppenderRef ref="applicationFile"/>
     </Logger>
-    <Logger name="LoadFilter" level="DEBUG">
-      <AppenderRef ref="debugFile"/>
+    <Logger name="event.LoadFilter" level="DEBUG">
+      <AppenderRef ref="applicationFile"/>
     </Logger>
-    <Logger name="RestoreApp" level="DEBUG">
-      <AppenderRef ref="debugFile"/>
+    <Logger name="event.RestoreApp" level="DEBUG">
+      <AppenderRef ref="applicationFile"/>
     </Logger>
-    <Logger name="SaveAsFilter" level="DEBUG">
-      <AppenderRef ref="debugFile"/>
+    <Logger name="event.SaveAsFilter" level="DEBUG">
+      <AppenderRef ref="applicationFile"/>
     </Logger>
-    <Logger name="SaveFilter" level="DEBUG">
-      <AppenderRef ref="debugFile"/>
+    <Logger name="event.SaveFilter" level="DEBUG">
+      <AppenderRef ref="applicationFile"/>
     </Logger>
-    <Logger name="StartPauseMonitor" level="DEBUG">
-      <AppenderRef ref="debugFile"/>
+    <Logger name="event.StartPauseMonitor" level="DEBUG">
+      <AppenderRef ref="applicationFile"/>
     </Logger>
     <!-- odkazy na loggery pro logovani jednotlivych sluzeb -->
-    <Logger name="SystemLoad" level="DEBUG">
+    <Logger name="library.SystemLoad" level="DEBUG">
       <AppenderRef ref="systemLoadFile"/>
     </Logger>
-    <Logger name="InstanceId" level="DEBUG">
+    <Logger name="library.InstanceId" level="DEBUG">
       <AppenderRef ref="instanceIDFile"/>
     </Logger>
-    <Logger name="SessionsCount" level="DEBUG">
+    <Logger name="library.SessionsCount" level="DEBUG">
       <AppenderRef ref="sessionsCountFile"/>
     </Logger>
-    <Logger name="SessionsInfo" level="DEBUG">
+    <Logger name="library.SessionsInfo" level="DEBUG">
       <AppenderRef ref="sessionsInfoFile"/>
     </Logger>
-    <Logger name="MemoryInfo" level="DEBUG">
+    <Logger name="library.MemoryInfo" level="DEBUG">
       <AppenderRef ref="memoryInfoFile"/>
     </Logger>
   </Loggers>
