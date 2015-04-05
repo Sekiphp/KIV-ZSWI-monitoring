@@ -5,28 +5,42 @@ package window;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+import event.ChangedFilter;
 import event.ExitApp;
 import event.LoadFilter;
 import event.RestoreApp;
 import event.SaveAsFilter;
 import event.SaveFilter;
 import event.StartPauseMonitor;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import javafx.application.Application;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBoxTreeItem;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TreeView;
+import javafx.scene.control.cell.CheckBoxListCell;
 import javafx.scene.control.cell.CheckBoxTreeCell;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import library.Monitoring;
 
 /**
@@ -34,31 +48,30 @@ import library.Monitoring;
  * @author Kohl
  */
 public class MainWindow extends Application {
-	
-	/**
-	 * nastaveni konfiguracniho souboru pro logovani
-	 */
-	static {
-		System.setProperty("log4j.configurationFile",
-				"log4j-config.xml");
-	}
-	
-    private TreeView filters;
+
+    /**
+     * nastaveni konfiguracniho souboru pro logovani
+     */
+    static {
+        System.setProperty("log4j.configurationFile",
+                "log4j-config.xml");
+    }
+
+    private ListView filters;
     private TextArea console;
     private Monitoring monitoring;
     private Stage stage;
 
     @Override
     public void start(Stage stage) {
-        this.stage=stage;
-        
+        this.stage = stage;
+
         this.console = new TextArea();
-        
         this.monitoring = new Monitoring(console);
-        
+
         BorderPane root = new BorderPane();
         root.setTop(getMenuBar());
-        root.setLeft(getLeftContent());
+        root.setLeft(monitoring.getFilter().getListView());
         root.setCenter(getCenterContent());
 
         stage.setScene(new Scene(root, 800, 500));
@@ -77,18 +90,18 @@ public class MainWindow extends Application {
     public Monitoring getMonitoring() {
         return monitoring;
     }
-    
+
     private MenuBar getMenuBar() {
         Menu menu = new Menu("File");
 
         MenuItem loadItem = new MenuItem("Load");
         loadItem.setMnemonicParsing(true);
-        loadItem.setAccelerator(new KeyCodeCombination(KeyCode.O,KeyCombination.CONTROL_DOWN));
+        loadItem.setAccelerator(new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_DOWN));
         loadItem.setOnAction(new LoadFilter(this));
 
         MenuItem saveItem = new MenuItem("Save");
         saveItem.setMnemonicParsing(true);
-        saveItem.setAccelerator(new KeyCodeCombination(KeyCode.S,KeyCombination.CONTROL_DOWN));
+        saveItem.setAccelerator(new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_DOWN));
         saveItem.setOnAction(new SaveFilter(this));
 
         MenuItem saveAsItem = new MenuItem("Save as...");
@@ -99,11 +112,11 @@ public class MainWindow extends Application {
         restoneItem.setMnemonicParsing(true);
         restoneItem.setAccelerator(new KeyCodeCombination(KeyCode.F5));
         restoneItem.setOnAction(new RestoreApp(this.monitoring));
-        
+
         MenuItem startPauseItem = new MenuItem("Start");
-        startPauseItem .setMnemonicParsing(true);
-        startPauseItem .setAccelerator(new KeyCodeCombination(KeyCode.SPACE));
-        startPauseItem .setOnAction(new StartPauseMonitor(this.monitoring));
+        startPauseItem.setMnemonicParsing(true);
+        startPauseItem.setAccelerator(new KeyCodeCombination(KeyCode.SPACE));
+        startPauseItem.setOnAction(new StartPauseMonitor(this.monitoring));
 
         MenuItem exitItem = new MenuItem("Exit");
         exitItem.setMnemonicParsing(true);
@@ -121,37 +134,7 @@ public class MainWindow extends Application {
         menuBar.prefWidthProperty().bind(stage.widthProperty());
         return menuBar;
     }
-
-    private TreeView getLeftContent() {
-        CheckBoxTreeItem root = new CheckBoxTreeItem<>("Filters");
-        root.setExpanded(true);
-        root.setSelected(true);
-        root.setIndependent(false);
-
-        for (int i = 0; i < 3; i++) {
-            CheckBoxTreeItem item = new CheckBoxTreeItem<>("Polozka");
-            item.setSelected(true);
-            root.getChildren().add(item);
-        }
-
-        this.filters = new TreeView<>();
-        this.filters.setPrefWidth(200);
-        this.filters.setRoot(root);
-        this.filters.setEditable(true);
-        this.filters.setCellFactory(CheckBoxTreeCell.forTreeView());
-        this.filters.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-//        this.filters.setOnMouseClicked(new EventHandler<MouseEvent>() {
-//            @Override
-//            public void handle(MouseEvent mouseEvent) {
-//
-//                System.out.println("Selected Text : ");
-//
-//            }
-//        });
-
-        return this.filters;
-    }
-
+    
     private TextArea getCenterContent() {
         this.console.setWrapText(true);
         this.console.setEditable(false);

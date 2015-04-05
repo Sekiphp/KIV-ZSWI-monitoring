@@ -22,6 +22,10 @@ public class UrlFactory {
 			urlFactoryLogger.debug("Setting URLs.");
 		this.urls = urls;
 	}
+        
+        public Object[] toArray(){
+            return (Object[])urls.keySet().toArray();
+        }
 
 	public String getSystemLoad(){
 		if (urlFactoryLogger.isDebugEnabled())

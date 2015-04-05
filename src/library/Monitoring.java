@@ -32,19 +32,14 @@ public class Monitoring {
     private final TextArea console;
     private final FilterManager filter;
     private final PeerFileMonitor pf;
-    private final RestTemplate restTemplate ;
+    private final RestTemplate restTemplate;
     private final UrlFactory fac;
 
     private boolean run = false;
     
     public Monitoring(TextArea console) {
-        monitoringLogger.info("Application launched.");
-        
+        monitoringLogger.info("Application launched.");        
         this.console = console;
-
-        this.filter = new FilterManager();
-        if (monitoringLogger.isDebugEnabled())
-			monitoringLogger.debug("Filter manager created.");
 
         this.app = new ClassPathXmlApplicationContext("./application-context.xml");
         if (monitoringLogger.isDebugEnabled())
@@ -61,6 +56,12 @@ public class Monitoring {
         this.fac = pf.getUrlFactory();
         if (monitoringLogger.isDebugEnabled())
 			monitoringLogger.debug("Retrieved URL factory.");
+        
+        
+        //NEVIM ODKUD ZISKAT POLE SLEDOVANYCH KATEGORII
+        this.filter = new FilterManager(new String[]{"A","B"});
+        if (monitoringLogger.isDebugEnabled())
+			monitoringLogger.debug("Filter manager created.");
     }
 
     public FilterManager getFilter() {
@@ -101,8 +102,8 @@ public class Monitoring {
         	monitoringLogger.debug("Retrieved instances from Rest template: Sessions Info (count: " + sessionsInfo.length + ")");
         writeConsole("sessions info: ");
 
-        for (int i = 0; i < sessionsInfo.length; i++) {
-            writeConsole(sessionsInfo[i].getSessions_info());
+        for (SessionsInfo sessionsInfo1 : sessionsInfo) {
+            writeConsole(sessionsInfo1.getSessions_info());
         }
       
         this.writeConsole("");
