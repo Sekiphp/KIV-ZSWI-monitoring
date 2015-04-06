@@ -5,7 +5,6 @@ package library;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import javafx.scene.control.TextArea;
 
 import org.apache.logging.log4j.LogManager;
@@ -21,10 +20,10 @@ public class Monitoring {
 
     /**
      * hlavni logger
-     * 
-     * Pozn. - regularni vyrazy pro doplneni testu isDebugEnabled:
-	 * Find:			([a-zA-Z]*Logger)(\.debug)
-	 * Replace with:	if \($1\.isDebugEnabled\(\)\)\r\n\t\t\t$1$2
+     *
+     * Pozn. - regularni vyrazy pro doplneni testu isDebugEnabled: Find:
+     * ([a-zA-Z]*Logger)(\.debug) Replace with:	if
+     * \($1\.isDebugEnabled\(\)\)\r\n\t\t\t$1$2
      */
     private static final Logger monitoringLogger = LogManager.getLogger();
 
@@ -36,91 +35,100 @@ public class Monitoring {
     private final UrlFactory fac;
 
     private boolean run = false;
-    
+
     public Monitoring(TextArea console) {
-        monitoringLogger.info("Application launched.");        
+        monitoringLogger.info("Application launched.");
         this.console = console;
 
         this.app = new ClassPathXmlApplicationContext("./application-context.xml");
-        if (monitoringLogger.isDebugEnabled())
-			monitoringLogger.debug("Application context loaded.");
-        
+        if (monitoringLogger.isDebugEnabled()) {
+            monitoringLogger.debug("Application context loaded.");
+        }
+
         this.pf = (PeerFileMonitor) app.getBean("peerFileMonitor");
-        if (monitoringLogger.isDebugEnabled())
-			monitoringLogger.debug("PeerFile monitor created.");
+        if (monitoringLogger.isDebugEnabled()) {
+            monitoringLogger.debug("PeerFile monitor created.");
+        }
 
         this.restTemplate = pf.getRestTemplate();
-        if (monitoringLogger.isDebugEnabled())
-			monitoringLogger.debug("Rest template created.");
+        if (monitoringLogger.isDebugEnabled()) {
+            monitoringLogger.debug("Rest template created.");
+        }
 
         this.fac = pf.getUrlFactory();
-        if (monitoringLogger.isDebugEnabled())
-			monitoringLogger.debug("Retrieved URL factory.");
-        
-        
+        if (monitoringLogger.isDebugEnabled()) {
+            monitoringLogger.debug("Retrieved URL factory.");
+        }
+
         //NEVIM ODKUD ZISKAT POLE SLEDOVANYCH KATEGORII
-        this.filter = new FilterManager(new String[]{"A","B"});
-        if (monitoringLogger.isDebugEnabled())
-			monitoringLogger.debug("Filter manager created.");
+        this.filter = new FilterManager(new String[]{"A", "B"});
+        if (monitoringLogger.isDebugEnabled()) {
+            monitoringLogger.debug("Filter manager created.");
+        }
     }
 
     public FilterManager getFilter() {
         return filter;
     }
 
-    public boolean isRun(){
+    public boolean isRun() {
         run = !run;
         return !run;
-    } 
-    
+    }
+
     public void start() {
-    	monitoringLogger.info("Monitoring started.");
+        monitoringLogger.info("Monitoring started.");
 
         writeConsole("Loading...\n");
         SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
-        if (monitoringLogger.isDebugEnabled())
-			monitoringLogger.debug("Retrieved instance from Rest template: System Load");
+        if (monitoringLogger.isDebugEnabled()) {
+            monitoringLogger.debug("Retrieved instance from Rest template: System Load");
+        }
         writeConsole("systemLoad: " + systemLoad.getSystem_load());
 
         InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
-        if (monitoringLogger.isDebugEnabled())
-			monitoringLogger.debug("Retrieved instance from Rest template: Instance ID");
+        if (monitoringLogger.isDebugEnabled()) {
+            monitoringLogger.debug("Retrieved instance from Rest template: Instance ID");
+        }
         writeConsole("instance ID: " + instanceId.getInstance_id());
 
         SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
-        if (monitoringLogger.isDebugEnabled())
-			monitoringLogger.debug("Retrieved instance from Rest template: Sessions Count");
+        if (monitoringLogger.isDebugEnabled()) {
+            monitoringLogger.debug("Retrieved instance from Rest template: Sessions Count");
+        }
         writeConsole("sessions count: " + sessionsCount.getSessions_count());
 
         MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
-        if (monitoringLogger.isDebugEnabled())
-			monitoringLogger.debug("Retrieved instance from Rest template: Memory Info");
+        if (monitoringLogger.isDebugEnabled()) {
+            monitoringLogger.debug("Retrieved instance from Rest template: Memory Info");
+        }
         writeConsole("memory info: " + memoryInfo.getMemory_info());
 
         SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
-        if (monitoringLogger.isDebugEnabled())
-        	monitoringLogger.debug("Retrieved instances from Rest template: Sessions Info (count: " + sessionsInfo.length + ")");
+        if (monitoringLogger.isDebugEnabled()) {
+            monitoringLogger.debug("Retrieved instances from Rest template: Sessions Info (count: " + sessionsInfo.length + ")");
+        }
         writeConsole("sessions info: ");
 
         for (SessionsInfo sessionsInfo1 : sessionsInfo) {
             writeConsole(sessionsInfo1.getSessions_info());
         }
-      
+
         this.writeConsole("");
 
     }
 
-    public void pause(){
-    	monitoringLogger.info("Monitoring paused.");
+    public void pause() {
+        monitoringLogger.info("Monitoring paused.");
     }
-    
-    public void close(){
+
+    public void close() {
         app.close();
         monitoringLogger.info("Application closed.");
     }
 
     private void writeConsole(String text) {
-        this.console.appendText(text+"\n");
+        this.console.appendText(text + "\n");
     }
 
 }

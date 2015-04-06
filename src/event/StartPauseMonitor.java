@@ -7,7 +7,6 @@ package event;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.MenuItem;
@@ -19,8 +18,8 @@ import library.Monitoring;
  */
 public class StartPauseMonitor implements EventHandler {
 
-	private static final Logger startPauseMonitorLogger = LogManager.getLogger();
-	
+    private static final Logger startPauseMonitorLogger = LogManager.getLogger();
+
     private final Monitoring monitoring;
 
     public StartPauseMonitor(Monitoring monitorig) {

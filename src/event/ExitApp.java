@@ -12,12 +12,9 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ButtonBar.ButtonData;
 import javafx.scene.control.ButtonType;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.util.comparator.ComparableComparator;
 
 import window.MainWindow;
 
@@ -26,8 +23,8 @@ import window.MainWindow;
  * @author Kohl
  */
 public class ExitApp implements EventHandler {
-	
-	private static final Logger exitAppLogger = LogManager.getLogger();
+
+    private static final Logger exitAppLogger = LogManager.getLogger();
 
     private final MainWindow mainWindow;
 
@@ -38,29 +35,29 @@ public class ExitApp implements EventHandler {
     @Override
     public void handle(Event event) {
 
-        if (!this.mainWindow.getMonitoring().getFilter().isSave()) {           
-            Optional<ButtonType> result = dialogYesNo("Confirm Save filter","Save filter?");
+        if (!this.mainWindow.getMonitoring().getFilter().isSave()) {
+            Optional<ButtonType> result = dialogYesNo("Confirm Save filter", "Save filter?");
             if (result.get() == ButtonType.YES) {
                 new SaveFilter(this.mainWindow).handle(null);
             }
         }
-        
-        Optional<ButtonType> result = dialogYesNo("Confirm Exit","Exit Monitoring?");
+
+        Optional<ButtonType> result = dialogYesNo("Confirm Exit", "Exit Monitoring?");
 
         if (result.get() == ButtonType.NO) {
             event.consume();
         } else {
-        	mainWindow.getMonitoring().close();
+            mainWindow.getMonitoring().close();
             Platform.exit();
         }
     }
 
-    private Optional<ButtonType> dialogYesNo(String title, String text){ 
+    private Optional<ButtonType> dialogYesNo(String title, String text) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle(title);
         alert.setContentText(text);
         alert.getButtonTypes().set(0, ButtonType.YES);
         alert.getButtonTypes().set(1, ButtonType.NO);
         return alert.showAndWait();
-    }  
+    }
 }

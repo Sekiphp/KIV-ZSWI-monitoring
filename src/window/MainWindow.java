@@ -5,42 +5,24 @@ package window;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import event.ChangedFilter;
 import event.ExitApp;
 import event.LoadFilter;
 import event.RestoreApp;
 import event.SaveAsFilter;
 import event.SaveFilter;
 import event.StartPauseMonitor;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 import javafx.application.Application;
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBoxTreeItem;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TreeView;
-import javafx.scene.control.cell.CheckBoxListCell;
-import javafx.scene.control.cell.CheckBoxTreeCell;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import library.Monitoring;
 
 /**
@@ -134,7 +116,7 @@ public class MainWindow extends Application {
         menuBar.prefWidthProperty().bind(stage.widthProperty());
         return menuBar;
     }
-    
+
     private TextArea getCenterContent() {
         this.console.setWrapText(true);
         this.console.setEditable(false);

@@ -9,7 +9,6 @@ import java.io.File;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
@@ -21,8 +20,8 @@ import window.MainWindow;
  * @author Kohl
  */
 public class LoadFilter implements EventHandler {
-	
-	private static final Logger loadFilterLogger = LogManager.getLogger();
+
+    private static final Logger loadFilterLogger = LogManager.getLogger();
 
     private final MainWindow mainWindow;
 
@@ -51,7 +50,7 @@ public class LoadFilter implements EventHandler {
             alert.setContentText(ex.getMessage());
             alert.showAndWait();
         }
-        fileChooser=null;
+        fileChooser = null;
     }
 
 }
