@@ -19,7 +19,6 @@ import library.Monitoring;
 public class StartPauseMonitor implements EventHandler {
 
     private static final Logger startPauseMonitorLogger = LogManager.getLogger();
-
     private final Monitoring monitoring;
 
     public StartPauseMonitor(Monitoring monitorig) {
@@ -37,7 +36,5 @@ public class StartPauseMonitor implements EventHandler {
             monitoring.start();
             menu.setText("Pause");
         }
-
     }
-
 }

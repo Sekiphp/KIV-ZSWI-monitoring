@@ -39,7 +39,6 @@ public class MainWindow extends Application {
                 "log4j-config.xml");
     }
 
-    private ListView filters;
     private TextArea console;
     private Monitoring monitoring;
     private Stage stage;

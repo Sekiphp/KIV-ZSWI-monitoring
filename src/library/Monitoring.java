@@ -61,7 +61,7 @@ public class Monitoring {
         }
 
         //NEVIM ODKUD ZISKAT POLE SLEDOVANYCH KATEGORII
-        this.filter = new FilterManager(new String[]{"A", "B"});
+        this.filter = new FilterManager();
         if (monitoringLogger.isDebugEnabled()) {
             monitoringLogger.debug("Filter manager created.");
         }
@@ -80,40 +80,50 @@ public class Monitoring {
         monitoringLogger.info("Monitoring started.");
 
         writeConsole("Loading...\n");
-        SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
-        if (monitoringLogger.isDebugEnabled()) {
-            monitoringLogger.debug("Retrieved instance from Rest template: System Load");
-        }
-        writeConsole("systemLoad: " + systemLoad.getSystem_load());
 
-        InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
-        if (monitoringLogger.isDebugEnabled()) {
-            monitoringLogger.debug("Retrieved instance from Rest template: Instance ID");
-        }
-        writeConsole("instance ID: " + instanceId.getInstance_id());
-
-        SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
-        if (monitoringLogger.isDebugEnabled()) {
-            monitoringLogger.debug("Retrieved instance from Rest template: Sessions Count");
-        }
-        writeConsole("sessions count: " + sessionsCount.getSessions_count());
-
-        MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
-        if (monitoringLogger.isDebugEnabled()) {
-            monitoringLogger.debug("Retrieved instance from Rest template: Memory Info");
-        }
-        writeConsole("memory info: " + memoryInfo.getMemory_info());
-
-        SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
-        if (monitoringLogger.isDebugEnabled()) {
-            monitoringLogger.debug("Retrieved instances from Rest template: Sessions Info (count: " + sessionsInfo.length + ")");
-        }
-        writeConsole("sessions info: ");
-
-        for (SessionsInfo sessionsInfo1 : sessionsInfo) {
-            writeConsole(sessionsInfo1.getSessions_info());
+        if (filter.isSelect(TypeMonitoring.SYSTEM_LOAD)) {
+            SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
+            if (monitoringLogger.isDebugEnabled()) {
+                monitoringLogger.debug("Retrieved instance from Rest template: System Load");
+            }
+            writeConsole("systemLoad: " + systemLoad.getSystem_load());
         }
 
+        if (filter.isSelect(TypeMonitoring.INSTANCE_ID)) {
+            InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
+            if (monitoringLogger.isDebugEnabled()) {
+                monitoringLogger.debug("Retrieved instance from Rest template: Instance ID");
+            }
+            writeConsole("instance ID: " + instanceId.getInstance_id());
+        }
+
+        if (filter.isSelect(TypeMonitoring.SESSIONS_COUNT)) {
+            SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
+            if (monitoringLogger.isDebugEnabled()) {
+                monitoringLogger.debug("Retrieved instance from Rest template: Sessions Count");
+            }
+            writeConsole("sessions count: " + sessionsCount.getSessions_count());
+        }
+
+        if (filter.isSelect(TypeMonitoring.MEMORY_INFO)) {
+            MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
+            if (monitoringLogger.isDebugEnabled()) {
+                monitoringLogger.debug("Retrieved instance from Rest template: Memory Info");
+            }
+            writeConsole("memory info: " + memoryInfo.getMemory_info());
+        }
+
+        if (filter.isSelect(TypeMonitoring.SESSIONS_INFO)) {
+            SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
+            if (monitoringLogger.isDebugEnabled()) {
+                monitoringLogger.debug("Retrieved instances from Rest template: Sessions Info (count: " + sessionsInfo.length + ")");
+            }
+            writeConsole("sessions info: ");
+
+            for (SessionsInfo sessionsInfo1 : sessionsInfo) {
+                writeConsole(sessionsInfo1.getSessions_info());
+            }
+        }
         this.writeConsole("");
 
     }

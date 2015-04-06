@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.util.Callback;
 import library.FilterManager;
+import library.TypeMonitoring;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,11 +30,11 @@ public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> 
     @Override
     public ObservableValue<Boolean> call(String item) {
         BooleanProperty observable = new SimpleBooleanProperty();
-        if (filterManager.isSelect(item)) {
+        if (filterManager.isSelect(TypeMonitoring.valueOf(item))) {
             observable.setValue(true);
         }
         observable.addListener((ObservableValue<? extends Boolean> observable1, Boolean oldValue, Boolean newValue) -> {
-            if (newValue = true) {
+            if (newValue == true) {
                 this.filterManager.add(item);
             } else {
                 this.filterManager.remove(item);

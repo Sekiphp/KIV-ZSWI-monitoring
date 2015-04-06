@@ -9,7 +9,6 @@ public class InstanceId {
      * logger sluzby InstanceId
      */
     private static final Logger instanceIdLogger = LogManager.getLogger();
-
     private String instance_id;
 
     public String getInstance_id() {
@@ -21,5 +20,4 @@ public class InstanceId {
         instanceIdLogger.info("Setting instance_id: " + instance_id);
         this.instance_id = instance_id;
     }
-
 }

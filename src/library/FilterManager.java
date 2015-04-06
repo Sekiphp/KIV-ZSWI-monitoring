@@ -35,19 +35,19 @@ public class FilterManager {
     private boolean isSave;
     private String path;
     private final ListView lvFilters;
-    private final List<String> selectedFilters;
+    private final List<TypeMonitoring> selectedFilters;
 
-    public FilterManager(String[] allFilters) {
+    public FilterManager() {
         if (filterManagerLogger.isDebugEnabled()) {
             filterManagerLogger.debug("Creating Filter manager.");
         }
         this.isSave = true;
 
         this.lvFilters = new ListView<>();
-        this.lvFilters.setItems(FXCollections.observableArrayList(allFilters));
+        this.lvFilters.setItems(FXCollections.observableArrayList(TypeMonitoring.toArray()));
         this.lvFilters.setCellFactory(CheckBoxListCell.forListView(new ChangeFilter(this)));
 
-        this.selectedFilters = new ArrayList<>(Arrays.asList(allFilters));
+        this.selectedFilters = new ArrayList<>(Arrays.asList(TypeMonitoring.values()));
     }
 
     public boolean isSave() {
@@ -66,7 +66,9 @@ public class FilterManager {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
 
         this.selectedFilters.clear();
-        this.selectedFilters.addAll(Arrays.asList(br.readLine().split(";")));
+        for (String type : br.readLine().split(";")) {
+            this.selectedFilters.add(TypeMonitoring.valueOf(type));
+        }
 
         br.close();
 
@@ -89,7 +91,7 @@ public class FilterManager {
             if (i != 0) {
                 bw.write(";");
             }
-            bw.write(this.selectedFilters.get(i));
+            bw.write(this.selectedFilters.get(i).name());
         }
 
         bw.close();
@@ -109,14 +111,7 @@ public class FilterManager {
         this.path = path;
     }
 
-    public void remove(String item) {
-
-        this.selectedFilters.add(item);
-
-        this.isSave = false;
-    }
-
-    public boolean isSelect(String item) {
+    public boolean isSelect(TypeMonitoring item) {
         return this.selectedFilters.contains(item);
     }
 
@@ -125,9 +120,13 @@ public class FilterManager {
     }
 
     public void add(String item) {
-
-        this.selectedFilters.remove(item);
-
+        this.selectedFilters.add(TypeMonitoring.valueOf(item));
         this.isSave = false;
     }
+
+    public void remove(String item) {
+        this.selectedFilters.remove(TypeMonitoring.valueOf(item));
+        this.isSave = false;
+    }
+
 }

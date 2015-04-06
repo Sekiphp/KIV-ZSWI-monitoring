@@ -10,13 +10,11 @@ public class UrlFactory {
      * logger URLFactory
      */
     private static final Logger urlFactoryLogger = LogManager.getLogger();
-
     private final String SYSTEM_LOAD = "system_load";
     private final String INSTANCE_ID = "instance_id";
     private final String SESSIONS_COUNT = "sessions_count";
     private final String SESSIONS_INFO = "sessions_info";
     private final String MEMORY_INFO = "memory_info";
-
     private Map<String, String> urls;
 
     public void setUrls(Map<String, String> urls) {
@@ -64,5 +62,4 @@ public class UrlFactory {
         }
         return urls.get(MEMORY_INFO);
     }
-
 }
