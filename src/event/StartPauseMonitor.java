@@ -30,9 +30,17 @@ public class StartPauseMonitor implements EventHandler {
 
         MenuItem menu = (MenuItem) event.getSource();
         if (monitoring.isRun()) {
+        	if (startPauseMonitorLogger.isDebugEnabled()) {
+            	startPauseMonitorLogger.debug("Starting monitoring...");
+        	}
+        	
             menu.setText("Start");
             monitoring.pause();
         } else {
+        	if (startPauseMonitorLogger.isDebugEnabled()) {
+            	startPauseMonitorLogger.debug("Pausing monitoring...");
+        	}
+        	
             monitoring.start();
             menu.setText("Pause");
         }

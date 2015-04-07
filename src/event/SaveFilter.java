@@ -30,12 +30,16 @@ public class SaveFilter implements EventHandler {
     public void handle(Event event) {
 
         if (this.mainWindow.getMonitoring().getFilter().isPath()) {
+        	
+        	saveFilterLogger.info("Saving filter.");
+
             try {
                 this.mainWindow.getMonitoring().getFilter().saveFile();
             } catch (Exception ex) {
+            	saveFilterLogger.error("An error occured when attempting to save a filter file.");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setHeaderText("Error save filter");
+                alert.setHeaderText("Saving filter error.");
                 alert.setContentText(ex.getMessage());
                 alert.showAndWait();
             }

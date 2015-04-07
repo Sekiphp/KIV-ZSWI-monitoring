@@ -29,6 +29,10 @@ public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> 
 
     @Override
     public ObservableValue<Boolean> call(String item) {
+    	if (changeFilterLogger.isDebugEnabled()) {
+    		changeFilterLogger.debug("Changing filter...");
+    	}
+    	
         BooleanProperty observable = new SimpleBooleanProperty();
         if (filterManager.isSelect(TypeMonitoring.valueOf(item))) {
             observable.setValue(true);
@@ -40,6 +44,10 @@ public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> 
                 this.filterManager.remove(item);
             }
         });
+        
+        if (changeFilterLogger.isDebugEnabled()) {
+    		changeFilterLogger.debug("Filter changed.");
+    	}
         return observable;
     }
 

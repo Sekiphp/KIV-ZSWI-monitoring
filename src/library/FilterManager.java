@@ -41,6 +41,7 @@ public class FilterManager {
         if (filterManagerLogger.isDebugEnabled()) {
             filterManagerLogger.debug("Creating Filter manager.");
         }
+        
         this.isSave = true;
 
         this.lvFilters = new ListView<>();
@@ -59,18 +60,26 @@ public class FilterManager {
     }
 
     public void loadFile(String filePath) throws FileNotFoundException, IOException {
-        if (filterManagerLogger.isDebugEnabled()) {
-            filterManagerLogger.debug("Loading file.");
-        }
-
         BufferedReader br = new BufferedReader(new FileReader(filePath));
 
+        if (filterManagerLogger.isDebugEnabled()) {
+            filterManagerLogger.debug("Filter input file opened.");
+        }
+        
         this.selectedFilters.clear();
         for (String type : br.readLine().split(";")) {
             this.selectedFilters.add(TypeMonitoring.valueOf(type));
         }
+        
+        if (filterManagerLogger.isDebugEnabled()) {
+            filterManagerLogger.debug("Filter loaded.");
+        }
 
         br.close();
+        
+        if (filterManagerLogger.isDebugEnabled()) {
+            filterManagerLogger.debug("Filter input file closed.");
+        }
 
         this.lvFilters.setCellFactory(CheckBoxListCell.forListView(new ChangeFilter(this)));
         this.path = filePath;
@@ -81,11 +90,11 @@ public class FilterManager {
     }
 
     public void saveFile(String filePath) throws IOException {
-        if (filterManagerLogger.isDebugEnabled()) {
-            filterManagerLogger.debug("Saving file.");
-        }
-
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));
+        
+        if (filterManagerLogger.isDebugEnabled()) {
+            filterManagerLogger.debug("Filter output file opened.");
+        }
 
         for (int i = 0; i < this.selectedFilters.size(); i++) {
             if (i != 0) {
@@ -93,8 +102,17 @@ public class FilterManager {
             }
             bw.write(this.selectedFilters.get(i).name());
         }
+        
+        if (filterManagerLogger.isDebugEnabled()) {
+            filterManagerLogger.debug("Filter saved.");
+        }
 
         bw.close();
+        
+        if (filterManagerLogger.isDebugEnabled()) {
+            filterManagerLogger.debug("Filter output file opened.");
+        }
+        
         this.isSave = true;
         this.path = filePath;
     }

@@ -27,6 +27,10 @@ public class RestoreApp implements EventHandler {
 
     @Override
     public void handle(Event event) {
+    	if (restoreAppLogger.isDebugEnabled()) {
+    		restoreAppLogger.debug("Restoring monitoring...");
+    	}
+    	
         this.monitoring.start();
     }
 

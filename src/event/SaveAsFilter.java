@@ -35,7 +35,6 @@ public class SaveAsFilter implements EventHandler {
     public void handle(Event event) {
 
         String fileName = "untitled.filter";
-
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save filter");
         fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Filter Files", "*.filter"));
@@ -49,20 +48,25 @@ public class SaveAsFilter implements EventHandler {
         }
 
         File file = fileChooser.showSaveDialog(this.mainWindow.getStage());
+        
         if (file == null) {
             return;
         }
 
+        saveAsFilterLogger.info("Saving filter.");
+
         try {
             this.mainWindow.getMonitoring().getFilter().saveFile(file.getPath());
         } catch (Exception ex) {
+        	saveAsFilterLogger.error("An error occured when attempting to save a filter file.");
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Error save filter");
+            alert.setHeaderText("Saving filter error.");
             alert.setContentText(ex.getMessage());
             alert.showAndWait();
 
         }
+        
         fileChooser = null;
     }
 

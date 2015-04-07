@@ -37,19 +37,24 @@ public class LoadFilter implements EventHandler {
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Filter Files", "*.filter"));
 
         File file = fileChooser.showOpenDialog(this.mainWindow.getStage());
+        
         if (file == null) {
             return;
         }
 
+        loadFilterLogger.info("Loading filter.");
+
         try {
             this.mainWindow.getMonitoring().getFilter().loadFile(file.getPath());
         } catch (Exception ex) {
+            loadFilterLogger.error("An error occured when attempting to load a filter file.");
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Error load filter");
+            alert.setHeaderText("Loading filter error.");
             alert.setContentText(ex.getMessage());
             alert.showAndWait();
         }
+        
         fileChooser = null;
     }
 
