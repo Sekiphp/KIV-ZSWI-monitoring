@@ -16,3 +16,210 @@
 2015.04.07 10:19:46 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 939556
 2015.04.07 10:19:46 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
 2015.04.07 10:19:51 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 19:53:24 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 19:53:34 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 19:53:39 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 20:57:22 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 20:57:29 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 20:57:38 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 20:57:38 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 600196
+2015.04.12 20:57:38 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 20:57:47 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 20:59:54 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 20:59:59 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:00:02 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:00:02 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 600080
+2015.04.12 21:00:02 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:00:04 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:00:09 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:00:09 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 600320
+2015.04.12 21:00:09 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:00:15 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:00:21 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:00:28 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:00:34 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:00:34 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 600212
+2015.04.12 21:00:34 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:00:50 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:00:54 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:00:54 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 599956
+2015.04.12 21:00:54 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:01:08 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:02:29 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:02:36 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:03:06 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:03:10 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:03:11 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:03:11 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 599444
+2015.04.12 21:03:11 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:03:14 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:03:23 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:03:23 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 599832
+2015.04.12 21:03:23 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:03:25 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:03:25 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 599956
+2015.04.12 21:03:25 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:04:02 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:04:06 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:04:08 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:04:08 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 599576
+2015.04.12 21:04:08 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:04:16 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:04:51 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:04:56 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:05:02 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:22:17 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:22:21 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:22:39 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:32:00 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:32:04 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:32:09 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:32:37 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:32:40 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:32:45 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:33:16 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:33:24 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:33:29 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:33:34 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:33:34 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 612232
+2015.04.12 21:33:34 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:33:37 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:33:37 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 612612
+2015.04.12 21:33:37 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:33:41 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:33:41 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 612852
+2015.04.12 21:33:41 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:33:42 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:42:08 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:42:14 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:42:28 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:42:31 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:42:33 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:42:33 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611620
+2015.04.12 21:42:33 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:42:40 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:42:44 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:42:46 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:42:46 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611208
+2015.04.12 21:42:46 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:42:52 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:42:52 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611852
+2015.04.12 21:42:52 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:42:59 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:43:07 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:43:12 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:43:26 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:43:26 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611116
+2015.04.12 21:43:26 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:43:26 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:43:26 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611340
+2015.04.12 21:43:26 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:43:27 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:43:27 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611224
+2015.04.12 21:43:27 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:43:34 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:43:34 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611488
+2015.04.12 21:43:34 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:43:35 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:43:40 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:43:43 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:43:44 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:43:44 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611108
+2015.04.12 21:43:44 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:43:51 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:43:51 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611480
+2015.04.12 21:43:51 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:43:58 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:43:58 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 610868
+2015.04.12 21:43:58 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:44:05 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:44:05 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611812
+2015.04.12 21:44:05 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:44:05 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:44:20 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:44:34 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:44:38 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:44:39 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:44:39 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 610984
+2015.04.12 21:44:39 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:44:46 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:44:46 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611380
+2015.04.12 21:44:46 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:44:49 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:45:16 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:45:20 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:45:21 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:45:21 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611356
+2015.04.12 21:45:21 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:45:28 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:45:28 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 610852
+2015.04.12 21:45:28 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:45:35 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:45:35 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 611372
+2015.04.12 21:45:35 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:45:38 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:46:48 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:47:01 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:47:16 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:47:24 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:47:25 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:47:25 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 609580
+2015.04.12 21:47:25 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:47:32 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:47:32 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 610488
+2015.04.12 21:47:32 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:47:33 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:49:36 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:49:42 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:49:44 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:49:44 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 610868
+2015.04.12 21:49:44 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:49:50 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:49:50 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 610232
+2015.04.12 21:49:50 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:49:52 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:50:17 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:50:36 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:50:37 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:50:37 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 610356
+2015.04.12 21:50:37 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:50:44 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:50:44 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 610488
+2015.04.12 21:50:44 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:50:51 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:50:51 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 610488
+2015.04.12 21:50:51 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:50:58 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:50:58 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 610108
+2015.04.12 21:50:58 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:51:02 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:53:54 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:54:09 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:54:11 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:54:11 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 609000
+2015.04.12 21:54:11 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:54:18 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:54:18 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 609992
+2015.04.12 21:54:18 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:54:20 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:54:20 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 610396
+2015.04.12 21:54:21 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:54:22 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 21:54:22 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 609596
+2015.04.12 21:54:23 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 21:54:23 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 22:06:56 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 22:07:00 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 22:07:01 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 22:07:01 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 608892
+2015.04.12 22:07:01 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 22:07:08 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 22:07:08 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 608488
+2015.04.12 22:07:08 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 22:07:15 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 22:07:15 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 608512
+2015.04.12 22:07:15 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 22:07:22 [INFO - MemoryInfo.setMem_total()] - Setting mem_total: 4043044
+2015.04.12 22:07:22 [INFO - MemoryInfo.setMem_free()] - Setting mem_free: 608396
+2015.04.12 22:07:22 [INFO - MemoryInfo.getMemory_info()] - Getting memory_info.
+2015.04.12 22:07:26 [INFO - Monitoring.close()] - Application closed.

@@ -8,3 +8,178 @@
 2015.04.07 10:19:46 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
 2015.04.07 10:19:46 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
 2015.04.07 10:19:51 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 19:53:24 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 19:53:34 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 19:53:39 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 20:57:22 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 20:57:29 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 20:57:34 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 20:57:34 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 20:57:47 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 20:59:54 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 20:59:59 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:00:02 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:00:02 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:00:04 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:00:09 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:00:09 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:00:15 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:00:21 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:00:28 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:00:31 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:00:31 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:00:50 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:00:54 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:00:54 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:01:08 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:02:29 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:02:36 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:03:06 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:03:10 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:03:11 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:03:11 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:03:14 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:03:21 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:03:21 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:03:25 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:03:25 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:04:02 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:04:06 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:04:08 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:04:08 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:04:16 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:04:51 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:04:56 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:05:02 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:22:17 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:22:21 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:22:39 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:32:00 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:32:04 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:32:09 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:32:37 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:32:40 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:32:45 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:33:16 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:33:24 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:33:29 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:33:33 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:33:33 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:33:37 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:33:37 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:33:41 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:33:41 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:33:42 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:42:08 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:42:14 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:42:28 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:42:31 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:42:33 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:42:33 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:42:40 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:42:44 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:42:45 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:42:45 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:42:52 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:42:52 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:42:59 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:43:07 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:43:12 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:43:21 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:43:21 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:43:26 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:43:26 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:43:27 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:43:27 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:43:34 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:43:34 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:43:35 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:43:40 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:43:43 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:43:44 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:43:44 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:43:51 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:43:51 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:43:58 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:43:58 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:44:05 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:44:05 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:44:05 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:44:20 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:44:34 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:44:38 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:44:39 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:44:39 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:44:46 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:44:46 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:44:49 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:45:16 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:45:20 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:45:21 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:45:21 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:45:28 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:45:28 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:45:35 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:45:35 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:45:38 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:46:48 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:47:01 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:47:16 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:47:24 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:47:25 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:47:25 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:47:27 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:47:27 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:47:29 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:47:29 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:47:31 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:47:31 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:47:33 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:47:33 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:47:33 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:49:36 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:49:42 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:49:43 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:49:43 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:49:50 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:49:50 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:49:52 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:50:17 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:50:36 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:50:37 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:50:37 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:50:44 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:50:44 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:50:51 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:50:51 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:50:58 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:50:58 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:51:02 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 21:53:54 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 21:54:09 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 21:54:11 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:54:11 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:54:18 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 21:54:18 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 21:54:23 [INFO - Monitoring.close()] - Application closed.
+2015.04.12 22:06:56 [INFO - Monitoring.<init>()] - Application launched.
+2015.04.12 22:07:00 [INFO - Monitoring.start()] - Monitoring started.
+2015.04.12 22:07:01 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 22:07:01 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 22:07:08 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 22:07:08 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 22:07:15 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 22:07:15 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 22:07:17 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 22:07:17 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 22:07:18 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 22:07:18 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 22:07:19 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 22:07:19 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 22:07:20 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 22:07:20 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 22:07:21 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 22:07:21 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 22:07:22 [INFO - InstanceId.setInstance_id()] - Setting instance_id: PFT
+2015.04.12 22:07:22 [INFO - InstanceId.getInstance_id()] - Getting instance_id: PFT
+2015.04.12 22:07:26 [INFO - Monitoring.close()] - Application closed.

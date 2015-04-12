@@ -9,6 +9,9 @@ public class InstanceId {
      * logger sluzby InstanceId
      */
     private static final Logger instanceIdLogger = LogManager.getLogger();
+    
+    public static int refreshTimePeriod = Monitoring.DEFAULT_REFRESH_TIME;
+    
     private String instance_id;
 
     public String getInstance_id() {

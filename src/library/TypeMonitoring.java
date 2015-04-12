@@ -29,4 +29,11 @@ public enum TypeMonitoring {
         String text = Arrays.toString(values());
         return text.substring(1, text.length() - 1).split(", ");
     }
+    
+    public static TypeMonitoring getTypeBy(String str) {
+    	for(TypeMonitoring t : TypeMonitoring.values()) {
+    		if(str.equals(t.name())) return t;
+    	}
+    	return null;
+    }
 }

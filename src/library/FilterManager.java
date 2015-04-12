@@ -6,6 +6,8 @@ package library;
  * and open the template in the editor.
  */
 import event.ChangeFilter;
+import event.SetInstanceRefreshPeriod;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
@@ -15,9 +17,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import javafx.collections.FXCollections;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.CheckBoxListCell;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -47,7 +51,8 @@ public class FilterManager {
         this.lvFilters = new ListView<>();
         this.lvFilters.setItems(FXCollections.observableArrayList(TypeMonitoring.toArray()));
         this.lvFilters.setCellFactory(CheckBoxListCell.forListView(new ChangeFilter(this)));
-
+        this.lvFilters.setOnMouseClicked(new SetInstanceRefreshPeriod(this.lvFilters));
+        
         this.selectedFilters = new ArrayList<>(Arrays.asList(TypeMonitoring.values()));
     }
 

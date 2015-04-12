@@ -10,7 +10,9 @@ public class PeerFileMonitor {
      * logger PeerFileMonitoru
      */
     private static final Logger peerFileLogger = LogManager.getLogger();
-
+    public static int refreshTimePeriod = Monitoring.DEFAULT_REFRESH_TIME;
+    
+    
     private final UrlFactory urlFactory;
     private final RestTemplate restTemplate;
 
