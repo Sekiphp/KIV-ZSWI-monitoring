@@ -7,10 +7,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import library.InstanceId;
 import library.MemoryInfo;
+import library.Monitoring;
 import library.SessionsCount;
 import library.SessionsInfo;
 import library.SystemLoad;
 import library.TypeMonitoring;
+
 import org.controlsfx.dialog.Dialogs;
 
 
@@ -52,7 +54,7 @@ public class SetInstanceRefreshPeriod  implements EventHandler<MouseEvent> {
 			        .title("Custom time period")
 			        .masthead("Set custom time period of refreshing for: \n" + selectedItem + ".")
 			        .message("Please enter a period higer than zero (seconds):")
-			        .showTextInput("7");
+			        .showTextInput(String.valueOf(getInsntancePeriod(selectedItem)));
 
 			if (response.isPresent()) {
 				
@@ -85,6 +87,31 @@ public class SetInstanceRefreshPeriod  implements EventHandler<MouseEvent> {
 			}			
          }
 	}
+	
+	/**
+	 * Getter of refresh time period of selected instance.
+	 * @param type	type of selected instance
+	 * @return	refresh period of selected instance
+	 */
+	private int getInsntancePeriod(TypeMonitoring type){
+		switch (type) {
+
+		//selected view item
+		case INSTANCE_ID:
+			return InstanceId.refreshTimePeriod;
+		case MEMORY_INFO:
+			return MemoryInfo.refreshTimePeriod;
+		case SESSIONS_COUNT:
+			return SessionsCount.refreshTimePeriod;
+		case SESSIONS_INFO:
+			return SessionsInfo.refreshTimePeriod;
+		case SYSTEM_LOAD:
+			return SystemLoad.refreshTimePeriod;
+		default:
+			return Monitoring.DEFAULT_REFRESH_TIME;
+		}	
+	}
+	
 	
 	/**
 	 * Tests whether or not is time period inserted by user via input dialogue valid.
