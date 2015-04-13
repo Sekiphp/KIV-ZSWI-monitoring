@@ -79,16 +79,14 @@ public class MainWindow extends Application {
         loadItem.setMnemonicParsing(true);
         loadItem.setAccelerator(new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_DOWN));
         loadItem.setOnAction(new LoadFilter(this));
-        
-        /*
+
         MenuItem saveItem = new MenuItem("Save");
         saveItem.setMnemonicParsing(true);
         saveItem.setAccelerator(new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_DOWN));
         saveItem.setOnAction(new SaveFilter(this));
-		*/
-        MenuItem saveAsItem = new MenuItem("Save filter as...");
+
+        MenuItem saveAsItem = new MenuItem("Save as...");
         saveAsItem.setMnemonicParsing(true);
-        saveAsItem.setAccelerator(new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_DOWN));
         saveAsItem.setOnAction(new SaveAsFilter(this));
 
         MenuItem restoneItem = new MenuItem("Restore");
@@ -106,7 +104,7 @@ public class MainWindow extends Application {
         exitItem.setOnAction(new ExitApp(this));
 
         menu.getItems().add(loadItem);
-        //menu.getItems().add(saveItem);
+        menu.getItems().add(saveItem);
         menu.getItems().add(saveAsItem);
         menu.getItems().add(startPauseItem);
         menu.getItems().add(restoneItem);
