@@ -45,14 +45,14 @@ public class FilterManager {
         if (filterManagerLogger.isDebugEnabled()) {
             filterManagerLogger.debug("Creating Filter manager.");
         }
-        
+
         this.isSave = true;
 
         this.lvFilters = new ListView<>();
         this.lvFilters.setItems(FXCollections.observableArrayList(TypeMonitoring.toArray()));
         this.lvFilters.setCellFactory(CheckBoxListCell.forListView(new ChangeFilter(this)));
         this.lvFilters.setOnMouseClicked(new SetInstanceRefreshPeriod(this.lvFilters));
-        
+
         this.selectedFilters = new ArrayList<>(Arrays.asList(TypeMonitoring.values()));
     }
 
@@ -70,18 +70,18 @@ public class FilterManager {
         if (filterManagerLogger.isDebugEnabled()) {
             filterManagerLogger.debug("Filter input file opened.");
         }
-        
+
         this.selectedFilters.clear();
         for (String type : br.readLine().split(";")) {
             this.selectedFilters.add(TypeMonitoring.valueOf(type));
         }
-        
+
         if (filterManagerLogger.isDebugEnabled()) {
             filterManagerLogger.debug("Filter loaded.");
         }
 
         br.close();
-        
+
         if (filterManagerLogger.isDebugEnabled()) {
             filterManagerLogger.debug("Filter input file closed.");
         }
@@ -96,7 +96,7 @@ public class FilterManager {
 
     public void saveFile(String filePath) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));
-        
+
         if (filterManagerLogger.isDebugEnabled()) {
             filterManagerLogger.debug("Filter output file opened.");
         }
@@ -107,17 +107,17 @@ public class FilterManager {
             }
             bw.write(this.selectedFilters.get(i).name());
         }
-        
+
         if (filterManagerLogger.isDebugEnabled()) {
             filterManagerLogger.debug("Filter saved.");
         }
 
         bw.close();
-        
+
         if (filterManagerLogger.isDebugEnabled()) {
             filterManagerLogger.debug("Filter output file opened.");
         }
-        
+
         this.isSave = true;
         this.path = filePath;
     }

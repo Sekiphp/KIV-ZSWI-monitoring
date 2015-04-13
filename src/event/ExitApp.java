@@ -35,19 +35,25 @@ public class ExitApp implements EventHandler {
     @Override
     public void handle(Event event) {
 
-        if (!this.mainWindow.getMonitoring().getFilter().isSave()) {
-            Optional<ButtonType> result = dialogYesNo("Confirm Save filter", "Save filter?");
-            if (result.get() == ButtonType.YES) {
-                new SaveFilter(this.mainWindow).handle(null);
-            }
-        }
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+        alert.setTitle("Confirm Exit");
+        alert.setContentText("Save filter before closing?");
+        
+        alert.getButtonTypes().setAll( ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+        
+        Optional<ButtonType> result = alert.showAndWait();
 
-        Optional<ButtonType> result = dialogYesNo("Confirm Exit", "Exit Monitoring?");
-
-        if (result.get() == ButtonType.NO) {
+        if (result.get() == ButtonType.CANCEL) {
             event.consume();
-        } else {
+        } else if (result.get() == ButtonType.NO) {
             mainWindow.getMonitoring().close();
+            Platform.exit();
+        } else if (result.get() == ButtonType.YES) {
+            if (!this.mainWindow.getMonitoring().getFilter().isSave()) {
+
+                new SaveFilter(this.mainWindow).handle(null);
+                mainWindow.getMonitoring().close();
+            }
             Platform.exit();
         }
     }
