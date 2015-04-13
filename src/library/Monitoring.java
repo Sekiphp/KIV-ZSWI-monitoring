@@ -48,6 +48,7 @@ public class Monitoring {
     private final PeerFileMonitor pf;
     private final RestTemplate restTemplate;
     private final UrlFactory fac;
+    private Timeline timeline;
 
     private boolean run = false;
 
@@ -99,7 +100,7 @@ public class Monitoring {
         //SystemLoad.refreshTimePeriod = 1;
         
         
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+        timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
 			int time = 0;
         	
 			public void handle(ActionEvent e) {
@@ -163,6 +164,7 @@ public class Monitoring {
     }
 
     public void pause() {
+    	timeline.pause();
         monitoringLogger.info("Monitoring paused.");
     }
 
