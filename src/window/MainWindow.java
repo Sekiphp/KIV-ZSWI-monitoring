@@ -7,7 +7,6 @@ package window;
  */
 import event.ExitApp;
 import event.LoadFilter;
-import event.RestoreApp;
 import event.SaveAsFilter;
 import event.SaveFilter;
 import event.StartPauseMonitor;
@@ -88,12 +87,7 @@ public class MainWindow extends Application {
         MenuItem saveAsItem = new MenuItem("Save as...");
         saveAsItem.setMnemonicParsing(true);
         saveAsItem.setOnAction(new SaveAsFilter(this));
-
-        MenuItem restoneItem = new MenuItem("Restore");
-        restoneItem.setMnemonicParsing(true);
-        restoneItem.setAccelerator(new KeyCodeCombination(KeyCode.F5));
-        restoneItem.setOnAction(new RestoreApp(this.monitoring));
-
+        
         MenuItem startPauseItem = new MenuItem("Start");
         startPauseItem.setMnemonicParsing(true);
         startPauseItem.setAccelerator(new KeyCodeCombination(KeyCode.SPACE));
@@ -107,7 +101,6 @@ public class MainWindow extends Application {
         menu.getItems().add(saveItem);
         menu.getItems().add(saveAsItem);
         menu.getItems().add(startPauseItem);
-        menu.getItems().add(restoneItem);
         menu.getItems().add(exitItem);
 
         MenuBar menuBar = new MenuBar();
