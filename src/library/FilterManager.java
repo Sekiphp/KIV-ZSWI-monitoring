@@ -73,6 +73,10 @@ public class FilterManager {
 
         this.selectedFilters.clear();
         for (String type : br.readLine().split(";")) {
+            TypeMonitoring typeMonitoring = TypeMonitoring.valueOf(type.split(",")[0]);
+            typeMonitoring.setRefreshPeriod(Integer.parseInt(type.split(",")[1]));
+
+            this.selectedFilters.add(typeMonitoring);
         }
 
         if (filterManagerLogger.isDebugEnabled()) {
@@ -104,7 +108,7 @@ public class FilterManager {
             if (i != 0) {
                 bw.write(";");
             }
-            bw.write(this.selectedFilters.get(i).name());
+            
             String name = this.selectedFilters.get(i).name();
             bw.write(name + "," + TypeMonitoring.valueOf(name).getRefreshPeriod());
         }
