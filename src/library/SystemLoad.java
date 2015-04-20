@@ -9,7 +9,6 @@ public class SystemLoad {
      * logger sluzby SystemLoad
      */
     private static final Logger systemLoadLogger = LogManager.getLogger();
-    public static int refreshTimePeriod = Monitoring.DEFAULT_REFRESH_TIME;
 
     private double system_load;
 

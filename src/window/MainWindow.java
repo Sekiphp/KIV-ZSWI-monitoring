@@ -12,7 +12,6 @@ import event.SaveFilter;
 import event.StartPauseMonitor;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;

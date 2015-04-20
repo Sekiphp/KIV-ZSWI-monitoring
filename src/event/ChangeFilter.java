@@ -21,7 +21,7 @@ import org.apache.logging.log4j.Logger;
  * @author Kohl
  */
 public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> {
-	
+
     private final FilterManager filterManager;
     private static final Logger changeFilterLogger = LogManager.getLogger();
 
@@ -31,15 +31,15 @@ public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> 
 
     @Override
     public ObservableValue<Boolean> call(final String item) {
-    	if (changeFilterLogger.isDebugEnabled()) {
-    		changeFilterLogger.debug("Changing filter...");
-    	}
-    	
+        if (changeFilterLogger.isDebugEnabled()) {
+            changeFilterLogger.debug("Changing filter...");
+        }
+
         BooleanProperty observable = new SimpleBooleanProperty();
         if (filterManager.isSelect(TypeMonitoring.valueOf(item))) {
             observable.setValue(true);
         }
-        
+
         observable.addListener(new ChangeListener<Boolean>() {
 
             public void changed(ObservableValue<? extends Boolean> observable1, Boolean oldValue, Boolean newValue) {
@@ -50,10 +50,10 @@ public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> 
                 }
             }
         });
-        
+
         if (changeFilterLogger.isDebugEnabled()) {
-    		changeFilterLogger.debug("Filter changed.");
-    	}
+            changeFilterLogger.debug("Filter changed.");
+        }
         return observable;
     }
 

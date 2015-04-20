@@ -6,12 +6,6 @@ import javafx.event.EventHandler;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.MouseEvent;
-import library.InstanceId;
-import library.MemoryInfo;
-import library.Monitoring;
-import library.SessionsCount;
-import library.SessionsInfo;
-import library.SystemLoad;
 import library.TypeMonitoring;
 
 /**
@@ -64,26 +58,7 @@ public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
 
                     //chosen time period
                     int period = Integer.parseInt(response.get());
-
-                    switch (selectedItem) {
-
-                        //selected view item
-                        case INSTANCE_ID:
-                            InstanceId.refreshTimePeriod = period;
-                            break;
-                        case MEMORY_INFO:
-                            MemoryInfo.refreshTimePeriod = period;
-                            break;
-                        case SESSIONS_COUNT:
-                            SessionsCount.refreshTimePeriod = period;
-                            break;
-                        case SESSIONS_INFO:
-                            SessionsInfo.refreshTimePeriod = period;
-                            break;
-                        case SYSTEM_LOAD:
-                            SystemLoad.refreshTimePeriod = period;
-                            break;
-                    }
+                    selectedItem.setRefreshPeriod(period);
                 }
             }
         }
@@ -96,22 +71,7 @@ public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
      * @return	refresh period of selected instance
      */
     private int getInsntancePeriod(TypeMonitoring type) {
-        switch (type) {
-
-            //selected view item
-            case INSTANCE_ID:
-                return InstanceId.refreshTimePeriod;
-            case MEMORY_INFO:
-                return MemoryInfo.refreshTimePeriod;
-            case SESSIONS_COUNT:
-                return SessionsCount.refreshTimePeriod;
-            case SESSIONS_INFO:
-                return SessionsInfo.refreshTimePeriod;
-            case SYSTEM_LOAD:
-                return SystemLoad.refreshTimePeriod;
-            default:
-                return Monitoring.DEFAULT_REFRESH_TIME;
-        }
+        return type.getRefreshPeriod();
     }
 
     /**

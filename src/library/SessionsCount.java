@@ -9,9 +9,6 @@ public class SessionsCount {
      * logger sluzby SessionsCount
      */
     private static final Logger sessionsCountLogger = LogManager.getLogger();
-    
-    public static int refreshTimePeriod = Monitoring.DEFAULT_REFRESH_TIME;
-    
 
     private String sessions_count;
 

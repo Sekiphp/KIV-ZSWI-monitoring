@@ -10,11 +10,6 @@ public class UrlFactory {
      * logger URLFactory
      */
     private static final Logger urlFactoryLogger = LogManager.getLogger();
-    private final String SYSTEM_LOAD = "system_load";
-    private final String INSTANCE_ID = "instance_id";
-    private final String SESSIONS_COUNT = "sessions_count";
-    private final String SESSIONS_INFO = "sessions_info";
-    private final String MEMORY_INFO = "memory_info";
     private Map<String, String> urls;
 
     public void setUrls(Map<String, String> urls) {
@@ -32,34 +27,34 @@ public class UrlFactory {
         if (urlFactoryLogger.isDebugEnabled()) {
             urlFactoryLogger.debug("Getting system_load service instance.");
         }
-        return urls.get(SYSTEM_LOAD);
+        return urls.get(TypeMonitoring.SYSTEM_LOAD.getValue());
     }
 
     public String getInstanceId() {
         if (urlFactoryLogger.isDebugEnabled()) {
             urlFactoryLogger.debug("Getting instance_id service instance.");
         }
-        return urls.get(INSTANCE_ID);
+        return urls.get(TypeMonitoring.INSTANCE_ID.getValue());
     }
 
     public String getSessionsCount() {
         if (urlFactoryLogger.isDebugEnabled()) {
             urlFactoryLogger.debug("Getting sessions_count service instance.");
         }
-        return urls.get(SESSIONS_COUNT);
+        return urls.get(TypeMonitoring.SESSIONS_COUNT.getValue());
     }
 
     public String getSessionsInfo() {
         if (urlFactoryLogger.isDebugEnabled()) {
             urlFactoryLogger.debug("Getting sessions_info service instance.");
         }
-        return urls.get(SESSIONS_INFO);
+        return urls.get(TypeMonitoring.SESSIONS_INFO.getValue());
     }
 
     public String getMemoryInfo() {
         if (urlFactoryLogger.isDebugEnabled()) {
             urlFactoryLogger.debug("Getting memory_info service instance.");
         }
-        return urls.get(MEMORY_INFO);
+        return urls.get(TypeMonitoring.MEMORY_INFO.getValue());
     }
 }

@@ -10,9 +10,6 @@ public class MemoryInfo {
      * logger sluzby MemoryInfo
      */
     private static final Logger memoryInfoLogger = LogManager.getLogger();
-    
-    public static int refreshTimePeriod = Monitoring.DEFAULT_REFRESH_TIME;
-    
 
     @JsonProperty("mem_total")
     private long mem_total;

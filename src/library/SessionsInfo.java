@@ -10,8 +10,7 @@ public class SessionsInfo {
      * logger sluzby SessionsInfo
      */
     private static final Logger sessionsInfoLogger = LogManager.getLogger();
-    public static int refreshTimePeriod = Monitoring.DEFAULT_REFRESH_TIME;
-    
+
     @JsonProperty("session_code")
     private String session_code;
     @JsonProperty("session_name")
