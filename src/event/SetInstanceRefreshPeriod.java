@@ -53,7 +53,7 @@ public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
             //Použití JAVA 8u40
             TextInputDialog dialog = new TextInputDialog(Integer.toString(getInsntancePeriod(selectedItem)));
             dialog.setTitle("Custom time period");
-            dialog.setHeaderText("Look, a Text Input Dialog");
+            dialog.setHeaderText("Refreshing time settings");
             dialog.setContentText("Set custom time period of refreshing for: \n" + selectedItem + ".");
 
             Optional<String> response = dialog.showAndWait();
