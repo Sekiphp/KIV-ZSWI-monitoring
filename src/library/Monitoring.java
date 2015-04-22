@@ -96,13 +96,12 @@ public class Monitoring {
         //ukazka nastaveni casove periody
         //SystemLoad.refreshTimePeriod = 1;
         timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-            int time = 0;
+            private int time = 0;
 
             @Override
             public void handle(ActionEvent e) {
-                //System.out.println(time);
 
-                if (filter.isSelect(TypeMonitoring.SYSTEM_LOAD) && isRefreshable(TypeMonitoring.SYSTEM_LOAD.getRefreshPeriod())) {
+                if (this.isActiveMonitoring(TypeMonitoring.SYSTEM_LOAD)) {
                     SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
                     if (monitoringLogger.isDebugEnabled()) {
                         monitoringLogger.debug("Retrieved instance from Rest template: System Load");
@@ -110,7 +109,7 @@ public class Monitoring {
                     writeConsole("systemLoad: " + systemLoad.getSystem_load());
                 }
 
-                if (filter.isSelect(TypeMonitoring.INSTANCE_ID) && isRefreshable(TypeMonitoring.INSTANCE_ID.getRefreshPeriod())) {
+                if (this.isActiveMonitoring(TypeMonitoring.INSTANCE_ID)) {
                     InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
                     if (monitoringLogger.isDebugEnabled()) {
                         monitoringLogger.debug("Retrieved instance from Rest template: Instance ID");
@@ -118,7 +117,7 @@ public class Monitoring {
                     writeConsole("instance ID: " + instanceId.getInstance_id());
                 }
 
-                if (filter.isSelect(TypeMonitoring.SESSIONS_COUNT) && isRefreshable(TypeMonitoring.SESSIONS_COUNT.getRefreshPeriod())) {
+                if (this.isActiveMonitoring(TypeMonitoring.SESSIONS_COUNT)) {
                     SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
                     if (monitoringLogger.isDebugEnabled()) {
                         monitoringLogger.debug("Retrieved instance from Rest template: Sessions Count");
@@ -126,7 +125,7 @@ public class Monitoring {
                     writeConsole("sessions count: " + sessionsCount.getSessions_count());
                 }
 
-                if (filter.isSelect(TypeMonitoring.MEMORY_INFO) && isRefreshable(TypeMonitoring.MEMORY_INFO.getRefreshPeriod())) {
+                if (this.isActiveMonitoring(TypeMonitoring.MEMORY_INFO)) {
                     MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
                     if (monitoringLogger.isDebugEnabled()) {
                         monitoringLogger.debug("Retrieved instance from Rest template: Memory Info");
@@ -134,7 +133,7 @@ public class Monitoring {
                     writeConsole("memory info: " + memoryInfo.getMemory_info());
                 }
 
-                if (filter.isSelect(TypeMonitoring.SESSIONS_INFO) && isRefreshable(TypeMonitoring.SESSIONS_INFO.getRefreshPeriod())) {
+                if (this.isActiveMonitoring(TypeMonitoring.SESSIONS_INFO)) {
                     SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
                     if (monitoringLogger.isDebugEnabled()) {
                         monitoringLogger.debug("Retrieved instances from Rest template: Sessions Info (count: " + sessionsInfo.length + ")");
@@ -146,11 +145,11 @@ public class Monitoring {
                     }
                 }
 
-                time++;
+                this.time++;
             }
 
-            private boolean isRefreshable(int timePeriod) {
-                return time % timePeriod == 0;
+            private boolean isActiveMonitoring(TypeMonitoring typeMonitoring) {
+                return filter.isSelect(typeMonitoring) && this.time % typeMonitoring.getRefreshPeriod() == 0;
             }
         }));
 

@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
@@ -78,7 +79,7 @@ public class MainWindow extends Application {
     }
 
     private MenuBar getMenuBar() {
-        Menu menu = new Menu("File");
+    	Menu menu = new Menu("File");
 
         MenuItem loadItem = new MenuItem("Load");
         loadItem.setMnemonicParsing(true);
@@ -103,11 +104,13 @@ public class MainWindow extends Application {
         exitItem.setMnemonicParsing(true);
         exitItem.setOnAction(new ExitApp(this));
         exitItem.getStyleClass().add("iconExit");
+               
 
         menu.getItems().add(loadItem);
         menu.getItems().add(saveItem);
         menu.getItems().add(saveAsItem);
         menu.getItems().add(startPauseItem);
+        menu.getItems().add(new SeparatorMenuItem());
         menu.getItems().add(exitItem);
 
         MenuBar menuBar = new MenuBar();
