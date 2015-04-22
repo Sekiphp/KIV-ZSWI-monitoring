@@ -42,9 +42,7 @@ public class FilterManager {
     private final List<TypeMonitoring> selectedFilters;
 
     public FilterManager() {
-        if (filterManagerLogger.isDebugEnabled()) {
-            filterManagerLogger.debug("Creating Filter manager.");
-        }
+        Logging.logDebugIfEnabled(filterManagerLogger, "Creating Filter manager.");
 
         this.isSave = true;
 
@@ -67,9 +65,7 @@ public class FilterManager {
     public void loadFile(String filePath) throws FileNotFoundException, IOException {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
 
-        if (filterManagerLogger.isDebugEnabled()) {
-            filterManagerLogger.debug("Filter input file opened.");
-        }
+        Logging.logDebugIfEnabled(filterManagerLogger, "Filter input file opened.");
 
         this.selectedFilters.clear();
         for (String type : br.readLine().split(";")) {
@@ -79,15 +75,11 @@ public class FilterManager {
             this.selectedFilters.add(typeMonitoring);
         }
 
-        if (filterManagerLogger.isDebugEnabled()) {
-            filterManagerLogger.debug("Filter loaded.");
-        }
+        Logging.logDebugIfEnabled(filterManagerLogger, "Filter loaded.");
 
         br.close();
 
-        if (filterManagerLogger.isDebugEnabled()) {
-            filterManagerLogger.debug("Filter input file closed.");
-        }
+        Logging.logDebugIfEnabled(filterManagerLogger, "Filter input file closed.");
 
         this.lvFilters.setCellFactory(CheckBoxListCell.forListView(new ChangeFilter(this)));
         this.path = filePath;
@@ -100,9 +92,7 @@ public class FilterManager {
     public void saveFile(String filePath) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));
 
-        if (filterManagerLogger.isDebugEnabled()) {
-            filterManagerLogger.debug("Filter output file opened.");
-        }
+        Logging.logDebugIfEnabled(filterManagerLogger, "Filter output file opened.");
 
         for (int i = 0; i < this.selectedFilters.size(); i++) {
             if (i != 0) {
@@ -113,15 +103,11 @@ public class FilterManager {
             bw.write(name + "," + TypeMonitoring.valueOf(name).getRefreshPeriod());
         }
 
-        if (filterManagerLogger.isDebugEnabled()) {
-            filterManagerLogger.debug("Filter saved.");
-        }
+        Logging.logDebugIfEnabled(filterManagerLogger, "Filter saved.");
 
         bw.close();
 
-        if (filterManagerLogger.isDebugEnabled()) {
-            filterManagerLogger.debug("Filter output file opened.");
-        }
+        Logging.logDebugIfEnabled(filterManagerLogger, "Filter output file opened.");
 
         this.isSave = true;
         this.path = filePath;

@@ -13,9 +13,7 @@ public class UrlFactory {
     private Map<String, String> urls;
 
     public void setUrls(Map<String, String> urls) {
-        if (urlFactoryLogger.isDebugEnabled()) {
-            urlFactoryLogger.debug("Setting URLs.");
-        }
+        Logging.logDebugIfEnabled(urlFactoryLogger, "Setting URLs.");
         this.urls = urls;
     }
 
@@ -24,37 +22,27 @@ public class UrlFactory {
     }
 
     public String getSystemLoad() {
-        if (urlFactoryLogger.isDebugEnabled()) {
-            urlFactoryLogger.debug("Getting system_load service instance.");
-        }
+        Logging.logDebugIfEnabled(urlFactoryLogger, "Getting system_load service instance.");
         return urls.get(TypeMonitoring.SYSTEM_LOAD.getValue());
     }
 
     public String getInstanceId() {
-        if (urlFactoryLogger.isDebugEnabled()) {
-            urlFactoryLogger.debug("Getting instance_id service instance.");
-        }
+        Logging.logDebugIfEnabled(urlFactoryLogger, "Getting instance_id service instance.");
         return urls.get(TypeMonitoring.INSTANCE_ID.getValue());
     }
 
     public String getSessionsCount() {
-        if (urlFactoryLogger.isDebugEnabled()) {
-            urlFactoryLogger.debug("Getting sessions_count service instance.");
-        }
+        Logging.logDebugIfEnabled(urlFactoryLogger, "Getting sessions_count service instance.");
         return urls.get(TypeMonitoring.SESSIONS_COUNT.getValue());
     }
 
     public String getSessionsInfo() {
-        if (urlFactoryLogger.isDebugEnabled()) {
-            urlFactoryLogger.debug("Getting sessions_info service instance.");
-        }
+        Logging.logDebugIfEnabled(urlFactoryLogger, "Getting sessions_info service instance.");
         return urls.get(TypeMonitoring.SESSIONS_INFO.getValue());
     }
 
     public String getMemoryInfo() {
-        if (urlFactoryLogger.isDebugEnabled()) {
-            urlFactoryLogger.debug("Getting memory_info service instance.");
-        }
+        Logging.logDebugIfEnabled(urlFactoryLogger, "Getting memory_info service instance.");
         return urls.get(TypeMonitoring.MEMORY_INFO.getValue());
     }
 }

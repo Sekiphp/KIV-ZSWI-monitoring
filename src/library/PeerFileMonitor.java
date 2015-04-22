@@ -15,24 +15,18 @@ public class PeerFileMonitor {
     private final RestTemplate restTemplate;
 
     public PeerFileMonitor(UrlFactory urlFactory, RestTemplate restTemplate) {
-        if (peerFileLogger.isDebugEnabled()) {
-            peerFileLogger.debug("Creating PeerFile monitor.");
-        }
+        Logging.logDebugIfEnabled(peerFileLogger, "Creating PeerFile monitor.");
         this.urlFactory = urlFactory;
         this.restTemplate = restTemplate;
     }
 
     public UrlFactory getUrlFactory() {
-        if (peerFileLogger.isDebugEnabled()) {
-            peerFileLogger.debug("Getting URL Factory.");
-        }
+        Logging.logDebugIfEnabled(peerFileLogger, "Getting URL Factory.");
         return urlFactory;
     }
 
     public RestTemplate getRestTemplate() {
-        if (peerFileLogger.isDebugEnabled()) {
-            peerFileLogger.debug("Getting Rest template.");
-        }
+        Logging.logDebugIfEnabled(peerFileLogger, "Getting Rest template.");
         return restTemplate;
     }
 

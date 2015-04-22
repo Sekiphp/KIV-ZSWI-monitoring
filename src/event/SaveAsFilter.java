@@ -16,6 +16,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import window.MainWindow;
+import library.Logging;
 
 /**
  *

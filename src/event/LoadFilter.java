@@ -14,6 +14,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import window.MainWindow;
+import library.Logging;
 
 /**
  *

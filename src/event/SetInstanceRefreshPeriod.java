@@ -7,6 +7,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.MouseEvent;
 import library.TypeMonitoring;
+import library.Logging;
 
 /**
  *

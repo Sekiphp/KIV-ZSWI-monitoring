@@ -11,6 +11,7 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import window.MainWindow;
+import library.Logging;
 
 /**
  *

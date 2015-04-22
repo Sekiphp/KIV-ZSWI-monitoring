@@ -12,6 +12,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.util.Callback;
 import library.FilterManager;
 import library.TypeMonitoring;
+import library.Logging;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,9 +32,7 @@ public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> 
 
     @Override
     public ObservableValue<Boolean> call(final String item) {
-        if (changeFilterLogger.isDebugEnabled()) {
-            changeFilterLogger.debug("Changing filter...");
-        }
+        Logging.logDebugIfEnabled(changeFilterLogger, "Changing filter...");
 
         BooleanProperty observable = new SimpleBooleanProperty();
         if (filterManager.isSelect(TypeMonitoring.valueOf(item))) {
@@ -51,9 +50,7 @@ public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> 
             }
         });
 
-        if (changeFilterLogger.isDebugEnabled()) {
-            changeFilterLogger.debug("Filter changed.");
-        }
+        Logging.logDebugIfEnabled(changeFilterLogger, "Filter changed.");
         return observable;
     }
 
