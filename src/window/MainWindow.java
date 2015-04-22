@@ -5,8 +5,6 @@ package window;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.io.File;
-
 import event.ExitApp;
 import event.LoadFilter;
 import event.SaveAsFilter;
@@ -56,11 +54,6 @@ public class MainWindow extends Application {
         root.setCenter(getCenterContent());
 
         stage.setScene(new Scene(root, 800, 500));
-        
-        File f = new File("src/application.css");
-        stage.getScene().getStylesheets().clear();
-        stage.getScene().getStylesheets().add("file:///" + f.getAbsolutePath().replace("\\", "/"));
-        
         stage.setTitle("Monitoring");
         stage.setMinHeight(400);
         stage.setMinWidth(400);
@@ -102,7 +95,6 @@ public class MainWindow extends Application {
         MenuItem exitItem = new MenuItem("Exit");
         exitItem.setMnemonicParsing(true);
         exitItem.setOnAction(new ExitApp(this));
-        exitItem.getStyleClass().add("iconExit");
 
         menu.getItems().add(loadItem);
         menu.getItems().add(saveItem);
