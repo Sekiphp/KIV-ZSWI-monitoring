@@ -12,6 +12,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 import javafx.util.Duration;
@@ -41,6 +42,7 @@ public class Monitoring {
 
     private final ClassPathXmlApplicationContext app;
     private final TextArea console;
+    private final Label statusLabel;
     private final FilterManager filter;
     private final PeerFileMonitor pf;
     private final RestTemplate restTemplate;
@@ -52,6 +54,7 @@ public class Monitoring {
     public Monitoring(TextArea console) {
         monitoringLogger.info("Application launched.");
         this.console = console;
+        this.statusLabel = new Label("Status: Stop");
 
         this.app = new ClassPathXmlApplicationContext("./application-context.xml");
         Logging.logDebugIfEnabled(monitoringLogger, "Application context loaded.");
@@ -82,6 +85,7 @@ public class Monitoring {
     public void start() {
         monitoringLogger.info("Monitoring started.");
         writeConsole("Loading...\n");
+        this.statusLabel.setText("Status: Run");
 
         //ukazka nastaveni casove periody
         //SystemLoad.refreshTimePeriod = 1;
@@ -141,6 +145,7 @@ public class Monitoring {
     public void pause() {
         timeline.pause();
         monitoringLogger.info("Monitoring paused.");
+        this.statusLabel.setText("Status: Pause");
     }
 
     public void close() {
@@ -150,6 +155,10 @@ public class Monitoring {
 
     private void writeConsole(String text) {
         this.console.appendText(text + "\n\n");
+    }
+
+    public Label getStatusLabel() {
+        return this.statusLabel;
     }
 
 }
