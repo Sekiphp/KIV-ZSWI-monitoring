@@ -5,13 +5,13 @@
   	<!-- format vystupu -->
     <Property name="format">%d{yyyy.MM.dd HH:mm:ss} [%-level - %logger{1}.%-M()] - %msg%n</Property>
     <!-- nazev vystupniho souboru pro logy cinnosti aplikace -->
-    <Property name="applicationFileDest">application-log</Property>
+    <Property name="applicationFileDest">logs/application-log</Property>
     <!-- nazvy vystupnich souboru pro logy jednotlivych sluzeb -->
-    <Property name="systemLoadFileDest">system_load-log</Property>
-    <Property name="instanceIDFileDest">instance_id-log</Property>
-    <Property name="sessionsCountFileDest">sessions_count-log</Property>
-    <Property name="sessionsInfoFileDest">sessions_info-log</Property>
-    <Property name="memoryInfoFileDest">memory_info-log</Property>
+    <Property name="systemLoadFileDest">logs/system_load-log</Property>
+    <Property name="instanceIDFileDest">logs/instance_id-log</Property>
+    <Property name="sessionsCountFileDest">logs/sessions_count-log</Property>
+    <Property name="sessionsInfoFileDest">logs/sessions_info-log</Property>
+    <Property name="memoryInfoFileDest">logs/memory_info-log</Property>
   </Properties>
   
   <Appenders>
