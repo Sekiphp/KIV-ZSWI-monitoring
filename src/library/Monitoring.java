@@ -5,7 +5,6 @@ package library;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.util.Timer;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -27,6 +26,11 @@ import org.springframework.web.client.RestTemplate;
  * @author Kohl
  */
 public class Monitoring {
+	
+	/**
+	 * Monitors instances/services of PeerFile server.
+	 */
+	
 
     /**
      * hlavni logger
@@ -37,20 +41,61 @@ public class Monitoring {
      */
     private static final Logger monitoringLogger = LogManager.getLogger();
 
+    /**
+     * Default period of time of refreshing isntance.
+     */
     public static final int DEFAULT_REFRESH_TIME = 7;
-    public static Timer timer;
-
+    
+    /**
+     * Application context.
+     */
     private final ClassPathXmlApplicationContext app;
+    
+    /**
+     * Output terminal GUI component.
+     */
     private final TextArea console;
+    
+    /**
+     * Label informing user about app status.
+     */
     private final Label statusLabel;
+    
+    /**
+     * Manages filters.
+     */
     private final FilterManager filter;
+    
+    /**
+     * Provides URLs and REST service.
+     */
     private final PeerFileMonitor pf;
+    
+    /**
+     * Rest service.
+     */
     private final RestTemplate restTemplate;
+    
+    /**
+     * Provides URLs.
+     */
     private final UrlFactory fac;
+    
+    /**
+     * Timer.
+     */
     private Timeline timeline;
 
+    /**
+     * Indicates whether or not is app running.
+     */
     private boolean run = false;
 
+    
+    /**
+     * Constructor.
+     * @param console	Output terminal GUI component.
+     */
     public Monitoring(TextArea console) {
         monitoringLogger.info("Application launched.");
         this.console = console;
@@ -73,15 +118,26 @@ public class Monitoring {
         Logging.logDebugIfEnabled(monitoringLogger, "Filter manager created.");
     }
 
+    /**
+     * Getter of filter manager.
+     * @return	filter manager
+     */
     public FilterManager getFilter() {
         return filter;
     }
 
+    /**
+     * Indicates whether or not is app running.
+     * @return
+     */
     public boolean isRun() {
         run = !run;
         return !run;
     }
 
+    /**
+     * Starts monitoring.
+     */
     public void start() {
         monitoringLogger.info("Monitoring started.");
         writeConsole("Loading...\n");
@@ -142,21 +198,35 @@ public class Monitoring {
 
     }
 
+    /**
+     * Pauses monitoring.
+     */
     public void pause() {
         timeline.pause();
         monitoringLogger.info("Monitoring paused.");
         this.statusLabel.setText("Status: Pause");
     }
 
+    /**
+     * Closes app.
+     */
     public void close() {
         app.close();
         monitoringLogger.info("Application closed.");
     }
 
+    /**
+     * Displays terminal output.
+     * @param text	terminal output
+     */
     private void writeConsole(String text) {
         this.console.appendText(text + "\n\n");
     }
 
+    /**
+     * Getter of app status.
+     * @return	app status
+     */
     public Label getStatusLabel() {
         return this.statusLabel;
     }

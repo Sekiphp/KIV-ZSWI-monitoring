@@ -24,11 +24,25 @@ import window.MainWindow;
  * @author Kohl
  */
 public class ExitApp implements EventHandler {
+	
+	/**
+	 * Class handling application exit.
+	 */
 
+	/**
+	 * Logger.
+	 */
     private static final Logger exitAppLogger = LogManager.getLogger();
 
+    /**
+     * Window (GUI) of application.
+     */
     private final MainWindow mainWindow;
 
+    /**
+     * Constructor.
+     * @param mainWindow	main window of application
+     */
     public ExitApp(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
     }
@@ -59,6 +73,12 @@ public class ExitApp implements EventHandler {
         }
     }
 
+    /**
+     * Method creating dialogue asking user to confirm action.
+     * @param title	title of dialogue window
+     * @param text	text of dialogue
+     * @return
+     */
     private Optional<ButtonType> dialogYesNo(String title, String text) {
         Alert alert = new Alert(AlertType.CONFIRMATION);
         alert.setTitle(title);

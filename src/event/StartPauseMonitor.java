@@ -18,10 +18,25 @@ import library.Logging;
  * @author Kohl
  */
 public class StartPauseMonitor implements EventHandler {
-
+	
+	/**
+	 * Handles start/pause of app.
+	 */
+	
+	/**
+	 * Logger logging start/pause app status.
+	 */
     private static final Logger startPauseMonitorLogger = LogManager.getLogger();
+    
+    /**
+     * Object providing monitoring.
+     */
     private final Monitoring monitoring;
 
+    /**
+     * Constructor.
+     * @param monitorig	object providing monitoring
+     */
     public StartPauseMonitor(Monitoring monitorig) {
         this.monitoring = monitorig;
     }

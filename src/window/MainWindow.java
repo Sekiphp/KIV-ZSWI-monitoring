@@ -40,15 +40,26 @@ import library.Monitoring;
 public class MainWindow extends Application {
 
     /**
-     * nastaveni konfiguracniho souboru pro logovani
+     * Logging file configuration settings.
      */
     static {
         System.setProperty("log4j.configurationFile",
                 "log4j-config.xml");
     }
 
+    /**
+     * Output terminal GUI component.
+     */
     private TextArea console;
+    
+    /**
+     * Provides monitoring of server services.
+     */
     private Monitoring monitoring;
+    
+    /**
+     * Top-level containger of app window.
+     */
     private Stage stage;
 
     @Override
@@ -78,14 +89,23 @@ public class MainWindow extends Application {
         stage.show();
     }
 
+    /**
+     * Getter of top-level containger of app window.
+     */
     public Stage getStage() {
         return stage;
     }
 
+    /**
+     * Getter of object monitoring server instances.
+     */
     public Monitoring getMonitoring() {
         return monitoring;
     }
 
+    /**
+     * Builds menu bar - GUI component.
+     */
     private MenuBar getMenuBar() {
         Menu fileMenu = new Menu("File");
 
@@ -132,6 +152,10 @@ public class MainWindow extends Application {
         return menuBar;
     }
 
+    /**
+     * Configures and gets output terminal GUI component.
+     * @return	
+     */
     private TextArea getCenterContent() {
         this.console.setWrapText(true);
         this.console.setEditable(false);
@@ -140,6 +164,10 @@ public class MainWindow extends Application {
     }
 
 
+    /**
+     * Builds status bar - GUI component
+     * @return
+     */
     private ToolBar getStatusBar() {
 
         Region spring = new Region();
@@ -147,13 +175,13 @@ public class MainWindow extends Application {
 
         CheckBox autoScroll = new CheckBox("Auto scroll");
         autoScroll.setSelected(true);
-        autoScroll.selectedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+        /*autoScroll.selectedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if (newValue) {
                 //zapnuti autoscroll
             } else {
                 //vypnuti autoscroll
             }
-        });
+        });*/
 
         ToolBar toolBar = new ToolBar();
         toolBar.requestLayout();
@@ -167,6 +195,7 @@ public class MainWindow extends Application {
     }
 
     /**
+     * Main top-level method of application. Runs GUI.
      * @param args the command line arguments
      */
     public static void main(String[] args) {

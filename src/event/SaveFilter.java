@@ -18,11 +18,22 @@ import library.Logging;
  * @author Kohl
  */
 public class SaveFilter implements EventHandler {
+	
+	/**
+	 * Handles saving filter.
+	 */
 
     private static final Logger saveFilterLogger = LogManager.getLogger();
-
+    
+    /**
+     * Main window (GUI) of app.
+     */
     private final MainWindow mainWindow;
-
+    
+    /**
+     * Constructor.
+     * @param mainWindow	Main window (GUI) of app.
+     */
     public SaveFilter(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
     }

@@ -30,17 +30,39 @@ import org.apache.logging.log4j.Logger;
  * @author Kohl
  */
 public class FilterManager {
+	
+	/**
+	 * Provides basic actions with filters - saving, loading, etc.
+	 */
 
     /**
      * logger FilterManageru
      */
     private static final Logger filterManagerLogger = LogManager.getLogger();
 
+    /**
+     * 
+     */
     private boolean isSave;
+    
+    /**
+     * Destination of saved filters.
+     */
     private String path;
+    
+    /**
+     * 
+     */
     private final ListView lvFilters;
+    
+    /**
+     * Collection of selected filters.
+     */
     private final List<TypeMonitoring> selectedFilters;
 
+    /**
+     * Constructor.
+     */
     public FilterManager() {
         Logging.logDebugIfEnabled(filterManagerLogger, "Creating Filter manager.");
 
@@ -54,14 +76,28 @@ public class FilterManager {
         this.selectedFilters = new ArrayList<>(Arrays.asList(TypeMonitoring.values()));
     }
 
+    /**
+     * Getter indicating whether or not are filters going to be saved.
+     * @return
+     */
     public boolean isSave() {
         return this.isSave;
     }
 
+    /**
+     * Loads filters.
+     * @throws IOException	Input/output exception.
+     */
     public void loadFile() throws IOException {
         this.loadFile(path);
     }
 
+    /**
+     * Loads filters for filtering terminal output.
+     * @param filePath					destination of saved filters
+     * @throws FileNotFoundException	File not found exception
+     * @throws IOException				Input/output exception
+     */
     public void loadFile(String filePath) throws FileNotFoundException, IOException {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
 
@@ -85,10 +121,19 @@ public class FilterManager {
         this.path = filePath;
     }
 
+    /**
+     * Saves filters.
+     * @throws IOException Input/output exception.
+     */
     public void saveFile() throws IOException {
         this.saveFile(path);
     }
 
+    /**
+     * Saves filters.
+     * @param filePath		destination of saved filters
+     * @throws IOException	input/output exception
+     */
     public void saveFile(String filePath) throws IOException {
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));
 
@@ -112,32 +157,61 @@ public class FilterManager {
         this.isSave = true;
         this.path = filePath;
     }
-
+    
+    /**
+     * 
+     * @return
+     */
     public boolean isPath() {
         return path != null;
     }
-
+    
+    /**
+     * Path getter.
+     * @return	destination of saved filters
+     */
     public String getPath() {
         return path;
     }
-
+    
+    /**
+     * Setter of destination for saving filters.
+     * @param path
+     */
     public void setPath(String path) {
         this.path = path;
     }
-
+    
+    /**
+     * Indicates whether or not is item selected.
+     * @param item	testing item
+     * @return		status of selection of item
+     */
     public boolean isSelect(TypeMonitoring item) {
         return this.selectedFilters.contains(item);
     }
 
+    /**
+     * Getter of filters.
+     * @return	list view containing filters
+     */
     public ListView getListView() {
         return this.lvFilters;
     }
 
+    /**
+     * Adds selected filter into a collection of selected ones.
+     * @param item	newly selected item
+     */
     public void add(String item) {
         this.selectedFilters.add(TypeMonitoring.valueOf(item));
         this.isSave = false;
     }
 
+    /**
+     * Removes selected filter from a collection of selected ones.
+     * @param item	newly removed item
+     */
     public void remove(String item) {
         this.selectedFilters.remove(TypeMonitoring.valueOf(item));
         this.isSave = false;

@@ -22,10 +22,21 @@ import org.apache.logging.log4j.Logger;
  * @author Kohl
  */
 public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> {
+	
+	/**
+	 * Class handling filter change.
+	 */
 
+	/**
+	 * Managing filters (saving, loading, etc.)
+	 */
     private final FilterManager filterManager;
     private static final Logger changeFilterLogger = LogManager.getLogger();
 
+    /**
+     * Constructor.
+     * @param filterManager filter manager
+     */
     public ChangeFilter(FilterManager filterManager) {
         this.filterManager = filterManager;
     }

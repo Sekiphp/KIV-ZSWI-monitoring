@@ -21,11 +21,22 @@ import library.Logging;
  * @author Kohl
  */
 public class LoadFilter implements EventHandler {
+	
+	/**
+	 * Handles loading of a filter.
+	 */
 
     private static final Logger loadFilterLogger = LogManager.getLogger();
 
+    /**
+     * Main window (GUI) of app.
+     */
     private final MainWindow mainWindow;
-
+    
+    /**
+     * Constructor.
+     * @param mainWindow	Main window (GUI) of app.
+     */
     public LoadFilter(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
     }
