@@ -113,7 +113,7 @@ public class Monitoring {
         this.fac = pf.getUrlFactory();
         Logging.logDebugIfEnabled(monitoringLogger, "Retrieved URL factory.");
 
-        //NEVIM ODKUD ZISKAT POLE SLEDOVANYCH KATEGORII
+        //TODO: NEVIM ODKUD ZISKAT POLE SLEDOVANYCH KATEGORII
         this.filter = new FilterManager();
         Logging.logDebugIfEnabled(monitoringLogger, "Filter manager created.");
     }
@@ -150,40 +150,66 @@ public class Monitoring {
 
             @Override
             public void handle(ActionEvent e) {
+            	try{
+	                if (this.isActiveMonitoring(TypeMonitoring.SYSTEM_LOAD)) {
+	                    SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
+	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: System Load");
+	                    writeConsole("systemLoad: " + systemLoad.getSystem_load());
+	                }
+            	}
+            	catch(Exception e1){
+            		System.out.println("RESPONSE SERVER ERROR!");	
+            	}
+            	
+            	try{            		
+	                if (this.isActiveMonitoring(TypeMonitoring.INSTANCE_ID)) {
+	                    InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
+	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: Instance ID");
+	                    writeConsole("instance ID: " + instanceId.getInstance_id());
+	                }
+            	}
+	        	catch(Exception e1){
+	        		System.out.println("RESPONSE SERVER ERROR!");
+	        	}
 
-                if (this.isActiveMonitoring(TypeMonitoring.SYSTEM_LOAD)) {
-                    SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
-                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: System Load");
-                    writeConsole("systemLoad: " + systemLoad.getSystem_load());
+                try{
+	                if (this.isActiveMonitoring(TypeMonitoring.SESSIONS_COUNT)) {
+	                    SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
+	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: Sessions Count");
+	                    writeConsole("sessions count: " + sessionsCount.getSessions_count());
+	                }
                 }
+	        	catch(Exception e1){
+	        		System.out.println("RESPONSE SERVER ERROR!");
+	        	}
 
-                if (this.isActiveMonitoring(TypeMonitoring.INSTANCE_ID)) {
-                    InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
-                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: Instance ID");
-                    writeConsole("instance ID: " + instanceId.getInstance_id());
-                }
+                try{
+	                if (this.isActiveMonitoring(TypeMonitoring.MEMORY_INFO)) {
+	                    MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
+	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: Memory Info");
+	                    writeConsole("memory info: " + memoryInfo.getMemory_info());
+	                }
+	        	}
+	        	catch(Exception e1){
+	        		System.out.println("RESPONSE SERVER ERROR!");
+	        	}
 
-                if (this.isActiveMonitoring(TypeMonitoring.SESSIONS_COUNT)) {
-                    SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
-                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: Sessions Count");
-                    writeConsole("sessions count: " + sessionsCount.getSessions_count());
-                }
-
-                if (this.isActiveMonitoring(TypeMonitoring.MEMORY_INFO)) {
-                    MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
-                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: Memory Info");
-                    writeConsole("memory info: " + memoryInfo.getMemory_info());
-                }
-
-                if (this.isActiveMonitoring(TypeMonitoring.SESSIONS_INFO)) {
-                    SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
-                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instances from Rest template: Sessions Info (count: " + sessionsInfo.length + ")");
-                    writeConsole("sessions info: ");
-
-                    for (SessionsInfo sessionsInfo1 : sessionsInfo) {
-                        writeConsole(sessionsInfo1.getSessions_info());
-                    }
-                }
+                try{
+	                if (this.isActiveMonitoring(TypeMonitoring.SESSIONS_INFO)) {
+	                    SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
+	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instances from Rest template: Sessions Info (count: " + sessionsInfo.length + ")");
+	                    writeConsole("sessions info: ");
+	
+	                    for (SessionsInfo sessionsInfo1 : sessionsInfo) {
+	                        writeConsole(sessionsInfo1.getSessions_info());
+	                    }
+	                }
+            	}
+            	catch(Exception e1){
+            		System.out.println("RESPONSE SERVER ERROR!");
+            	}
+                
+                System.out.println("dalsi cyklus");
 
                 this.time++;
             }
