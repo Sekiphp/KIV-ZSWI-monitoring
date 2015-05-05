@@ -2,21 +2,17 @@ package library;
 
 import org.apache.logging.log4j.Logger;
 
+/**
+ * 
+ * @author Petr Kozler
+ */
 public class Logging {
 	
 	/**
+	 * Logs the given string with given logger if DEBUG level is enabled.
 	 * 
-	 */
-	
-	/*
-	 * if\s*\((.+Logger)\.isDebugEnabled\(\)\)\s*\{\r\n\s*.+Logger\.debug\((.*)\);\r\n\s*\}
-	 * Logging\.logDebugIfEnabled\($1, $2\);
-	 */
-	
-	/**
-	 * 
-	 * @param logger
-	 * @param s
+	 * @param logger used logger
+	 * @param s logged string
 	 */
 	public static void logDebugIfEnabled(Logger logger, String s) {
 		if (logger.isDebugEnabled()) {

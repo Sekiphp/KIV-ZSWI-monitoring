@@ -2,6 +2,9 @@ package event;
 
 import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javafx.event.EventHandler;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
@@ -15,6 +18,11 @@ import library.Logging;
  */
 public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
 
+	/**
+	 * Logger instance refresh period.
+	 */
+    private static final Logger setInstanceRefreshPeriodLogger = LogManager.getLogger();
+	
     /**
      * "Tree" of instances.
      */
@@ -60,6 +68,8 @@ public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
                     //chosen time period
                     int period = Integer.parseInt(response.get());
                     selectedItem.setRefreshPeriod(period);
+                    
+                    setInstanceRefreshPeriodLogger.info("New refreshing period for " + selectedItem + ": " + period + " s.");
                 }
             }
         }
@@ -89,7 +99,7 @@ public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
             int val = Integer.parseInt(str);
             return val > 0;
         } catch (NumberFormatException e) {
-            System.out.println("INVALID PERIOD!!!");
+        	setInstanceRefreshPeriodLogger.warn("Invalid period format!");
 
             return false;
         }

@@ -43,8 +43,6 @@ public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> 
 
     @Override
     public ObservableValue<Boolean> call(final String item) {
-        Logging.logDebugIfEnabled(changeFilterLogger, "Changing filter...");
-
         BooleanProperty observable = new SimpleBooleanProperty();
         if (filterManager.isSelect(TypeMonitoring.valueOf(item))) {
             observable.setValue(true);

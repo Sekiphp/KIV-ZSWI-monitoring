@@ -59,7 +59,7 @@ public class LoadFilter implements EventHandler {
         try {
             this.mainWindow.getMonitoring().getFilter().loadFile(file.getPath());
         } catch (Exception ex) {
-            loadFilterLogger.error("An error occured when attempting to load a filter file.");
+            loadFilterLogger.error("An error occured while attempting to load a filter file.");
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Loading filter error.");

@@ -73,7 +73,7 @@ public class SaveAsFilter implements EventHandler {
         try {
             this.mainWindow.getMonitoring().getFilter().saveFile(file.getPath());
         } catch (Exception ex) {
-        	saveAsFilterLogger.error("An error occured when attempting to save a filter file.");
+        	saveAsFilterLogger.error("An error occured while attempting to save a filter file.");
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Saving filter error.");

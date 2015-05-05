@@ -22,22 +22,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.web.client.RestTemplate;
 
 /**
+ * Monitors instances/services of PeerFile server.
  *
  * @author Kohl
  */
 public class Monitoring {
-	
-	/**
-	 * Monitors instances/services of PeerFile server.
-	 */
-	
 
     /**
-     * hlavni logger
-     *
-     * Pozn. - regularni vyrazy pro doplneni testu isDebugEnabled: Find:
-     * ([a-zA-Z]*Logger)(\.debug) Replace with:	if
-     * \($1\.isDebugEnabled\(\)\)\r\n\t\t\t$1$2
+     * Main monitoring logger
      */
     private static final Logger monitoringLogger = LogManager.getLogger();
 
@@ -153,51 +145,52 @@ public class Monitoring {
             	try{
 	                if (this.isActiveMonitoring(TypeMonitoring.SYSTEM_LOAD)) {
 	                    SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
-	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: System Load");
+	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: System Load");
 	                    writeConsole("systemLoad: " + systemLoad.getSystem_load());
 	                }
             	}
             	catch(Exception e1){
-            		System.out.println("RESPONSE SERVER ERROR!");	
+            		monitoringLogger.error("Server response error for instance: System Load!");
+
             	}
             	
             	try{            		
 	                if (this.isActiveMonitoring(TypeMonitoring.INSTANCE_ID)) {
 	                    InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
-	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: Instance ID");
+	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: Instance ID");
 	                    writeConsole("instance ID: " + instanceId.getInstance_id());
 	                }
             	}
 	        	catch(Exception e1){
-	        		System.out.println("RESPONSE SERVER ERROR!");
+	        		monitoringLogger.error("Server response error for instance: Instance ID!");
 	        	}
 
                 try{
 	                if (this.isActiveMonitoring(TypeMonitoring.SESSIONS_COUNT)) {
 	                    SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
-	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: Sessions Count");
+	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: Sessions Count");
 	                    writeConsole("sessions count: " + sessionsCount.getSessions_count());
 	                }
                 }
 	        	catch(Exception e1){
-	        		System.out.println("RESPONSE SERVER ERROR!");
+	        		monitoringLogger.error("Server response error for instance: Sessions Count!");
 	        	}
 
                 try{
 	                if (this.isActiveMonitoring(TypeMonitoring.MEMORY_INFO)) {
 	                    MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
-	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instance from Rest template: Memory Info");
+	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: Memory Info");
 	                    writeConsole("memory info: " + memoryInfo.getMemory_info());
 	                }
 	        	}
 	        	catch(Exception e1){
-	        		System.out.println("RESPONSE SERVER ERROR!");
+	        		monitoringLogger.error("Server response error for instance: Memory Info!");
 	        	}
 
                 try{
 	                if (this.isActiveMonitoring(TypeMonitoring.SESSIONS_INFO)) {
 	                    SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
-	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved instances from Rest template: Sessions Info (count: " + sessionsInfo.length + ")");
+	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instances: Sessions Info (count: " + sessionsInfo.length + ")");
 	                    writeConsole("sessions info: ");
 	
 	                    for (SessionsInfo sessionsInfo1 : sessionsInfo) {
@@ -206,10 +199,10 @@ public class Monitoring {
 	                }
             	}
             	catch(Exception e1){
-            		System.out.println("RESPONSE SERVER ERROR!");
+            		monitoringLogger.error("Server response error for instances: Sessions Info!");
             	}
                 
-                System.out.println("dalsi cyklus");
+                monitoringLogger.info("Monitoring cycle finished.");
 
                 this.time++;
             }
