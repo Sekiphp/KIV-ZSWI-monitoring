@@ -5,17 +5,12 @@ package library;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Timer;
+import java.util.TimerTask;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-
-import javafx.util.Duration;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -37,55 +32,55 @@ public class Monitoring {
      * Default period of time of refreshing isntance.
      */
     public static final int DEFAULT_REFRESH_TIME = 7;
-    
+
     /**
      * Application context.
      */
     private final ClassPathXmlApplicationContext app;
-    
+
     /**
      * Output terminal GUI component.
      */
     private final TextArea console;
-    
+
     /**
      * Label informing user about app status.
      */
     private final Label statusLabel;
-    
+
     /**
      * Manages filters.
      */
     private final FilterManager filter;
-    
+
     /**
      * Provides URLs and REST service.
      */
     private final PeerFileMonitor pf;
-    
+
     /**
      * Rest service.
      */
     private final RestTemplate restTemplate;
-    
+
     /**
      * Provides URLs.
      */
     private final UrlFactory fac;
-    
+
     /**
      * Timer.
      */
-    private Timeline timeline;
+    private Timer timer;
 
     /**
      * Indicates whether or not is app running.
      */
     private boolean run = false;
 
-    
     /**
      * Constructor.
+     *
      * @param console	Output terminal GUI component.
      */
     public Monitoring(TextArea console) {
@@ -112,6 +107,7 @@ public class Monitoring {
 
     /**
      * Getter of filter manager.
+     *
      * @return	filter manager
      */
     public FilterManager getFilter() {
@@ -120,6 +116,7 @@ public class Monitoring {
 
     /**
      * Indicates whether or not is app running.
+     *
      * @return
      */
     public boolean isRun() {
@@ -134,94 +131,125 @@ public class Monitoring {
         monitoringLogger.info("Monitoring started.");
         writeConsole("Loading...\n");
         this.statusLabel.setText("Status: Run");
-
+               
         //ukazka nastaveni casove periody
         //SystemLoad.refreshTimePeriod = 1;
-        timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+
             private int time = 0;
 
-            @Override
-            public void handle(ActionEvent e) {
-            	try{
-	                if (this.isActiveMonitoring(TypeMonitoring.SYSTEM_LOAD)) {
-	                    SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
-	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: System Load");
-	                    writeConsole("systemLoad: " + systemLoad.getSystem_load());
-	                }
-            	}
-            	catch(Exception e1){
-            		monitoringLogger.error("Server response error for instance: System Load!");
-
-            	}
-            	
-            	try{            		
-	                if (this.isActiveMonitoring(TypeMonitoring.INSTANCE_ID)) {
-	                    InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
-	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: Instance ID");
-	                    writeConsole("instance ID: " + instanceId.getInstance_id());
-	                }
-            	}
-	        	catch(Exception e1){
-	        		monitoringLogger.error("Server response error for instance: Instance ID!");
-	        	}
-
-                try{
-	                if (this.isActiveMonitoring(TypeMonitoring.SESSIONS_COUNT)) {
-	                    SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
-	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: Sessions Count");
-	                    writeConsole("sessions count: " + sessionsCount.getSessions_count());
-	                }
+            private boolean isActiveMonitoring(TypeMonitoring typeMonitoring, String url) {
+                if (filter.isSelect(typeMonitoring) && this.time % typeMonitoring.getRefreshPeriod() == 0) {
+                    if (checkUrl(url)) {
+                        return true;
+                    }
+                    writeConsole("Tato url je nedostupná: " + url);
                 }
-	        	catch(Exception e1){
-	        		monitoringLogger.error("Server response error for instance: Sessions Count!");
-	        	}
 
-                try{
-	                if (this.isActiveMonitoring(TypeMonitoring.MEMORY_INFO)) {
-	                    MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
-	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: Memory Info");
-	                    writeConsole("memory info: " + memoryInfo.getMemory_info());
-	                }
-	        	}
-	        	catch(Exception e1){
-	        		monitoringLogger.error("Server response error for instance: Memory Info!");
-	        	}
+                return false;
+            }
 
-                try{
-	                if (this.isActiveMonitoring(TypeMonitoring.SESSIONS_INFO)) {
-	                    SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
-	                    Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instances: Sessions Info (count: " + sessionsInfo.length + ")");
-	                    writeConsole("sessions info: ");
-	
-	                    for (SessionsInfo sessionsInfo1 : sessionsInfo) {
-	                        writeConsole(sessionsInfo1.getSessions_info());
-	                    }
-	                }
-            	}
-            	catch(Exception e1){
-            		monitoringLogger.error("Server response error for instances: Sessions Info!");
-            	}
-                
+            @Override
+            public void run() {
+
+                try {
+                    if (isActiveMonitoring(TypeMonitoring.SYSTEM_LOAD, fac.getSystemLoad())) {
+                        SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
+                        Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: System Load");
+                        writeConsole("systemLoad: " + systemLoad.getSystem_load());
+                    }
+                } catch (Exception e1) {
+                    monitoringLogger.error("Server response error for instance: System Load!");
+
+                }
+
+                try {
+                    if (isActiveMonitoring(TypeMonitoring.INSTANCE_ID, fac.getInstanceId())) {
+                        InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
+                        Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: Instance ID");
+                        writeConsole("instance ID: " + instanceId.getInstance_id());
+                    }
+                } catch (Exception e1) {
+                    monitoringLogger.error("Server response error for instance: Instance ID!");
+                }
+
+                try {
+                    if (isActiveMonitoring(TypeMonitoring.SESSIONS_COUNT, fac.getSessionsCount())) {
+                        SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
+                        Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: Sessions Count");
+                        writeConsole("sessions count: " + sessionsCount.getSessions_count());
+                    }
+                } catch (Exception e1) {
+                    monitoringLogger.error("Server response error for instance: Sessions Count!");
+                }
+
+                try {
+                    if (isActiveMonitoring(TypeMonitoring.MEMORY_INFO, fac.getMemoryInfo())) {
+                        MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
+                        Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instance: Memory Info");
+                        writeConsole("memory info: " + memoryInfo.getMemory_info());
+                    }
+                } catch (Exception e1) {
+                    monitoringLogger.error("Server response error for instance: Memory Info!");
+                }
+
+                try {
+                    if (isActiveMonitoring(TypeMonitoring.SESSIONS_INFO, fac.getSessionsInfo())) {
+                        SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
+                        Logging.logDebugIfEnabled(monitoringLogger, "Retrieved PeerFile instances: Sessions Info (count: " + sessionsInfo.length + ")");
+                        writeConsole("sessions info: ");
+
+                        for (SessionsInfo sessionsInfo1 : sessionsInfo) {
+                            writeConsole(sessionsInfo1.getSessions_info());
+                        }
+                    }
+                } catch (Exception e1) {
+                    monitoringLogger.error("Server response error for instances: Sessions Info!");
+                }
+
                 monitoringLogger.info("Monitoring cycle finished.");
 
                 this.time++;
             }
 
-            private boolean isActiveMonitoring(TypeMonitoring typeMonitoring) {
-                return filter.isSelect(typeMonitoring) && this.time % typeMonitoring.getRefreshPeriod() == 0;
+        }, 1000, 1000);
+
+    }
+
+    /**
+     * Checkurl
+     *
+     * @param url	url address
+     * @return status url
+     */
+    public static boolean checkUrl(String url) {
+
+        boolean result = false;
+        try {
+            URL siteURL = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) siteURL.openConnection();
+            connection.setRequestMethod("GET");
+            connection.connect();
+
+            int code = connection.getResponseCode();
+            if (code == 200) {
+                result = true;
             }
-        }));
-
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-
+        } catch (Exception e) {
+            result = false;
+        }
+        return result;
     }
 
     /**
      * Pauses monitoring.
      */
     public void pause() {
-        timeline.pause();
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
+        }
         monitoringLogger.info("Monitoring paused.");
         this.statusLabel.setText("Status: Pause");
     }
@@ -236,6 +264,7 @@ public class Monitoring {
 
     /**
      * Displays terminal output.
+     *
      * @param text	terminal output
      */
     private void writeConsole(String text) {
@@ -244,6 +273,7 @@ public class Monitoring {
 
     /**
      * Getter of app status.
+     *
      * @return	app status
      */
     public Label getStatusLabel() {
