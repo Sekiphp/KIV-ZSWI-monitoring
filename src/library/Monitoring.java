@@ -237,6 +237,7 @@ public class Monitoring {
                 result = true;
             }
         } catch (Exception e) {
+        	monitoringLogger.error("URL is not available: " + url);
             result = false;
         }
         return result;
