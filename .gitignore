@@ -10,3 +10,4 @@
 *.prefs
 *.class
 *log_?.txt
+/dist/
