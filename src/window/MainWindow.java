@@ -134,7 +134,7 @@ public class MainWindow extends Application {
         
         MenuItem startPauseItem = new MenuItem("Start");
         startPauseItem.setMnemonicParsing(true);
-        startPauseItem.setAccelerator(new KeyCodeCombination(KeyCode.SPACE));
+        startPauseItem.setAccelerator(new KeyCodeCombination(KeyCode.F1));
         startPauseItem.setOnAction(new StartPauseMonitor(this.monitoring));
         
         monitorMenu.getItems().add(startPauseItem);
