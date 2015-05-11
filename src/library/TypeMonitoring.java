@@ -1,22 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package library;
 
 import java.util.Arrays;
 
 /**
- *
- * @author Kohl
+ * Enum of server services/instances.
  */
 public enum TypeMonitoring {
-	
-	/**
-	 * Enum of server services/instances.
-	 */
-
     SYSTEM_LOAD("system_load",7),
     INSTANCE_ID("instance_id",7),
     SESSIONS_COUNT("sessions_count",7),

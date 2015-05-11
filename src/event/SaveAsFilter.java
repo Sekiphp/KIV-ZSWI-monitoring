@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package event;
 
 import java.io.File;
@@ -19,15 +14,9 @@ import window.MainWindow;
 import library.Logging;
 
 /**
- *
- * @author Kohl
+ * Handles saving a filter as.
  */
 public class SaveAsFilter implements EventHandler {
-	
-	/**
-	 * Handles saving a filter as.
-	 */
-
 	/**
 	 * Logger logging filter saving status.
 	 */

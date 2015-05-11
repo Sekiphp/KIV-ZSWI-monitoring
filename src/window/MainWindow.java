@@ -1,10 +1,5 @@
 package window;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.io.File;
 
 import event.ExitApp;
@@ -13,9 +8,7 @@ import event.SaveAsFilter;
 import event.SaveFilter;
 import event.StartPauseMonitor;
 import javafx.application.Application;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -34,7 +27,8 @@ import javafx.stage.Stage;
 import library.Monitoring;
 
 /**
- *
+ * Main runnable class
+ * 
  * @author Kohl
  */
 public class MainWindow extends Application {
@@ -173,8 +167,8 @@ public class MainWindow extends Application {
         Region spring = new Region();
         HBox.setHgrow(spring, Priority.ALWAYS);
 
-        CheckBox autoScroll = new CheckBox("Auto scroll");
-        autoScroll.setSelected(true);
+        //CheckBox autoScroll = new CheckBox("Auto scroll");
+        //autoScroll.setSelected(true);
         /*autoScroll.selectedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if (newValue) {
                 //zapnuti autoscroll
@@ -187,7 +181,7 @@ public class MainWindow extends Application {
         toolBar.requestLayout();
 
         toolBar.getItems().add(spring);// right
-        toolBar.getItems().add(autoScroll);
+        //toolBar.getItems().add(autoScroll);
         toolBar.getItems().add(new Separator());
         toolBar.getItems().add(this.monitoring.getStatusLabel());
 
@@ -201,5 +195,4 @@ public class MainWindow extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
 }

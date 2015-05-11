@@ -4,12 +4,10 @@ import org.springframework.web.client.RestTemplate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class PeerFileMonitor {
-
-	/**
-	 * Provides URLs (<code>UrlFactory</code>) and REST service (<code>RestTemplate</code>).
-	 */
-	
+/**
+ * Provides URLs (<code>UrlFactory</code>) and REST service (<code>RestTemplate</code>).
+ */
+public class PeerFileMonitor {	
     /**
      * logger PeerFileMonitoru
      */
@@ -53,5 +51,4 @@ public class PeerFileMonitor {
         Logging.logDebugIfEnabled(peerFileLogger, "Getting Rest template.");
         return restTemplate;
     }
-
 }

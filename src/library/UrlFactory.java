@@ -4,12 +4,10 @@ import java.util.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Provides URLs of server services.
+ */
 public class UrlFactory {
-
-	/**
-	 * Provides URLs of server services.
-	 */
-	
     /**
      * logger of URLFactory server service
      */

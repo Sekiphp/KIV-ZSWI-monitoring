@@ -1,10 +1,5 @@
 package library;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Timer;
@@ -18,8 +13,6 @@ import org.springframework.web.client.RestTemplate;
 
 /**
  * Monitors instances/services of PeerFile server.
- *
- * @author Kohl
  */
 public class Monitoring {
 
@@ -214,17 +207,15 @@ public class Monitoring {
             }
 
         }, 1000, 1000);
-
     }
 
     /**
-     * Checkurl
+     * Check if url is connectability
      *
      * @param url	url address
      * @return status url
      */
     public static boolean checkUrl(String url) {
-
         boolean result = false;
         try {
             URL siteURL = new URL(url);
@@ -240,6 +231,7 @@ public class Monitoring {
         	monitoringLogger.error("URL is not available: " + url);
             result = false;
         }
+        
         return result;
     }
 
@@ -251,6 +243,7 @@ public class Monitoring {
             timer.cancel();
             timer = null;
         }
+        
         monitoringLogger.info("Monitoring paused.");
         this.statusLabel.setText("Status: Pause");
     }
@@ -280,5 +273,4 @@ public class Monitoring {
     public Label getStatusLabel() {
         return this.statusLabel;
     }
-
 }

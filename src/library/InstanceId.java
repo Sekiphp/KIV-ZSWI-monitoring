@@ -3,12 +3,10 @@ package library;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Represents InstanceID service of PF.
+ */
 public class InstanceId {
-	
-	/**
-	 * Represents InstanceID service of PF.
-	 */
-	
     /**
      * Logger logging InstanceId service.
      */

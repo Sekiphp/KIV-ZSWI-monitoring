@@ -4,12 +4,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.codehaus.jackson.annotate.JsonProperty;
 
+/**
+ * Represents MemoryInfo service of PF.
+ */
 public class MemoryInfo {
-	
-	/**
-	 * Represents MemoryInfo service of PF.
-	 */
-
     /**
      * logger sluzby MemoryInfo
      */

@@ -13,13 +13,11 @@ import library.TypeMonitoring;
 import library.Logging;
 
 /**
- *
- * @author Ondrej Pittl
+ * Logger instance refresh period.
  */
 public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
-
 	/**
-	 * Logger instance refresh period.
+	 * Messenger.
 	 */
     private static final Logger setInstanceRefreshPeriodLogger = LogManager.getLogger();
 	
@@ -53,7 +51,7 @@ public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
             TypeMonitoring selectedItem = TypeMonitoring.getTypeBy((String) view.getSelectionModel().getSelectedItem());
 
             /* Response from input dialogue. */
-            //Použití JAVA 8u40
+            // use JAVA 8u40 or higher
             TextInputDialog dialog = new TextInputDialog(Integer.toString(getInsntancePeriod(selectedItem)));
             dialog.setTitle("Custom time period");
             dialog.setHeaderText("Refreshing time settings");
@@ -94,7 +92,6 @@ public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
      * invalid
      */
     private boolean isValidPeriod(String str) {
-
         try {
             int val = Integer.parseInt(str);
             return val > 0;

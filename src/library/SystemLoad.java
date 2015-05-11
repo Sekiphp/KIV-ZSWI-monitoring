@@ -3,12 +3,10 @@ package library;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Represents SystemLoad service of PF.
+ */
 public class SystemLoad {
-
-	/**
-	 * Represents SystemLoad service of PF.
-	 */
-	
 	/**
      * Logger logging SystemLoad service.
      */

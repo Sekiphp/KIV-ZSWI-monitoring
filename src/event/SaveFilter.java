@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package event;
 
 import org.apache.logging.log4j.LogManager;
@@ -14,15 +9,12 @@ import window.MainWindow;
 import library.Logging;
 
 /**
- *
- * @author Kohl
+ * Handles saving filter.
  */
-public class SaveFilter implements EventHandler {
-	
+public class SaveFilter implements EventHandler {	
 	/**
-	 * Handles saving filter.
+	 * Messenger.
 	 */
-
     private static final Logger saveFilterLogger = LogManager.getLogger();
     
     /**
@@ -60,5 +52,4 @@ public class SaveFilter implements EventHandler {
         }
 
     }
-
 }

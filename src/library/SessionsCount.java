@@ -3,12 +3,10 @@ package library;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/**
+ * Represents SessionsCount service of PF.
+ */
 public class SessionsCount {
-	
-	/**
-	 * Represents SessionsCount service of PF.
-	 */
-
     /**
      * Logger logging SessionsCount service.
      */

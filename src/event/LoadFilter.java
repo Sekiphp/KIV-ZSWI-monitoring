@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package event;
 
 import java.io.File;
@@ -17,15 +12,13 @@ import window.MainWindow;
 import library.Logging;
 
 /**
- *
- * @author Kohl
+ * Handles loading of a filter.
  */
 public class LoadFilter implements EventHandler {
 	
 	/**
-	 * Handles loading of a filter.
+	 * Messenger
 	 */
-
     private static final Logger loadFilterLogger = LogManager.getLogger();
 
     /**
@@ -69,5 +62,4 @@ public class LoadFilter implements EventHandler {
         
         fileChooser = null;
     }
-
 }

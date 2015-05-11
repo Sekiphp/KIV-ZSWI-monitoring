@@ -4,13 +4,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-public class SessionsInfo {
-	
-	
-	/**
-	 * Represents SessionsInfo service of PF.
-	 */
-	
+/**
+ * Represents SessionsInfo service of PF.
+ */
+public class SessionsInfo {	
     /**
      * Logger logging SessionsInfo service.
      */
@@ -138,5 +135,4 @@ public class SessionsInfo {
         sessionsInfoLogger.info("Setting user_name: " + user_name);
         this.user_name = user_name;
     }
-
 }

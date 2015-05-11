@@ -1,10 +1,6 @@
 package library;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 import event.ChangeFilter;
 import event.SetInstanceRefreshPeriod;
 
@@ -26,15 +22,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 /**
- *
- * @author Kohl
+ * Provides basic actions with filters - saving, loading, etc.
  */
 public class FilterManager {
-	
-	/**
-	 * Provides basic actions with filters - saving, loading, etc.
-	 */
-
     /**
      * logger FilterManageru
      */
@@ -53,7 +43,8 @@ public class FilterManager {
     /**
      * 
      */
-    private final ListView lvFilters;
+    @SuppressWarnings("rawtypes")
+	private final ListView lvFilters;
     
     /**
      * Collection of selected filters.
@@ -78,7 +69,7 @@ public class FilterManager {
 
     /**
      * Getter indicating whether or not are filters going to be saved.
-     * @return
+     * @return boolean
      */
     public boolean isSave() {
         return this.isSave;
@@ -98,7 +89,7 @@ public class FilterManager {
      * @throws FileNotFoundException	File not found exception
      * @throws IOException				Input/output exception
      */
-    public void loadFile(String filePath) throws FileNotFoundException, IOException {
+	public void loadFile(String filePath) throws FileNotFoundException, IOException {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
 
         Logging.logDebugIfEnabled(filterManagerLogger, "Filter input file opened.");
@@ -160,7 +151,7 @@ public class FilterManager {
     
     /**
      * 
-     * @return
+     * @return boolean
      */
     public boolean isPath() {
         return path != null;
@@ -216,5 +207,4 @@ public class FilterManager {
         this.selectedFilters.remove(TypeMonitoring.valueOf(item));
         this.isSave = false;
     }
-
 }

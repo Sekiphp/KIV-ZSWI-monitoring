@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package event;
 
 import org.apache.logging.log4j.LogManager;
@@ -15,15 +10,9 @@ import library.Monitoring;
 import library.Logging;
 
 /**
- *
- * @author Kohl
+ * Handles start/pause of app.
  */
-public class StartPauseMonitor implements EventHandler {
-	
-	/**
-	 * Handles start/pause of app.
-	 */
-	
+public class StartPauseMonitor implements EventHandler {	
 	/**
 	 * Logger logging start/pause app status.
 	 */
