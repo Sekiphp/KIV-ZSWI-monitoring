@@ -17,11 +17,11 @@
 	<bean id="urlFactory" class="library.UrlFactory">
 		<property name="urls">
 			<map>
-				<entry key="instance_id" value="http://peerfile.eu:3000/api/mon/instance_id"/>
-				<entry key="system_load" value="http://peerfile.eu:3000/api/mon/system_load"/>
-				<entry key="sessions_count" value="http://peerfile.eu:3000/api/mon/sessions_count"/>
-				<entry key="sessions_info" value="http://peerfile.eu:3000/api/mon/sessions_info"/>
-				<entry key="memory_info" value="http://peerfile.eu:3000/api/mon/memory_info"/>
+				<entry key="instance_id" value="http://peerfile.eu:4000/api/mon/instance_id"/>
+				<entry key="system_load" value="http://peerfile.eu:4000/api/mon/system_load"/>
+				<entry key="sessions_count" value="http://peerfile.eu:4000/api/mon/sessions_count"/>
+				<entry key="sessions_info" value="http://peerfile.eu:4000/api/mon/sessions_info"/>
+				<entry key="memory_info" value="http://peerfile.eu:4000/api/mon/memory_info"/>
 			</map>
 		</property>
 	</bean>

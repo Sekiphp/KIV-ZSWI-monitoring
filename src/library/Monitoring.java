@@ -161,9 +161,11 @@ public class Monitoring {
 
             private boolean isActiveMonitoring(TypeMonitoring typeMonitoring, String url) {
                 if (filter.isSelect(typeMonitoring) && this.time % typeMonitoring.getRefreshPeriod() == 0) {
-                	applicationLogger.error("URL is not available: " + url);
-                    writeConsole("URL is not available: " + url);
+                	return true;
                 }
+                
+                applicationLogger.error("URL is not available: " + url);
+                //writeConsole("URL is not available: " + url);
 
                 return false;
             }
