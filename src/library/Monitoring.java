@@ -1,7 +1,5 @@
 package library;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -176,7 +174,8 @@ public class Monitoring {
                 try {
                     if (isActiveMonitoring(TypeMonitoring.SYSTEM_LOAD, fac.getSystemLoad())) {
                         SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
-                        if (systemLoadLogger.isInfoEnabled()) systemLoadLogger.info("Retrieved PeerFile instance: " + TypeMonitoring.SYSTEM_LOAD.getName());
+                        if (systemLoadLogger.isInfoEnabled()) systemLoadLogger.info("Retrieved PeerFile instance: "
+                        		+ TypeMonitoring.SYSTEM_LOAD.getName());
                         writeConsole(TypeMonitoring.SYSTEM_LOAD.getName() + ": " + systemLoad.getSystem_load());
                     }
                 } catch (Exception e1) {
@@ -187,7 +186,8 @@ public class Monitoring {
                 try {
                     if (isActiveMonitoring(TypeMonitoring.INSTANCE_ID, fac.getInstanceId())) {
                         InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
-                        if (instanceIdLogger.isInfoEnabled()) instanceIdLogger.info("Retrieved PeerFile instance: " + TypeMonitoring.INSTANCE_ID.getName());
+                        if (instanceIdLogger.isInfoEnabled()) instanceIdLogger.info("Retrieved PeerFile instance: "
+                        		+ TypeMonitoring.INSTANCE_ID.getName());
                         writeConsole(TypeMonitoring.INSTANCE_ID.getName() + ": " + instanceId.getInstance_id());
                     }
                 } catch (Exception e1) {
@@ -198,7 +198,8 @@ public class Monitoring {
                 try {
                     if (isActiveMonitoring(TypeMonitoring.SESSIONS_COUNT, fac.getSessionsCount())) {
                         SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
-                        if (sessionsCountLogger.isInfoEnabled()) sessionsCountLogger.info("Retrieved PeerFile instance: " + TypeMonitoring.SESSIONS_COUNT.getName());
+                        if (sessionsCountLogger.isInfoEnabled()) sessionsCountLogger.info("Retrieved PeerFile instance: "
+                        		+ TypeMonitoring.SESSIONS_COUNT.getName());
                         writeConsole(TypeMonitoring.SESSIONS_COUNT.getName() + ": " + sessionsCount.getSessions_count());
                     }
                 } catch (Exception e1) {
@@ -209,7 +210,8 @@ public class Monitoring {
                 try {
                     if (isActiveMonitoring(TypeMonitoring.MEMORY_INFO, fac.getMemoryInfo())) {
                         MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
-                        if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Retrieved PeerFile instance: " + TypeMonitoring.MEMORY_INFO.getName());
+                        if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Retrieved PeerFile instance: "
+                        		+ TypeMonitoring.MEMORY_INFO.getName());
                         writeConsole(TypeMonitoring.MEMORY_INFO.getName() + ": " + memoryInfo.getMemory_info());
                     }
                 } catch (Exception e1) {
@@ -220,7 +222,8 @@ public class Monitoring {
                 try {
                     if (isActiveMonitoring(TypeMonitoring.SESSIONS_INFO, fac.getSessionsInfo())) {
                         SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
-                        if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Retrieved PeerFile instances: " + TypeMonitoring.SESSIONS_INFO.getName() + " (count: " + sessionsInfo.length + ")");
+                        if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Retrieved PeerFile instances: "
+                        		+ TypeMonitoring.SESSIONS_INFO.getName() + " (count: " + sessionsInfo.length + ")");
                         writeConsole(TypeMonitoring.SESSIONS_INFO.getName() + ": ");
 
                         for (SessionsInfo sessionsInfo1 : sessionsInfo) {
@@ -231,8 +234,6 @@ public class Monitoring {
                 	sessionsInfoLogger.error("Server response error for instances: " + TypeMonitoring.SESSIONS_INFO.getName());
                 	writeConsole("Server response error for instances: " + TypeMonitoring.SESSIONS_INFO.getName());
                 }
-
-                applicationLogger.info("Monitoring cycle finished.");
 
                 this.time++;
             }

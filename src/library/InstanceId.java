@@ -22,7 +22,7 @@ public class InstanceId {
      * @return	server response
      */
     public String getInstance_id() {
-        if (instanceIdLogger.isInfoEnabled()) instanceIdLogger.info("Getting instance_id: " + instance_id);
+        if (instanceIdLogger.isInfoEnabled()) instanceIdLogger.info("Getting " + TypeMonitoring.INSTANCE_ID.getName() + ": " + instance_id);
         return instance_id;
     }
 

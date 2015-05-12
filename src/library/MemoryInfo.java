@@ -38,7 +38,7 @@ public class MemoryInfo {
                 = "\n\tmem_total: " + mem_total
                 + "\n\tmem_free: " + mem_free + "\n";
 
-        if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Getting memory_info.");
+        if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Getting " + TypeMonitoring.MEMORY_INFO.getName());
         return memory_info;
     }
 

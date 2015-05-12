@@ -48,7 +48,7 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getSessions_info() {
-    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting sessions_info.");
+    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting " + TypeMonitoring.SESSIONS_INFO.getName());
         return ("\nsession_code: " + session_code
                 + "\nsession_name: " + session_name
                 + "\nsession_start: " + session_start
