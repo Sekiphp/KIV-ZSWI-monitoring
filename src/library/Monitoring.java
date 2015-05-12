@@ -1,10 +1,13 @@
 package library;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.util.Duration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -86,11 +89,11 @@ public class Monitoring {
      * Provides URLs.
      */
     private final UrlFactory fac;
-
+    
     /**
      * Timer.
      */
-    private Timer timer;
+    private Timeline timeline;
 
     /**
      * Indicates whether or not is app running.
@@ -154,24 +157,25 @@ public class Monitoring {
                
         //ukazka nastaveni casove periody
         //SystemLoad.refreshTimePeriod = 1;
-        timer = new Timer();
-        timer.schedule(new TimerTask() {
-
+        
+        timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
             private int time = 0;
-
+            
             private boolean isActiveMonitoring(TypeMonitoring typeMonitoring, String url) {
                 if (filter.isSelect(typeMonitoring) && this.time % typeMonitoring.getRefreshPeriod() == 0) {
                 	return true;
                 }
                 
-                applicationLogger.error("URL is not available: " + url);
-                writeConsole("URL is not available: " + url);
+                //blbost! musi prijit jinam
+                /*applicationLogger.error("URL is not available: " + url);
+                writeConsole("URL is not available: " + url);*/
 
                 return false;
             }
 
             @Override
-            public void run() {
+            public void handle(ActionEvent e) {
+
 
                 try {
                     if (isActiveMonitoring(TypeMonitoring.SYSTEM_LOAD, fac.getSystemLoad())) {
@@ -236,11 +240,13 @@ public class Monitoring {
                 	sessionsInfoLogger.error("Server response error for instances: " + TypeMonitoring.SESSIONS_INFO.getName());
                 	writeConsole("Server response error for instances: " + TypeMonitoring.SESSIONS_INFO.getName());
                 }
-
+                
                 this.time++;
-            }
+        }}));
 
-        }, 1000, 1000);
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+                
     }
 
 
@@ -248,9 +254,9 @@ public class Monitoring {
      * Pauses monitoring.
      */
     public void pause() {
-        if (timer != null) {
-            timer.cancel();
-            timer = null;
+        if (timeline != null) {
+        	timeline.stop();
+        	timeline = null;
         }
         
         applicationLogger.info("Monitoring paused.");
