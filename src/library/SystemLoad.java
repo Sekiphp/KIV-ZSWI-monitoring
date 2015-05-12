@@ -30,7 +30,7 @@ public class SystemLoad {
      * @param systemLoad	server response
      */
     public void setSystem_load(double systemLoad) {
-    	if (systemLoadLogger.isInfoEnabled()) systemLoadLogger.info("Setting " + TypeMonitoring.SYSTEM_LOAD.getName() + ": " + system_load);
+    	if (systemLoadLogger.isInfoEnabled()) systemLoadLogger.info("Setting " + TypeMonitoring.SYSTEM_LOAD.getName() + ": " + systemLoad);
         this.system_load = systemLoad;
     }
 }
