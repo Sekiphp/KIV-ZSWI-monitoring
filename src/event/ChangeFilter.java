@@ -7,7 +7,6 @@ import javafx.beans.value.ObservableValue;
 import javafx.util.Callback;
 import library.FilterManager;
 import library.TypeMonitoring;
-import library.Logging;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,7 +19,6 @@ public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> 
 	 * Managing filters (saving, loading, etc.)
 	 */
     private final FilterManager filterManager;
-    private static final Logger changeFilterLogger = LogManager.getLogger();
 
     /**
      * Constructor.
@@ -48,7 +46,6 @@ public class ChangeFilter implements Callback<String, ObservableValue<Boolean>> 
             }
         });
 
-        Logging.logDebugIfEnabled(changeFilterLogger, "Filter changed.");
         return observable;
     }
 

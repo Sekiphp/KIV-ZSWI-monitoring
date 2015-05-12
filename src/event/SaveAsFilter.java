@@ -11,16 +11,16 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import window.MainWindow;
-import library.Logging;
 
 /**
  * Handles saving a filter as.
  */
 public class SaveAsFilter implements EventHandler {
+	
 	/**
-	 * Logger logging filter saving status.
+	 * SaveAsFilter logger
 	 */
-    private static final Logger saveAsFilterLogger = LogManager.getLogger();
+    private final Logger applicationLogger = LogManager.getLogger();
 
     /**
      * Main window (GUI) of app.
@@ -57,12 +57,12 @@ public class SaveAsFilter implements EventHandler {
             return;
         }
 
-        saveAsFilterLogger.info("Saving filter.");
+        if (applicationLogger.isInfoEnabled()) applicationLogger.info("Saving filter.");
 
         try {
             this.mainWindow.getMonitoring().getFilter().saveFile(file.getPath());
         } catch (Exception ex) {
-        	saveAsFilterLogger.error("An error occured while attempting to save a filter file.");
+        	applicationLogger.error("An error occured while attempting to save a filter file.");
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Saving filter error.");

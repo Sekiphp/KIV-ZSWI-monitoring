@@ -10,7 +10,7 @@ public class InstanceId {
     /**
      * Logger logging InstanceId service.
      */
-    private static final Logger instanceIdLogger = LogManager.getLogger();
+    private final Logger instanceIdLogger = LogManager.getLogger("instanceID");
 
     /**
      * Response from server.
@@ -22,7 +22,7 @@ public class InstanceId {
      * @return	server response
      */
     public String getInstance_id() {
-        instanceIdLogger.info("Getting instance_id: " + instance_id);
+        if (instanceIdLogger.isInfoEnabled()) instanceIdLogger.info("Getting instance_id: " + instance_id);
         return instance_id;
     }
 
@@ -31,7 +31,6 @@ public class InstanceId {
      * @param instance_id	server response
      */
     public void setInstance_id(String instance_id) {
-        instanceIdLogger.info("Setting instance_id: " + instance_id);
         this.instance_id = instance_id;
     }
 }

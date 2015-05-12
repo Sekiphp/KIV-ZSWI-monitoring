@@ -84,6 +84,12 @@
 			<artifactId>controlsfx</artifactId>
 			<version>8.20.8</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3.6</version>
+		</dependency>
 			    
 	    
 	</dependencies>

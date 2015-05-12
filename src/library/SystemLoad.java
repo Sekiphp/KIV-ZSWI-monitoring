@@ -10,7 +10,7 @@ public class SystemLoad {
 	/**
      * Logger logging SystemLoad service.
      */
-    private static final Logger systemLoadLogger = LogManager.getLogger();
+    private final Logger systemLoadLogger = LogManager.getLogger("systemLoad");
 
     /**
      * Server response.
@@ -22,7 +22,7 @@ public class SystemLoad {
      * @return	server response
      */
     public double getSystem_load() {
-        systemLoadLogger.info("Getting system_load: " + system_load);
+    	if (systemLoadLogger.isInfoEnabled()) systemLoadLogger.info("Getting system_load: " + system_load);
         return system_load;
     }
 
@@ -31,7 +31,6 @@ public class SystemLoad {
      * @param systemLoad	server response
      */
     public void setSystem_load(double systemLoad) {
-        systemLoadLogger.info("Setting system_load: " + system_load);
         this.system_load = systemLoad;
     }
 }

@@ -4,7 +4,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     
     <!-- instance RestTemplate -->
-	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate" />
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+	    <constructor-arg>
+	        <bean class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory">
+	            <property name="readTimeout" value="5000" />
+	            <property name="connectTimeout" value="5000" />
+	        </bean>
+	    </constructor-arg>
+	</bean>
 	
 	<!-- instance UrlFactory s mapou (asociativni pole, klic:hodnota) url instanci -->
 	<bean id="urlFactory" class="library.UrlFactory">

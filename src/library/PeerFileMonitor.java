@@ -11,7 +11,7 @@ public class PeerFileMonitor {
     /**
      * logger PeerFileMonitoru
      */
-    private static final Logger peerFileLogger = LogManager.getLogger();
+    private static final Logger applicationLogger = LogManager.getLogger();
 
     /**
      * Url factory provides URLs to server instances.
@@ -29,7 +29,7 @@ public class PeerFileMonitor {
      * @param restTemplate	provides REST service
      */
     public PeerFileMonitor(UrlFactory urlFactory, RestTemplate restTemplate) {
-        Logging.logDebugIfEnabled(peerFileLogger, "Creating PeerFile monitor.");
+        if (applicationLogger.isDebugEnabled()) applicationLogger.debug("Creating PeerFile monitor.");
         this.urlFactory = urlFactory;
         this.restTemplate = restTemplate;
     }
@@ -39,7 +39,7 @@ public class PeerFileMonitor {
      * @return	UrlFactory providing URLs
      */
     public UrlFactory getUrlFactory() {
-        Logging.logDebugIfEnabled(peerFileLogger, "Getting URL Factory.");
+        if (applicationLogger.isDebugEnabled()) applicationLogger.debug("Getting URL Factory.");
         return urlFactory;
     }
 
@@ -48,7 +48,7 @@ public class PeerFileMonitor {
      * @return	rest template providing rest service
      */
     public RestTemplate getRestTemplate() {
-        Logging.logDebugIfEnabled(peerFileLogger, "Getting Rest template.");
+        if (applicationLogger.isDebugEnabled()) applicationLogger.debug("Getting Rest template.");
         return restTemplate;
     }
 }

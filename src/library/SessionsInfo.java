@@ -11,7 +11,7 @@ public class SessionsInfo {
     /**
      * Logger logging SessionsInfo service.
      */
-    private static final Logger sessionsInfoLogger = LogManager.getLogger();
+    private final Logger sessionsInfoLogger = LogManager.getLogger("sessionsInfo");
 
     /**
      * Server response.
@@ -48,7 +48,7 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getSessions_info() {
-        sessionsInfoLogger.info("Getting sessions_info.");
+    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting sessions_info.");
         return ("\nsession_code: " + session_code
                 + "\nsession_name: " + session_name
                 + "\nsession_start: " + session_start
@@ -60,7 +60,7 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getSession_code() {
-        sessionsInfoLogger.info("Getting session_code: " + session_code);
+    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting session_code: " + session_code);
         return session_code;
     }
 
@@ -68,7 +68,6 @@ public class SessionsInfo {
      * Setter of server response.
      */
     public void setSession_code(String session_code) {
-        sessionsInfoLogger.info("Setting session_code: " + session_code);
         this.session_code = session_code;
     }
 
@@ -76,7 +75,7 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getSession_name() {
-        sessionsInfoLogger.info("Getting session_name: " + session_name);
+    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting session_name: " + session_name);
         return session_name;
     }
 
@@ -84,7 +83,6 @@ public class SessionsInfo {
      * Setter of server response.
      */
     public void setSession_name(String session_name) {
-        sessionsInfoLogger.info("Setting session_name: " + session_name);
         this.session_name = session_name;
     }
 
@@ -92,7 +90,7 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getSession_start() {
-        sessionsInfoLogger.info("Getting session_start: " + session_start);
+    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting session_start: " + session_start);
         return session_start;
     }
 
@@ -100,7 +98,6 @@ public class SessionsInfo {
      * Setter of server response.
      */
     public void setSession_start(String session_start) {
-        sessionsInfoLogger.info("Setting session_start: " + session_start);
         this.session_start = session_start;
     }
 
@@ -108,7 +105,7 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getLast_request() {
-        sessionsInfoLogger.info("Getting last_request: " + last_request);
+    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting last_request: " + last_request);
         return last_request;
     }
 
@@ -116,7 +113,6 @@ public class SessionsInfo {
      * Setter of server response.
      */
     public void setLast_request(String last_request) {
-        sessionsInfoLogger.info("Setting last_request: " + last_request);
         this.last_request = last_request;
     }
 
@@ -124,7 +120,7 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getUser_name() {
-        sessionsInfoLogger.info("Getting user_name: " + user_name);
+    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting user_name: " + user_name);
         return user_name;
     }
 
@@ -132,7 +128,6 @@ public class SessionsInfo {
      * Setter of server response.
      */
     public void setUser_name(String user_name) {
-        sessionsInfoLogger.info("Setting user_name: " + user_name);
         this.user_name = user_name;
     }
 }

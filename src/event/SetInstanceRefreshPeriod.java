@@ -10,16 +10,16 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.input.MouseEvent;
 import library.TypeMonitoring;
-import library.Logging;
 
 /**
  * Logger instance refresh period.
  */
 public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
+	
 	/**
-	 * Messenger.
+	 * SetInstanceRefreshPeriod logger
 	 */
-    private static final Logger setInstanceRefreshPeriodLogger = LogManager.getLogger();
+    private final Logger applicationLogger = LogManager.getLogger();
 	
     /**
      * "Tree" of instances.
@@ -67,7 +67,7 @@ public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
                     int period = Integer.parseInt(response.get());
                     selectedItem.setRefreshPeriod(period);
                     
-                    setInstanceRefreshPeriodLogger.info("New refreshing period for " + selectedItem + ": " + period + " s.");
+                    if (applicationLogger.isInfoEnabled()) applicationLogger.info("New refreshing period for " + selectedItem + ": " + period + " s.");
                 }
             }
         }
@@ -96,8 +96,7 @@ public class SetInstanceRefreshPeriod implements EventHandler<MouseEvent> {
             int val = Integer.parseInt(str);
             return val > 0;
         } catch (NumberFormatException e) {
-        	setInstanceRefreshPeriodLogger.warn("Invalid period format!");
-
+        	if (applicationLogger.isWarnEnabled()) applicationLogger.warn("Invalid period format!");
             return false;
         }
     }

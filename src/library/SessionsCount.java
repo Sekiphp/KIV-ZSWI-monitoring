@@ -10,7 +10,7 @@ public class SessionsCount {
     /**
      * Logger logging SessionsCount service.
      */
-    private static final Logger sessionsCountLogger = LogManager.getLogger();
+    private final Logger sessionsCountLogger = LogManager.getLogger("sessionsCount");
 
     /**
      * Server response.
@@ -22,7 +22,7 @@ public class SessionsCount {
      * @return	server response
      */
     public String getSessions_count() {
-        sessionsCountLogger.info("Getting sessions_count: " + sessions_count);
+    	if (sessionsCountLogger.isInfoEnabled()) sessionsCountLogger.info("Getting sessions_count: " + sessions_count);
         return sessions_count;
     }
     
@@ -31,7 +31,7 @@ public class SessionsCount {
      * @param sessions_count	server response
      */
     public void setSessions_count(String sessions_count) {
-        sessionsCountLogger.info("Setting sessions_count: " + sessions_count);
+    	if (sessionsCountLogger.isInfoEnabled()) sessionsCountLogger.info("Setting sessions_count: " + sessions_count);
         this.sessions_count = sessions_count;
     }
 }

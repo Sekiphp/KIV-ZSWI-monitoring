@@ -8,9 +8,9 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import library.Logging;
 
 import window.MainWindow;
 
@@ -18,10 +18,6 @@ import window.MainWindow;
  * Class handling application exit.
  */
 public class ExitApp implements EventHandler {
-	/**
-	 * Logger.
-	 */
-    private static final Logger exitAppLogger = LogManager.getLogger();
 
     /**
      * Window (GUI) of application.

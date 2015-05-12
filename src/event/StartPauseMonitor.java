@@ -7,16 +7,16 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.MenuItem;
 import library.Monitoring;
-import library.Logging;
 
 /**
  * Handles start/pause of app.
  */
 public class StartPauseMonitor implements EventHandler {	
+	
 	/**
-	 * Logger logging start/pause app status.
+	 * StartPauseMonitor logger
 	 */
-    private static final Logger startPauseMonitorLogger = LogManager.getLogger();
+    private final Logger applicationLogger = LogManager.getLogger();
     
     /**
      * Object providing monitoring.
@@ -36,12 +36,12 @@ public class StartPauseMonitor implements EventHandler {
 
         MenuItem menu = (MenuItem) event.getSource();
         if (monitoring.isRun()) {
-        	Logging.logDebugIfEnabled(startPauseMonitorLogger, "Starting monitoring...");
+        	if (applicationLogger.isDebugEnabled()) applicationLogger.debug("Starting monitoring...");
         	
             menu.setText("Start");
             monitoring.pause();
         } else {
-        	Logging.logDebugIfEnabled(startPauseMonitorLogger, "Pausing monitoring...");
+        	if (applicationLogger.isDebugEnabled()) applicationLogger.debug("Pausing monitoring...");
         	
             monitoring.start();
             menu.setText("Pause");

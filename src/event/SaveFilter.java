@@ -6,16 +6,16 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import window.MainWindow;
-import library.Logging;
 
 /**
  * Handles saving filter.
  */
 public class SaveFilter implements EventHandler {	
+	
 	/**
-	 * Messenger.
+	 * SaveFilter logger
 	 */
-    private static final Logger saveFilterLogger = LogManager.getLogger();
+    private final Logger applicationLogger = LogManager.getLogger();
     
     /**
      * Main window (GUI) of app.
@@ -35,12 +35,12 @@ public class SaveFilter implements EventHandler {
 
         if (this.mainWindow.getMonitoring().getFilter().isPath()) {
         	
-        	saveFilterLogger.info("Saving filter.");
+        	if (applicationLogger.isInfoEnabled()) applicationLogger.info("Saving filter.");
 
             try {
                 this.mainWindow.getMonitoring().getFilter().saveFile();
             } catch (Exception ex) {
-            	saveFilterLogger.error("An error occured when attempting to save a filter file.");
+            	applicationLogger.error("An error occured when attempting to save a filter file.");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Saving filter error.");
