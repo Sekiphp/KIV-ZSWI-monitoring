@@ -72,6 +72,7 @@
     <Logger name="library.PeerFileMonitor" level="DEBUG">
       <AppenderRef ref="application"/>
     </Logger>
+    
     <Logger name="event.LoadFilter" level="DEBUG">
       <AppenderRef ref="application"/>
     </Logger>
@@ -104,6 +105,39 @@
     <Logger name="library.MemoryInfo" level="DEBUG">
       <AppenderRef ref="memoryInfo"/>
     </Logger>
+    
+    <Logger name="library.Monitoring" level="DEBUG">
+      <AppenderRef ref="systemLoad"/>
+    </Logger>
+    <Logger name="library.Monitoring" level="DEBUG">
+      <AppenderRef ref="instanceID"/>
+    </Logger>
+    <Logger name="library.Monitoring" level="DEBUG">
+      <AppenderRef ref="sessionsCount"/>
+    </Logger>
+    <Logger name="library.Monitoring" level="DEBUG">
+      <AppenderRef ref="sessionsInfo"/>
+    </Logger>
+    <Logger name="library.Monitoring" level="DEBUG">
+      <AppenderRef ref="memoryInfo"/>
+    </Logger>
+    
+    <Logger name="library.UrlFactory" level="DEBUG">
+      <AppenderRef ref="systemLoad"/>
+    </Logger>
+    <Logger name="library.UrlFactory" level="DEBUG">
+      <AppenderRef ref="instanceID"/>
+    </Logger>
+    <Logger name="library.UrlFactory" level="DEBUG">
+      <AppenderRef ref="sessionsCount"/>
+    </Logger>
+    <Logger name="library.UrlFactory" level="DEBUG">
+      <AppenderRef ref="sessionsInfo"/>
+    </Logger>
+    <Logger name="library.UrlFactory" level="DEBUG">
+      <AppenderRef ref="memoryInfo"/>
+    </Logger>
+    
   </Loggers>
   
 </Configuration>
