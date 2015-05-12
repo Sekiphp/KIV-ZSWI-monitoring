@@ -38,7 +38,7 @@ public class MemoryInfo {
                 = "\n\tmem_total: " + mem_total
                 + "\n\tmem_free: " + mem_free + "\n";
 
-        if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Getting " + TypeMonitoring.MEMORY_INFO.getName());
+        if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Setting " + TypeMonitoring.MEMORY_INFO.getName() + ": " + memory_info);
         return memory_info;
     }
 
@@ -53,7 +53,6 @@ public class MemoryInfo {
      * Getter of server response.
      */
     public long getMem_total() {
-    	if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Getting mem_total: " + mem_total);
         return mem_total;
     }
     
@@ -68,7 +67,6 @@ public class MemoryInfo {
      * Getter of server response.
      */
     public long getMem_free() {
-    	if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Getting mem_free: " + mem_free);
         return mem_free;
     }
     

@@ -22,7 +22,6 @@ public class SystemLoad {
      * @return	server response
      */
     public double getSystem_load() {
-    	if (systemLoadLogger.isInfoEnabled()) systemLoadLogger.info("Getting " + TypeMonitoring.SYSTEM_LOAD.getName() + ": " + system_load);
         return system_load;
     }
 
@@ -31,6 +30,7 @@ public class SystemLoad {
      * @param systemLoad	server response
      */
     public void setSystem_load(double systemLoad) {
+    	if (systemLoadLogger.isInfoEnabled()) systemLoadLogger.info("Setting " + TypeMonitoring.SYSTEM_LOAD.getName() + ": " + system_load);
         this.system_load = systemLoad;
     }
 }

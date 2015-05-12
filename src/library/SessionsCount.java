@@ -22,7 +22,6 @@ public class SessionsCount {
      * @return	server response
      */
     public String getSessions_count() {
-    	if (sessionsCountLogger.isInfoEnabled()) sessionsCountLogger.info("Getting " + TypeMonitoring.SESSIONS_COUNT.getName() + ": " + sessions_count);
         return sessions_count;
     }
     
@@ -31,6 +30,7 @@ public class SessionsCount {
      * @param sessions_count	server response
      */
     public void setSessions_count(String sessions_count) {
+    	if (sessionsCountLogger.isInfoEnabled()) sessionsCountLogger.info("Setting " + TypeMonitoring.SESSIONS_COUNT.getName() + ": " + sessions_count);
         this.sessions_count = sessions_count;
     }
 }

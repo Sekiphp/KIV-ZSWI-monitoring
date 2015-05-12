@@ -165,7 +165,7 @@ public class Monitoring {
                 }
                 
                 applicationLogger.error("URL is not available: " + url);
-                //writeConsole("URL is not available: " + url);
+                writeConsole("URL is not available: " + url);
 
                 return false;
             }

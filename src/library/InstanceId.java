@@ -22,7 +22,6 @@ public class InstanceId {
      * @return	server response
      */
     public String getInstance_id() {
-        if (instanceIdLogger.isInfoEnabled()) instanceIdLogger.info("Getting " + TypeMonitoring.INSTANCE_ID.getName() + ": " + instance_id);
         return instance_id;
     }
 
@@ -31,6 +30,7 @@ public class InstanceId {
      * @param instance_id	server response
      */
     public void setInstance_id(String instance_id) {
+    	if (instanceIdLogger.isInfoEnabled()) instanceIdLogger.info("Setting " + TypeMonitoring.INSTANCE_ID.getName() + ": " + instance_id);
         this.instance_id = instance_id;
     }
 }

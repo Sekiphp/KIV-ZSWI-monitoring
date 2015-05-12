@@ -48,19 +48,19 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getSessions_info() {
-    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting " + TypeMonitoring.SESSIONS_INFO.getName());
-        return ("\nsession_code: " + session_code
+    	String s = "\nsession_code: " + session_code
                 + "\nsession_name: " + session_name
                 + "\nsession_start: " + session_start
                 + "\nlast_request: " + last_request
-                + "\nuser_name: " + user_name);
+                + "\nuser_name: " + user_name;
+    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Setting " + TypeMonitoring.SESSIONS_INFO.getName() + ":" + s);
+        return s;
     }
 
     /**
      * Getter of server response.
      */
     public String getSession_code() {
-    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting session_code: " + session_code);
         return session_code;
     }
 
@@ -75,7 +75,6 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getSession_name() {
-    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting session_name: " + session_name);
         return session_name;
     }
 
@@ -90,7 +89,6 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getSession_start() {
-    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting session_start: " + session_start);
         return session_start;
     }
 
@@ -105,7 +103,6 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getLast_request() {
-    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting last_request: " + last_request);
         return last_request;
     }
 
@@ -120,7 +117,6 @@ public class SessionsInfo {
      * Getter of server response.
      */
     public String getUser_name() {
-    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Getting user_name: " + user_name);
         return user_name;
     }
 

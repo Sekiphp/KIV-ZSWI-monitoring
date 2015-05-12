@@ -3,7 +3,7 @@
 
   <Properties>
   	<!-- format vystupu -->
-    <Property name="format">%d{yyyy.MM.dd HH:mm:ss} [%-level - %logger{1}.%-M()] - %msg%n</Property>
+    <Property name="format">%d{yyyy.MM.dd HH:mm:ss} [%-level - %C.%M()] - %msg%n</Property>
     <!-- nazev vystupniho souboru pro logy cinnosti aplikace -->
     <Property name="applicationFile">logs/application-log</Property>
     <!-- nazvy vystupnich souboru pro logy jednotlivych sluzeb -->
