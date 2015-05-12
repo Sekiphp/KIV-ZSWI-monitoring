@@ -41,7 +41,7 @@ public class Monitoring {
     /**
      * MemoryInfo logger
      */
-    private final Logger memoryInfoLogger = LogManager.getLogger("memmoryInfo");
+    private final Logger memoryInfoLogger = LogManager.getLogger("memoryInfo");
     
     /**
      * SessionsInfo logger
@@ -163,7 +163,8 @@ public class Monitoring {
 
             private boolean isActiveMonitoring(TypeMonitoring typeMonitoring, String url) {
                 if (filter.isSelect(typeMonitoring) && this.time % typeMonitoring.getRefreshPeriod() == 0) {
-                    writeConsole("Tato url je nedostupná: " + url);
+                	applicationLogger.error("URL is not available: " + url);
+                    writeConsole("URL is not available: " + url);
                 }
 
                 return false;
@@ -179,8 +180,8 @@ public class Monitoring {
                         writeConsole("systemLoad: " + systemLoad.getSystem_load());
                     }
                 } catch (Exception e1) {
-                	systemLoadLogger.error("Server response error for instance: System Load!");
-                    writeConsole("URL is not available: " + TypeMonitoring.SYSTEM_LOAD);
+                	systemLoadLogger.error("Server response error for instance: " + TypeMonitoring.SYSTEM_LOAD.getName());
+                	writeConsole("Server response error for instance: " + TypeMonitoring.SYSTEM_LOAD.getName());
                 }
 
                 try {
@@ -190,8 +191,8 @@ public class Monitoring {
                         writeConsole("instance ID: " + instanceId.getInstance_id());
                     }
                 } catch (Exception e1) {
-                	instanceIdLogger.error("Server response error for instance: Instance ID!");
-                    writeConsole("URL is not available: " + TypeMonitoring.INSTANCE_ID);
+                	instanceIdLogger.error("Server response error for instance: " + TypeMonitoring.INSTANCE_ID.getName());
+                	writeConsole("Server response error for instance: " + TypeMonitoring.INSTANCE_ID.getName());
                 }
 
                 try {
@@ -201,8 +202,8 @@ public class Monitoring {
                         writeConsole("sessions count: " + sessionsCount.getSessions_count());
                     }
                 } catch (Exception e1) {
-                	sessionsCountLogger.error("Server response error for instance: Sessions Count!");
-                    writeConsole("URL is not available: " + TypeMonitoring.SESSIONS_COUNT);
+                	sessionsCountLogger.error("Server response error for instance: " + TypeMonitoring.SESSIONS_COUNT.getName());
+                	writeConsole("Server response error for instance: " + TypeMonitoring.SESSIONS_COUNT.getName());
                 }
 
                 try {
@@ -212,8 +213,8 @@ public class Monitoring {
                         writeConsole("memory info: " + memoryInfo.getMemory_info());
                     }
                 } catch (Exception e1) {
-                	memoryInfoLogger.error("Server response error for instance: Memory Info!");
-                    writeConsole("URL is not available: " + TypeMonitoring.MEMORY_INFO);
+                	memoryInfoLogger.error("Server response error for instance: " + TypeMonitoring.MEMORY_INFO.getName());
+                	writeConsole("Server response error for instance: " + TypeMonitoring.MEMORY_INFO.getName());
                 }
 
                 try {
@@ -227,8 +228,8 @@ public class Monitoring {
                         }
                     }
                 } catch (Exception e1) {
-                	sessionsInfoLogger.error("Server response error for instances: Sessions Info!");
-                    writeConsole("URL is not available: " + TypeMonitoring.SESSIONS_INFO);
+                	sessionsInfoLogger.error("Server response error for instances: " + TypeMonitoring.SESSIONS_INFO.getName());
+                	writeConsole("Server response error for instances: " + TypeMonitoring.SESSIONS_INFO.getName());
                 }
 
                 applicationLogger.info("Monitoring cycle finished.");

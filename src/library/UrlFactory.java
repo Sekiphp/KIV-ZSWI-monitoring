@@ -8,10 +8,35 @@ import org.apache.logging.log4j.Logger;
  * Provides URLs of server services.
  */
 public class UrlFactory {
-    /**
-     * logger of URLFactory server service
+	/**
+     * Application logger
      */
-    private static final Logger applicationLogger = LogManager.getLogger();
+    private final Logger applicationLogger = LogManager.getLogger("application");
+    
+    /**
+     * SystemLoad logger
+     */
+    private final Logger systemLoadLogger = LogManager.getLogger("systemLoad");
+    
+    /**
+     * InstanceID logger
+     */
+    private final Logger instanceIdLogger = LogManager.getLogger("instanceID");
+    
+    /**
+     * SessionsCount logger
+     */
+    private final Logger sessionsCountLogger = LogManager.getLogger("sessionsCount");
+    
+    /**
+     * MemoryInfo logger
+     */
+    private final Logger memoryInfoLogger = LogManager.getLogger("memoryInfo");
+    
+    /**
+     * SessionsInfo logger
+     */
+    private final Logger sessionsInfoLogger = LogManager.getLogger("sessionsInfo");
     
    /**
     * Collection of URLs of server services.
@@ -40,7 +65,7 @@ public class UrlFactory {
      * @return	name of server service
      */
     public String getSystemLoad() {
-        if (applicationLogger.isDebugEnabled()) applicationLogger.debug("Getting system_load service instance.");
+        if (systemLoadLogger.isDebugEnabled()) systemLoadLogger.debug("Getting " + TypeMonitoring.SYSTEM_LOAD.getName() + " service instance.");
         return urls.get(TypeMonitoring.SYSTEM_LOAD.getName());
     }
 
@@ -49,7 +74,7 @@ public class UrlFactory {
      * @return	name of server service
      */
     public String getInstanceId() {
-        if (applicationLogger.isDebugEnabled()) applicationLogger.debug("Getting instance_id service instance.");
+        if (instanceIdLogger.isDebugEnabled()) instanceIdLogger.debug("Getting " + TypeMonitoring.INSTANCE_ID.getName() + " service instance.");
         return urls.get(TypeMonitoring.INSTANCE_ID.getName());
     }
 
@@ -58,7 +83,7 @@ public class UrlFactory {
      * @return	name of server service
      */
     public String getSessionsCount() {
-        if (applicationLogger.isDebugEnabled()) applicationLogger.debug("Getting sessions_count service instance.");
+        if (sessionsCountLogger.isDebugEnabled()) sessionsCountLogger.debug("Getting " + TypeMonitoring.SESSIONS_COUNT.getName() + " service instance.");
         return urls.get(TypeMonitoring.SESSIONS_COUNT.getName());
     }
 
@@ -67,7 +92,7 @@ public class UrlFactory {
      * @return	name of server service
      */
     public String getSessionsInfo() {
-        if (applicationLogger.isDebugEnabled()) applicationLogger.debug("Getting sessions_info service instance.");
+        if (sessionsInfoLogger.isDebugEnabled()) sessionsInfoLogger.debug("Getting " + TypeMonitoring.SESSIONS_INFO.getName() + " service instance.");
         return urls.get(TypeMonitoring.SESSIONS_INFO.getName());
     }
 
@@ -76,7 +101,7 @@ public class UrlFactory {
      * @return	name of server service
      */
     public String getMemoryInfo() {
-        if (applicationLogger.isDebugEnabled()) applicationLogger.debug("Getting memory_info service instance.");
+        if (memoryInfoLogger.isDebugEnabled()) memoryInfoLogger.debug("Getting " + TypeMonitoring.MEMORY_INFO.getName() + " service instance.");
         return urls.get(TypeMonitoring.MEMORY_INFO.getName());
     }
 }
