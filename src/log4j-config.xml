@@ -60,84 +60,27 @@
     </Root>
     
     <!-- odkazy na loggery pro logovani cinnosti aplikace -->
-    <Logger name="library.Monitoring" level="DEBUG">
+    <Logger name="application" level="DEBUG">
    		<AppenderRef ref="application"/>
-    </Logger>
-    <Logger name="library.FilterManager" level="DEBUG">
-      <AppenderRef ref="application"/>
-    </Logger>
-    <Logger name="library.UrlFactory" level="DEBUG">
-      <AppenderRef ref="application"/>
-    </Logger>
-    <Logger name="library.PeerFileMonitor" level="DEBUG">
-      <AppenderRef ref="application"/>
-    </Logger>
-    
-    <Logger name="event.LoadFilter" level="DEBUG">
-      <AppenderRef ref="application"/>
-    </Logger>
-    <Logger name="event.SaveAsFilter" level="DEBUG">
-      <AppenderRef ref="application"/>
-    </Logger>
-    <Logger name="event.SaveFilter" level="DEBUG">
-      <AppenderRef ref="application"/>
-    </Logger>
-    <Logger name="event.SetInstanceRefreshPeriod" level="DEBUG">
-      <AppenderRef ref="application"/>
-    </Logger>
-    <Logger name="event.StartPauseMonitor" level="DEBUG">
-      <AppenderRef ref="application"/>
     </Logger>
     
     <!-- odkazy na loggery pro logovani jednotlivych sluzeb -->
-    <Logger name="library.SystemLoad" level="DEBUG">
+    <Logger name="systemLoad" level="DEBUG">
       <AppenderRef ref="systemLoad"/>
     </Logger>
-    <Logger name="library.InstanceId" level="DEBUG">
+    <Logger name="instanceID" level="DEBUG">
       <AppenderRef ref="instanceID"/>
     </Logger>
-    <Logger name="library.SessionsCount" level="DEBUG">
+    <Logger name="sessionsCount" level="DEBUG">
       <AppenderRef ref="sessionsCount"/>
     </Logger>
-    <Logger name="library.SessionsInfo" level="DEBUG">
+    <Logger name="sessionsInfo" level="DEBUG">
       <AppenderRef ref="sessionsInfo"/>
     </Logger>
-    <Logger name="library.MemoryInfo" level="DEBUG">
+    <Logger name="memoryInfo" level="DEBUG">
       <AppenderRef ref="memoryInfo"/>
     </Logger>
-    
-    <Logger name="library.Monitoring" level="DEBUG">
-      <AppenderRef ref="systemLoad"/>
-    </Logger>
-    <Logger name="library.Monitoring" level="DEBUG">
-      <AppenderRef ref="instanceID"/>
-    </Logger>
-    <Logger name="library.Monitoring" level="DEBUG">
-      <AppenderRef ref="sessionsCount"/>
-    </Logger>
-    <Logger name="library.Monitoring" level="DEBUG">
-      <AppenderRef ref="sessionsInfo"/>
-    </Logger>
-    <Logger name="library.Monitoring" level="DEBUG">
-      <AppenderRef ref="memoryInfo"/>
-    </Logger>
-    
-    <Logger name="library.UrlFactory" level="DEBUG">
-      <AppenderRef ref="systemLoad"/>
-    </Logger>
-    <Logger name="library.UrlFactory" level="DEBUG">
-      <AppenderRef ref="instanceID"/>
-    </Logger>
-    <Logger name="library.UrlFactory" level="DEBUG">
-      <AppenderRef ref="sessionsCount"/>
-    </Logger>
-    <Logger name="library.UrlFactory" level="DEBUG">
-      <AppenderRef ref="sessionsInfo"/>
-    </Logger>
-    <Logger name="library.UrlFactory" level="DEBUG">
-      <AppenderRef ref="memoryInfo"/>
-    </Logger>
-    
+
   </Loggers>
   
 </Configuration>
