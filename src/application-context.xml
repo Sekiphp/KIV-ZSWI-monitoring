@@ -8,7 +8,7 @@
 	    <constructor-arg>
 	        <bean class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory">
 	            <property name="readTimeout" value="5000" />
-	            <property name="connectTimeout" value="5000" />
+	            <property name="connectTimeout" value="3000" />
 	        </bean>
 	    </constructor-arg>
 	</bean>

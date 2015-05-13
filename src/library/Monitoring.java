@@ -8,11 +8,11 @@ import java.util.TimerTask;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import jdk.nashorn.internal.ir.annotations.Immutable;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -124,7 +124,7 @@ public class Monitoring {
     /**
      * Indicates whether or not is app running.
      *
-     * @return
+     * @return status of monitoring
      */
     public boolean isRun() {
         run = !run;
@@ -172,40 +172,52 @@ public class Monitoring {
         return false;
     }
 
-    // TODO: jeste by slo refaktorovat - dvakrat podminka na sessions info
+    /**
+     * Checks whether or not is instance active and time is appropriate for refresh of status of instance.
+     * @param instanceType	tested instance
+     * @param actualTime	actual time
+     */
     private void checkAndPrintResponse(TypeMonitoring instanceType, int actualTime){
     	try {
             if (isActiveMonitoring(instanceType, actualTime)) {
-            	
-            	IPFInstance instance = null;
-            	IPFInstance[] instances = null;
-            	
             	if(instanceType == TypeMonitoring.SESSIONS_INFO) {
-            		instances = restTemplate.getForObject(fac.getUrlByType(instanceType), SessionsInfo[].class);
-            	} else {
-            		instance = restTemplate.getForObject(fac.getUrlByType(instanceType), instanceType.getTypeClass());
-            	}
-            	
-                if (loggers.get(instanceType.getName() + "_logger").isInfoEnabled())
-                	loggers.get(instanceType.getName() + "_logger").info("Retrieved PeerFile instance: " + instanceType.getName());
-                
-                if(instanceType == TypeMonitoring.SESSIONS_INFO) {
-                	//sessions_info contains large amount of data
-                	String console_buffer = "";
+            		//sessions_info contains large amount of data
+            		String console_buffer = "";
+            		IPFInstance[] instances = restTemplate.getForObject(fac.getUrlByType(instanceType), SessionsInfo[].class);
+                	
+            		printInstanceAvailable(instanceType);
+            		
                 	for(IPFInstance inst : instances){
                 		console_buffer += instanceType.getName() + ": " + inst.getInstanceStatus() + "\n\n";
                 	}
-                	writeConsole(console_buffer);
-                } else {
-                	//other instances contain just one piece of data
-                	writeConsole(instanceType.getName() + ": " + instance.getInstanceStatus());
-                }
                 	
+                	writeConsole(console_buffer);
+            	} else {
+            		//other instances contain just one piece of data
+            		IPFInstance instance = restTemplate.getForObject(fac.getUrlByType(instanceType), instanceType.getTypeClass());
+            		
+            		printInstanceAvailable(instanceType);
+            		
+            		writeConsole(instanceType.getName() + ": " + instance.getInstanceStatus());
+            	}
+            	
             }
-        } catch (Exception e1) {
-        	loggers.get(instanceType.getName() + "_logger").error("Server response error for instance: " + instanceType.getName());
-        	writeConsole("Server response error for instance: " + instanceType.getName());
-        }
+            
+        } catch (ResourceAccessException e1) {
+        	
+        	loggers.get(instanceType.getName() + "_logger").error("Instance is not available: " + instanceType.getName());
+        	writeConsole("Instance is not available: " + instanceType.getName());
+
+        } catch (IllegalStateException e2) {
+        	
+        	writeConsole("Request invoked at inappropriate time.");
+		}
+    	
+    }
+    
+    private void printInstanceAvailable(TypeMonitoring type){
+    	if (loggers.get(type.getName() + "_logger").isInfoEnabled())
+        	loggers.get(type.getName() + "_logger").info("Retrieved PeerFile instance: " + type.getName());
     }
 
     /**
