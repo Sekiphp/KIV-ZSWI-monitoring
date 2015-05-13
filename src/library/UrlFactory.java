@@ -74,4 +74,8 @@ public class UrlFactory {
     public String getMemoryInfo() {
         return urls.get(TypeMonitoring.MEMORY_INFO.getName());
     }
+    
+    public String getUrlByType(TypeMonitoring type){
+    	return this.urls.get(type.getName());
+    }
 }

@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 /**
  * Represents InstanceID service of PF.
  */
-public class InstanceId {
+public class InstanceId implements IPFInstance {
     /**
      * Logger logging InstanceId service.
      */
@@ -21,9 +21,9 @@ public class InstanceId {
      * Getter of server response.
      * @return	server response
      */
-    public String getInstance_id() {
+    /*public String getInstance_id() {
         return instance_id;
-    }
+    }*/
 
     /**
      * Setter server response
@@ -33,4 +33,9 @@ public class InstanceId {
     	if (instanceIdLogger.isInfoEnabled()) instanceIdLogger.info("Setting " + TypeMonitoring.INSTANCE_ID.getName() + ": " + instance_id);
         this.instance_id = instance_id;
     }
+
+	@Override
+	public String getInstanceStatus() {
+		return instance_id;
+	}
 }

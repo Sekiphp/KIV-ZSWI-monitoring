@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 /**
  * Represents SystemLoad service of PF.
  */
-public class SystemLoad {
+public class SystemLoad implements IPFInstance {
 	/**
      * Logger logging SystemLoad service.
      */
@@ -21,9 +21,9 @@ public class SystemLoad {
      * Getter of server response.
      * @return	server response
      */
-    public double getSystem_load() {
+    /*public double getSystem_load() {
         return system_load;
-    }
+    }*/
 
     /**
      * Setter of server response.
@@ -33,4 +33,9 @@ public class SystemLoad {
     	if (systemLoadLogger.isInfoEnabled()) systemLoadLogger.info("Setting " + TypeMonitoring.SYSTEM_LOAD.getName() + ": " + systemLoad);
         this.system_load = systemLoad;
     }
+
+	@Override
+	public String getInstanceStatus() {
+        return String.valueOf(system_load);
+	}
 }

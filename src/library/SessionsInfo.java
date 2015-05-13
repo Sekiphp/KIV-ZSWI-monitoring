@@ -7,7 +7,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 /**
  * Represents SessionsInfo service of PF.
  */
-public class SessionsInfo {	
+public class SessionsInfo implements IPFInstance {	
     /**
      * Logger logging SessionsInfo service.
      */
@@ -47,7 +47,7 @@ public class SessionsInfo {
     /**
      * Getter of server response.
      */
-    public String getSessions_info() {
+    /*public String getSessions_info() {
     	String s = "\nsession_code: " + session_code
                 + "\nsession_name: " + session_name
                 + "\nsession_start: " + session_start
@@ -55,7 +55,7 @@ public class SessionsInfo {
                 + "\nuser_name: " + user_name;
     	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Setting " + TypeMonitoring.SESSIONS_INFO.getName() + ":" + s);
         return s;
-    }
+    }*/
 
     /**
      * Getter of server response.
@@ -126,4 +126,15 @@ public class SessionsInfo {
     public void setUser_name(String user_name) {
         this.user_name = user_name;
     }
+
+	@Override
+	public String getInstanceStatus() {
+		String s = "\nsession_code: " + session_code
+                + "\nsession_name: " + session_name
+                + "\nsession_start: " + session_start
+                + "\nlast_request: " + last_request
+                + "\nuser_name: " + user_name;
+    	if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Setting " + TypeMonitoring.SESSIONS_INFO.getName() + ":" + s);
+        return s;
+	}
 }

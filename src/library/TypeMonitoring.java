@@ -6,11 +6,11 @@ import java.util.Arrays;
  * Enum of server services/instances.
  */
 public enum TypeMonitoring {
-    SYSTEM_LOAD("system_load",7),
-    INSTANCE_ID("instance_id",7),
-    SESSIONS_COUNT("sessions_count",7),
-    SESSIONS_INFO("sessions_info",7),
-    MEMORY_INFO("memory_info",7);
+    SYSTEM_LOAD("system_load", 7, SystemLoad.class),
+    INSTANCE_ID("instance_id", 7, InstanceId.class),
+    SESSIONS_COUNT("sessions_count", 7, SessionsCount.class),
+    SESSIONS_INFO("sessions_info", 7, SessionsInfo.class),
+    MEMORY_INFO("memory_info", 7, MemoryInfo.class);
 
     /**
 	*	Name of server service.
@@ -22,12 +22,15 @@ public enum TypeMonitoring {
 	*/
     private int refreshPeriod;
     
+    private Class typeClass;
+    
     /**
 	*	Consturctor.
 	*/
-    private TypeMonitoring(final String name, final int refreshPeriod) {
+    private TypeMonitoring(final String name, final int refreshPeriod, Class typeClass) {
         this.name = name;
         this.refreshPeriod=refreshPeriod;
+        this.typeClass = typeClass;
     }
 
 	/**
@@ -42,6 +45,13 @@ public enum TypeMonitoring {
 	*/
     public int getRefreshPeriod(){
         return this.refreshPeriod;
+    }
+    
+    /**
+	*	Getter of class according to type.
+	*/
+    public Class getTypeClass(){
+        return this.typeClass;
     }
     
     /**

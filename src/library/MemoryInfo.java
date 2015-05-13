@@ -7,7 +7,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 /**
  * Represents MemoryInfo service of PF.
  */
-public class MemoryInfo {
+public class MemoryInfo implements IPFInstance {
     /**
      * logger sluzby MemoryInfo
      */
@@ -33,14 +33,14 @@ public class MemoryInfo {
     /**
      * Getter of server response.
      */
-    public String getMemory_info() {
+    /*public String getMemory_info() {
         memory_info
                 = "\n\tmem_total: " + mem_total
                 + "\n\tmem_free: " + mem_free;
 
         if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Setting " + TypeMonitoring.MEMORY_INFO.getName() + ": " + memory_info);
         return memory_info;
-    }
+    }*/
 
     /**
      * Setter of server response.
@@ -76,4 +76,14 @@ public class MemoryInfo {
     public void setMem_free(long mem_free) {
         this.mem_free = mem_free;
     }
+
+	@Override
+	public String getInstanceStatus() {
+        memory_info
+        = "\n\tmem_total: " + mem_total
+        + "\n\tmem_free: " + mem_free;
+
+		if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Setting " + TypeMonitoring.MEMORY_INFO.getName() + ": " + memory_info);
+		return memory_info;
+	}
 }
