@@ -172,6 +172,7 @@ public class Monitoring {
         return false;
     }
 
+    // TODO: jeste by slo refaktorovat - dvakrat podminka na sessions info
     private void checkAndPrintResponse(TypeMonitoring instanceType, int actualTime){
     	try {
             if (isActiveMonitoring(instanceType, actualTime)) {
@@ -190,8 +191,11 @@ public class Monitoring {
                 
                 if(instanceType == TypeMonitoring.SESSIONS_INFO) {
                 	//sessions_info contains large amount of data
-                	for(IPFInstance inst : instances)
-                    	writeConsole(instanceType.getName() + ": " + inst.getInstanceStatus());
+                	String console_buffer = "";
+                	for(IPFInstance inst : instances){
+                		console_buffer += instanceType.getName() + ": " + inst.getInstanceStatus() + "\n\n";
+                	}
+                	writeConsole(console_buffer);
                 } else {
                 	//other instances contain just one piece of data
                 	writeConsole(instanceType.getName() + ": " + instance.getInstanceStatus());
