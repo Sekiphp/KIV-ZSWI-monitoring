@@ -1,13 +1,11 @@
 package library;
 
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.util.Duration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -89,11 +87,11 @@ public class Monitoring {
      * Provides URLs.
      */
     private final UrlFactory fac;
-    
+
     /**
      * Timer.
      */
-    private Timeline timeline;
+    private Timer timer;
 
     /**
      * Indicates whether or not is app running.
@@ -157,16 +155,16 @@ public class Monitoring {
                
         //ukazka nastaveni casove periody
         //SystemLoad.refreshTimePeriod = 1;
-        
-        timeline = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+
             private int time = 0;
-            
+
             private boolean isActiveMonitoring(TypeMonitoring typeMonitoring, String url) {
                 if (filter.isSelect(typeMonitoring) && this.time % typeMonitoring.getRefreshPeriod() == 0) {
                 	return true;
                 }
                 
-                //blbost! musi prijit jinam
                 /*applicationLogger.error("URL is not available: " + url);
                 writeConsole("URL is not available: " + url);*/
 
@@ -174,79 +172,81 @@ public class Monitoring {
             }
 
             @Override
-            public void handle(ActionEvent e) {
-
-
-                try {
-                    if (isActiveMonitoring(TypeMonitoring.SYSTEM_LOAD, fac.getSystemLoad())) {
-                        SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
-                        if (systemLoadLogger.isInfoEnabled()) systemLoadLogger.info("Retrieved PeerFile instance: "
-                        		+ TypeMonitoring.SYSTEM_LOAD.getName());
-                        writeConsole(TypeMonitoring.SYSTEM_LOAD.getName() + ": " + systemLoad.getSystem_load());
-                    }
-                } catch (Exception e1) {
-                	systemLoadLogger.error("Server response error for instance: " + TypeMonitoring.SYSTEM_LOAD.getName());
-                	writeConsole("Server response error for instance: " + TypeMonitoring.SYSTEM_LOAD.getName());
-                }
-
-                try {
-                    if (isActiveMonitoring(TypeMonitoring.INSTANCE_ID, fac.getInstanceId())) {
-                        InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
-                        if (instanceIdLogger.isInfoEnabled()) instanceIdLogger.info("Retrieved PeerFile instance: "
-                        		+ TypeMonitoring.INSTANCE_ID.getName());
-                        writeConsole(TypeMonitoring.INSTANCE_ID.getName() + ": " + instanceId.getInstance_id());
-                    }
-                } catch (Exception e1) {
-                	instanceIdLogger.error("Server response error for instance: " + TypeMonitoring.INSTANCE_ID.getName());
-                	writeConsole("Server response error for instance: " + TypeMonitoring.INSTANCE_ID.getName());
-                }
-
-                try {
-                    if (isActiveMonitoring(TypeMonitoring.SESSIONS_COUNT, fac.getSessionsCount())) {
-                        SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
-                        if (sessionsCountLogger.isInfoEnabled()) sessionsCountLogger.info("Retrieved PeerFile instance: "
-                        		+ TypeMonitoring.SESSIONS_COUNT.getName());
-                        writeConsole(TypeMonitoring.SESSIONS_COUNT.getName() + ": " + sessionsCount.getSessions_count());
-                    }
-                } catch (Exception e1) {
-                	sessionsCountLogger.error("Server response error for instance: " + TypeMonitoring.SESSIONS_COUNT.getName());
-                	writeConsole("Server response error for instance: " + TypeMonitoring.SESSIONS_COUNT.getName());
-                }
-
-                try {
-                    if (isActiveMonitoring(TypeMonitoring.MEMORY_INFO, fac.getMemoryInfo())) {
-                        MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
-                        if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Retrieved PeerFile instance: "
-                        		+ TypeMonitoring.MEMORY_INFO.getName());
-                        writeConsole(TypeMonitoring.MEMORY_INFO.getName() + ": " + memoryInfo.getMemory_info());
-                    }
-                } catch (Exception e1) {
-                	memoryInfoLogger.error("Server response error for instance: " + TypeMonitoring.MEMORY_INFO.getName());
-                	writeConsole("Server response error for instance: " + TypeMonitoring.MEMORY_INFO.getName());
-                }
-
-                try {
-                    if (isActiveMonitoring(TypeMonitoring.SESSIONS_INFO, fac.getSessionsInfo())) {
-                        SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
-                        if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Retrieved PeerFile instances: "
-                        		+ TypeMonitoring.SESSIONS_INFO.getName() + " (count: " + sessionsInfo.length + ")");
-                        writeConsole(TypeMonitoring.SESSIONS_INFO.getName() + ": ");
-
-                        for (SessionsInfo sessionsInfo1 : sessionsInfo) {
-                            writeConsole(sessionsInfo1.getSessions_info());
+            public void run() {
+            	
+            	Platform.runLater(new Runnable() {
+                    public void run() {
+                    	try {
+                            if (isActiveMonitoring(TypeMonitoring.SYSTEM_LOAD, fac.getSystemLoad())) {
+                                SystemLoad systemLoad = restTemplate.getForObject(fac.getSystemLoad(), SystemLoad.class);
+                                if (systemLoadLogger.isInfoEnabled()) systemLoadLogger.info("Retrieved PeerFile instance: "
+                                		+ TypeMonitoring.SYSTEM_LOAD.getName());
+                                writeConsole(TypeMonitoring.SYSTEM_LOAD.getName() + ": " + systemLoad.getSystem_load());
+                            }
+                        } catch (Exception e1) {
+                        	systemLoadLogger.error("Server response error for instance: " + TypeMonitoring.SYSTEM_LOAD.getName());
+                        	writeConsole("Server response error for instance: " + TypeMonitoring.SYSTEM_LOAD.getName());
                         }
-                    }
-                } catch (Exception e1) {
-                	sessionsInfoLogger.error("Server response error for instances: " + TypeMonitoring.SESSIONS_INFO.getName());
-                	writeConsole("Server response error for instances: " + TypeMonitoring.SESSIONS_INFO.getName());
-                }
-                
-                this.time++;
-        }}));
 
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-                
+                        try {
+                            if (isActiveMonitoring(TypeMonitoring.INSTANCE_ID, fac.getInstanceId())) {
+                                InstanceId instanceId = restTemplate.getForObject(fac.getInstanceId(), InstanceId.class);
+                                if (instanceIdLogger.isInfoEnabled()) instanceIdLogger.info("Retrieved PeerFile instance: "
+                                		+ TypeMonitoring.INSTANCE_ID.getName());
+                                writeConsole(TypeMonitoring.INSTANCE_ID.getName() + ": " + instanceId.getInstance_id());
+                            }
+                        } catch (Exception e1) {
+                        	instanceIdLogger.error("Server response error for instance: " + TypeMonitoring.INSTANCE_ID.getName());
+                        	writeConsole("Server response error for instance: " + TypeMonitoring.INSTANCE_ID.getName());
+                        }
+
+                        try {
+                            if (isActiveMonitoring(TypeMonitoring.SESSIONS_COUNT, fac.getSessionsCount())) {
+                                SessionsCount sessionsCount = restTemplate.getForObject(fac.getSessionsCount(), SessionsCount.class);
+                                if (sessionsCountLogger.isInfoEnabled()) sessionsCountLogger.info("Retrieved PeerFile instance: "
+                                		+ TypeMonitoring.SESSIONS_COUNT.getName());
+                                writeConsole(TypeMonitoring.SESSIONS_COUNT.getName() + ": " + sessionsCount.getSessions_count());
+                            }
+                        } catch (Exception e1) {
+                        	sessionsCountLogger.error("Server response error for instance: " + TypeMonitoring.SESSIONS_COUNT.getName());
+                        	writeConsole("Server response error for instance: " + TypeMonitoring.SESSIONS_COUNT.getName());
+                        }
+
+                        try {
+                            if (isActiveMonitoring(TypeMonitoring.MEMORY_INFO, fac.getMemoryInfo())) {
+                                MemoryInfo memoryInfo = restTemplate.getForObject(fac.getMemoryInfo(), MemoryInfo.class);
+                                if (memoryInfoLogger.isInfoEnabled()) memoryInfoLogger.info("Retrieved PeerFile instance: "
+                                		+ TypeMonitoring.MEMORY_INFO.getName());
+                                writeConsole(TypeMonitoring.MEMORY_INFO.getName() + ": " + memoryInfo.getMemory_info());
+                            }
+                        } catch (Exception e1) {
+                        	memoryInfoLogger.error("Server response error for instance: " + TypeMonitoring.MEMORY_INFO.getName());
+                        	writeConsole("Server response error for instance: " + TypeMonitoring.MEMORY_INFO.getName());
+                        }
+
+                        try {
+                            if (isActiveMonitoring(TypeMonitoring.SESSIONS_INFO, fac.getSessionsInfo())) {
+                                SessionsInfo[] sessionsInfo = restTemplate.getForObject(fac.getSessionsInfo(), SessionsInfo[].class);
+                                if (sessionsInfoLogger.isInfoEnabled()) sessionsInfoLogger.info("Retrieved PeerFile instances: "
+                                		+ TypeMonitoring.SESSIONS_INFO.getName() + " (count: " + sessionsInfo.length + ")");
+                                writeConsole(TypeMonitoring.SESSIONS_INFO.getName() + ": ");
+
+                                for (SessionsInfo sessionsInfo1 : sessionsInfo) {
+                                    writeConsole(sessionsInfo1.getSessions_info());
+                                }
+                            }
+                        } catch (Exception e1) {
+                        	sessionsInfoLogger.error("Server response error for instances: " + TypeMonitoring.SESSIONS_INFO.getName());
+                        	writeConsole("Server response error for instances: " + TypeMonitoring.SESSIONS_INFO.getName());
+                        }
+
+                        time++;
+                    }
+                });
+            	
+            }
+
+        }, 1000, 1000);
     }
 
 
@@ -254,9 +254,9 @@ public class Monitoring {
      * Pauses monitoring.
      */
     public void pause() {
-        if (timeline != null) {
-        	timeline.stop();
-        	timeline = null;
+        if (timer != null) {
+            timer.cancel();
+            timer = null;
         }
         
         applicationLogger.info("Monitoring paused.");
